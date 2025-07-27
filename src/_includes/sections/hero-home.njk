@@ -1,0 +1,32 @@
+<section class="hero">
+  <div class="hero-background">
+    {# CORRECTED: Removed "src/" from the image path. #}
+    {# The .eleventy.js image shortcode already prepends your input directory (src/). #}
+    {% image "img/hero-snapshot.png", "Professioneller Friseursalon Haarmanufaktur Suszan in Traunstein", {
+        widths: [600, 900, 1200, 1920, "auto"],
+        sizes: "100vw",
+        class: "hero-snapshot is-visible",
+        id: "hero-snapshot-image",
+        "aria-hidden": "true"
+    } %}
+    <video
+      id="hero-video" {# Added ID #}
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata" {# Important for loadeddata event #}
+    >
+      <source src="{{ '/img/hero-mobile.mp4' | url }}" type="video/mp4" media="(max-width: 768px)"> {# Mobile-specific video #}
+      <source src="{{ '/img/hero.mp4' | url }}" type="video/mp4"> {# Ensure this is your correct video path #}
+      {# Add other video sources for broader compatibility if needed, e.g., WebM #}
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="hero-content">
+    <h1>Professioneller Friseur in Traunstein</h1>
+    <p>Haarmanufaktur Suszan - Ihr Experte für Haarschnitt, Färben und Styling in der Maximilianstraße</p>
+    <a href="{{ '/contact' | url }}" class="btn cta-button">Jetzt Termin vereinbaren</a>
+  </div>
+</section>

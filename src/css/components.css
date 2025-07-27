@@ -1,0 +1,189 @@
+/* General Component Styles */
+
+/* Services Section Wrapper (if needed for specific layout) */
+section.services { /* Make the selector more specific to target <section class="services"> */
+  padding: var(--space-lg) 0; /* Use global spacing */
+}
+
+/* Grid for Service Cards / Generic Card Grid */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-md); /* Use global spacing */
+}
+
+/* Base Card Style (Applies to .card, .service-card, .feature-card, etc.) */
+.card, .service-card, .feature-card, .testimonial-card, .gallery-item, .service-item { /* Apply to all card-like elements */
+  background-color: var(--theme-color-surface);
+  padding: var(--card-padding, var(--space-md)); /* Use specific card padding or fallback */
+  border-radius: var(--card-border-radius, var(--border-radius));
+  box-shadow: var(--theme-shadow-md);
+  transition: transform var(--transition-duration) var(--transition-timing-function),
+              box-shadow var(--transition-duration) var(--transition-timing-function);
+  display: flex; /* For better internal alignment if needed */
+  flex-direction: column; /* Default card content flow */
+}
+
+.card:hover, .service-card:hover, .feature-card:hover, .testimonial-card:hover, .gallery-item:hover, .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--theme-shadow-lg);
+}
+
+/* Card Content Styling (can be nested within .card or specific card types) */
+.card h2, .service-card h2, .feature-card h3, .service-item h3 { /* Card titles */
+  font-size: var(--font-size-xl); /* Use global heading sizes */
+  color: var(--theme-color-primary); /* Or --theme-color-neutral for less emphasis */
+  margin-bottom: var(--space-sm);
+}
+
+.card p, .service-card p, .feature-card p, .service-item p, .testimonial-card p { /* Card body text */
+  font-size: var(--font-size-md);
+  color: var(--theme-text-on-surface, --theme-color-neutral);
+  flex-grow: 1; /* Allows paragraphs to fill space if card is flex container */
+  margin-bottom: var(--space-sm);
+}
+
+/* Button styles are now primarily in main.css, .btn can be used directly. */
+/* If specific component button variations are needed, they can be defined here: */
+.btn--secondary { /* Extends .btn from main.css */
+  background-color: transparent; /* Outline button */
+  color: var(--theme-color-primary);
+  border: 2px solid var(--theme-color-primary);
+  /* Ensure padding accounts for border if using box-sizing: content-box for buttons */
+  /* If .btn already has padding, this might make it slightly larger. Adjust as needed. */
+}
+
+.btn--secondary:hover {
+  background-color: var(--theme-color-primary);
+  color: var(--theme-text-on-primary);
+  border-color: var(--theme-color-primary);
+}
+
+/* --- Service Card Home Specific Styles (Moved from home.css and underpages.css) --- */
+/* These are the core styles for service cards that are consistent across home and services page carousels.
+   Page-specific adjustments (like width/height or banner specific layout) will be handled in home.css and underpages.css. */
+
+.service-card-home {
+    box-sizing: border-box; /* Crucial for consistent padding/border behavior */
+    position: relative; /* IMPORTANT: Establishes positioning context for child image/banners */
+    overflow: hidden; /* Ensure image and gradient don't spill outside border-radius */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push content wrappers to the bottom by default */
+    color: var(--theme-text-on-accent); /* Assuming accent is the base for the gradient */
+    border-radius: var(--border-radius-lg); /* More rounded for a distinct look */
+    box-shadow: var(--theme-shadow-lg); /* Use theme shadow for consistency */
+    transition: transform var(--transition-duration) var(--transition-timing-function),
+                box-shadow var(--transition-duration) var(--transition-timing-function);
+    text-decoration: none; /* Remove underline from the <a> tag */
+}
+
+.service-card-home:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--theme-shadow-lg); /* Maintain strong shadow on hover */
+}
+
+/* Styles for the eleventy-image generated <picture> and <img> backgrounds */
+.service-card-home picture,
+.service-card-home .service-card-home__background-image {
+    position: absolute; /* Position the image absolutely within its parent .service-card-home */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    z-index: 1; /* Place the image behind the content banners */
+    border-radius: inherit; /* Inherit border-radius from .service-card-home */
+}
+
+/* Common styles for top and bottom banners */
+.service-card-home__banner {
+    position: absolute; /* Position banner absolutely within the card */
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    z-index: 2; /* Banners on top of the background image */
+    padding: var(--space-md); /* Consistent padding for banners */
+    /* REMOVED: background-color: rgba(var(--theme-color-surface-rgb, 252, 249, 247), 0.85); */
+    /* This will now be defined by specific banner styles in home.css/underpages.css */
+}
+
+.service-card-home__title {
+    margin-bottom: var(--space-xs);
+    color: inherit; /* Inherit color from banner, which should be --theme-text-on-accent */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Add subtle shadow for readability */
+    font-size: var(--font-size-xl); /* Consistent font size for titles */
+    text-align: center; /* Center align title by default */
+    margin: 0; /* Remove default margins from h2/h3 */
+    /* Simple line clamping for 2 lines if needed, works in most modern browsers */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.service-card-home__description {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-base);
+    color: inherit; /* Inherit color from banner */
+    /* Simple line clamping for available space (e.g., 3 lines) */
+    max-height: calc(var(--font-size-sm) * var(--line-height-base) * 3); /* Approx 3 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* For more robust multi-line clamping, JS or more complex CSS might be needed */
+}
+
+.service-card-home__icon {
+    width: var(--font-size-xl); /* Consistent size for icons */
+    height: var(--font-size-xl);
+    filter: invert(1); /* If your icon is black and you want it white on the accent background */
+    display: block; /* Ensures margin-left: auto works correctly in flex context */
+    animation: pulse-icon 2s infinite ease-in-out; /* Apply icon pulse animation */
+}
+
+/* Swiper Navigation and Pagination Styling (Generic for service carousels) */
+/* These styles will apply to any .services-home-swiper instance regardless of its parent */
+.services-home-swiper .swiper-pagination-bullet {
+    background-color: var(--theme-color-accent); /* Use theme accent color */
+    opacity: 0.7;
+}
+
+.services-home-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.services-home-swiper .swiper-button-next,
+.services-home-swiper .swiper-button-prev {
+    color: var(--theme-color-accent); /* Use theme accent color for navigation arrows */
+    /* --swiper-navigation-size: 30px; */ /* Example if arrows need resizing */
+}
+
+/* Keyframes for pulsing navigation arrows (also moved here as they are generic for Swiper arrows) */
+@keyframes pulse-left-arrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-4px); }
+}
+
+@keyframes pulse-right-arrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+}
+
+.services-home-swiper .swiper-button-prev {
+    animation: pulse-left-arrow 1.5s infinite ease-in-out;
+}
+.services-home-swiper .swiper-button-next {
+    animation: pulse-right-arrow 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for icon pulsing animation (used by service card icon and contact icons) */
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Pulse to 110% size */
+    }
+}

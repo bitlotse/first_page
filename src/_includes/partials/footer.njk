@@ -1,0 +1,51 @@
+<footer>
+  <div class="footer-container">
+    <!-- Contact Information -->
+    <div class="footer-contact">
+      <h3><a href="{{ '/' | url }}">Haarmanufaktur Suszan</a></h3>
+      <p>Telefon: <a href="tel:{{ site.contact.phoneLink }}">{{ site.contact.phone }}</a></p>
+      <p>E-Mail: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+      {# Ensure the address is linked to Google Maps and displays the full address string #}
+      {% set mapAddressQuery = site.contact.address.street + ", " + site.contact.address.zip + " " + site.contact.address.city %}
+      <p>Adresse: <a href="https://www.google.com/maps/search/?api=1&query={{ mapAddressQuery | urlencode }}" target="_blank" rel="noopener noreferrer" aria-label="Adresse auf Google Maps anzeigen">
+        {{ site.contact.address.full }}
+      </a></p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h3>Folgen Sie uns</h3>
+      <ul>
+        {% for social_link in site.social %}
+          {% if social_link.url and social_link.url != "#" %} {# Only render if URL is valid #}
+            <li><a href="{{ social_link.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ social_link.name }}"><img src="{{ social_link.icon | url }}" alt="{{ social_link.name }} Icon" /></a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-legal-container">
+    <!-- Legal Links (Impressum, Datenschutzerklärung, AGB) -->
+    <div class="footer-legal">
+      <ul>
+        <li><a href="{{ site.legalLinks.impressum }}">Impressum</a></li>
+        <li><a href="{{ site.legalLinks.datenschutzerklaerung }}">Datenschutzerklärung</a></li>
+        <li><a href="{{ site.legalLinks.agb }}">AGB</a></li>
+      </ul>
+    </div>
+
+    <!-- Back to Top Arrow -->
+    <div class="footer-back-to-top">
+      <a href="#top" aria-label="Nach oben">
+        <img src="/img/icons/arrow-up.svg" alt="Nach oben" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Copyright Notice -->
+  <div class="footer-bottom">
+    <p>Erstellt von <a href="https://mycompany.de" target="_blank" rel="noopener noreferrer">Company Name</a></p>
+    <p>&copy; {{ site.year }} Haarmanufaktur Suszan. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>

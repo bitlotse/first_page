@@ -1,0 +1,56 @@
+{# src/_includes/sections/services-home.njk #}
+<section class="services-home-section">
+  <div class="container">
+    <div class="services-home-layout">
+      <div class="services-home-text-content">
+        <h2>Unsere Friseur-Dienstleistungen</h2>
+        <p>Entdecken Sie unser umfassendes Angebot an professionellen Friseur-Dienstleistungen in Traunstein. Von klassischen Haarschnitten bis zu modernen Färbetechniken – wir bieten Ihnen alles, was Sie für Ihren perfekten Look benötigen.</p>
+        <a href="{{ '/services' | url }}" class="btn btn--secondary">Alle Dienstleistungen</a>
+      </div>
+
+      <div class="services-home-slider-column">
+        <div class="swiper services-home-swiper">
+          <div class="swiper-wrapper">
+            {# Loop through services from localServices.js, filter by mainCity #}
+            {% set featuredServices = [] %}
+            {% for item in localServices.services %}
+              {% if item.location == localServices.mainCity %}
+                {% set featuredServices = featuredServices.concat(item) %}
+              {% endif %}
+            {% endfor %}
+
+            {% for item in featuredServices %}
+              {% set imageIndex = (loop.index0 % 4) + 1 %} {# Used for default image cycling #}
+              {# Use item.image if available, otherwise default to cardX.jpg #}
+              {% set imageName = item.image | default('card' + imageIndex + '.jpg') %}
+              {% set imageSrcPath = "img/" + imageName %} {# Consistent path for image shortcode #}
+              {% set altText = "Professionelle " + item.service + " in " + item.location %}
+
+              <a href="{{ ('/services/' + item.serviceSlug + '/' + item.locationSlug + '/') | url }}" class="swiper-slide service-card-home">
+                {# Use the eleventy-img shortcode for optimized images #}
+                {% image imageSrcPath, altText, {
+                    class: "service-card-home__background-image",
+                    sizes: "(min-width: 1200px) 25vw, (min-width: 768px) 33vw, 100vw",
+                    widths: [300, 500, 700, "auto"],
+                    formats: ["webp", "jpeg"]
+                } %}
+
+                <div class="service-card-home__banner service-card-home__banner--bottom">
+                    <h3 class="service-card-home__title">{{ item.service }} in {{ item.location }}</h3>
+                    <p class="service-card-home__description">{{ item.description | truncate(150, true, "...") }}</p> {# Increased truncation length for more text #}
+                    <img src="{{ '/img/icons/corner-right-up.svg' | url }}" class="service-card-home__icon" alt="Mehr erfahren">
+                </div>
+              </a>
+            {% else %}
+            {# Fallback content if no featured services are found #}
+            <p>Keine Dienstleistungen zum Anzeigen vorhanden.</p>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+{% extends "layouts/default.njk" %}
+
+{% block css %}
+  {{ super() }}
+  <link rel="stylesheet" href="/css/underpages.css">
+{% endblock %}
+
+{% block content %}
+  <section class="page-section services-overview-section">
+    <div class="container">
+      <div class="page-title-intro-layout">
+        <div class="title-column">
+          <h1>{{ title | default("Unsere Dienstleistungen") }}</h1>
+        </div>
+        <div class="intro-text-column">
+          <p>{{ intro_paragraph | default("Entdecken Sie unser vielfältiges Angebot an professionellen Dienstleistungen an all unseren Standorten.") | safe }}</p>
+        </div>
+      </div>
+
+      <div class="services-home-slider-column services-page-carousel">
+        <div class="swiper services-home-swiper">
+          <div class="swiper-wrapper">
+            {%- for serviceItem in localServices.services -%}
+              {% set imageName = serviceItem.cardImage %}
+              {% set imageSrcPath = "img/" + imageName %}
+              {% set serviceUrl = ('/services/' + serviceItem.serviceSlug + '/' + serviceItem.locationSlug + '/') | url %}
+              {% set altText = serviceItem.cardImageAlt | default("Professionelle " + serviceItem.service + " in " + serviceItem.location) %}
+
+              <a href="{{ serviceUrl }}" class="swiper-slide service-card-home">
+                {%- image imageSrcPath, altText, {
+                    class: "service-card-home__background-image",
+                    sizes: "(min-width: 1200px) 25vw, (min-width: 768px) 33vw, 100vw",
+                    widths: [300, 500, 700, "auto"],
+                    formats: ["webp", "jpeg"]
+                } -%}
+
+                <div class="service-card-home__banner service-card-home__banner--bottom">
+                  <h3 class="service-card-home__title">{{ serviceItem.service }} in {{ serviceItem.location }}</h3>
+                  <p class="service-card-home__description">
+                    {{ serviceItem.description | safe | truncate(100, true, "...") }}
+                  </p>
+                  <img src="{{ '/img/icons/corner-right-up.svg' | url }}" class="service-card-home__icon" alt="Mehr erfahren">
+                </div>
+              </a>
+            {%- endfor -%}
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "{{ title | default('Dienstleistungsübersicht') | escape }}",
+    "description": "{{ intro_paragraph | default('Übersicht unserer professionellen Dienstleistungen.') | escape }}",
+    "url": "{{ site.url }}{{ page.url | url }}",
+    "numberOfItems": {{ localServices.services | length }},
+    "itemListElement": [
+      {%- for serviceItem in localServices.services -%}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "item": {
+            "@type": "Service",
+            "name": "{{ serviceItem.service | escape }} in {{ serviceItem.location | escape }}",
+            "description": "{{ serviceItem.description | escape }}",
+            "url": "{{ site.url }}{{ ('/services/' + serviceItem.serviceSlug + '/' + serviceItem.locationSlug + '/') | url }}",
+            {% set _jsonLdImageName = serviceItem.cardImage %}
+            {% set _jsonLdBaseImageName = _jsonLdImageName %}
+            {% for ext in ['.webp', '.jpeg', '.jpg', '.png', '.gif'] %}
+              {% if _jsonLdBaseImageName.endsWith(ext) %}
+                {% set _jsonLdBaseImageName = _jsonLdBaseImageName | replace(ext, '') %}
+              {% endif %}
+            {% endfor %}
+            "image": "{{ site.url }}/img/{{ _jsonLdBaseImageName }}-700w.jpeg",
+            "provider": {
+              "@type": "{{ site.contact.schemaType | default('Organization') }}",
+              "name": "{{ site.name | escape }}",
+              "url": "{{ site.url }}"
+            }
+          }
+        }{{ "," if not loop.last }}
+      {%- endfor -%}
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {# Swiper is initialized in main.js #}
+{% endblock %}

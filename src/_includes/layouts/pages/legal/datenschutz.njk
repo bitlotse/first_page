@@ -1,0 +1,18 @@
+{% extends "layouts/default.njk" %} {# Inherit from the default layout #}
+
+{% block css %}
+  {{ super() }} {# This will output the CSS links from default.njk #}
+  {# You can add a specific stylesheet for legal pages if needed #}
+  {# <link rel="stylesheet" href="/css/legal-pages.css"> #}
+{% endblock %}
+
+{% block content %}
+  <main class="main-content">
+    <section class="legal-page datenschutz-page container">
+      <h1>{{ title }}</h1>
+      <div class="legal-content">
+        {{ content | safe }}
+      </div>
+    </section>
+  </main>
+{% endblock %}

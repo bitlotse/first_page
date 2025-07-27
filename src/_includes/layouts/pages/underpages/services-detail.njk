@@ -1,0 +1,103 @@
+{% extends "layouts/default.njk" %}
+
+{% block css %}
+  {{ super() }} {# This will output the CSS links from default.njk #}
+  <link rel="stylesheet" href="/css/underpages.css">
+{% endblock %}
+
+{% block content %}
+  <section class="service-detail">
+    <div class="container">
+      <div class="service-detail-layout">
+        <div class="icon-column">
+          {# Check if 'cardImage' is available in front matter (e.g., 'card1.jpg') #}
+          {# The image should be in your images directory, e.g., /src/img/card1.jpg #}
+          {% if cardImage %}
+            {# Construct the path for the eleventy-img shortcode #}
+            {% set imageSrcPath = "img/" + cardImage %}
+            {# Define alt text for accessibility #}
+            {% set altText = cardImageAlt | default(title + ' illustration') %}
+
+            {# Use the eleventy-img shortcode for optimized, responsive images #}
+            {% image imageSrcPath, altText, {
+                class: "service-detail-card-image",
+                sizes: "(min-width: 768px) 30vw, 100vw",
+                widths: [300, 500, 700],
+                formats: ["webp", "jpeg"],
+                loading: "lazy"
+            } %}
+          {% else %}
+            {# Fallback if cardImage is not defined in front matter #}
+            <div class="image-placeholder"><span>Bild nicht verfügbar</span></div>
+          {% endif %}
+        </div>
+
+        {# Vertical Rule between Icon and Content #}
+        <div class="service-detail-vertical-rule"></div>
+
+        <div class="content-column">
+          <h1>{{ title }}</h1>
+          <div class="service-description">
+            {{ content | safe }}
+            <div class="service-actions-footer">
+              {# CTA Button to Contact Page #}
+              <a href="/contact/" class="btn">Jetzt Termin vereinbaren</a>
+
+              <a href="{{ '/services/' | url }}" class="return-arrow-link" aria-label="Zurück zur Dienstleistungsübersicht">
+                <img src="/img/icons/arrow-left.svg" alt="Pfeil zurück zur Übersicht">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {# Structured Data for Schema.org #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "{{ title | escape }}",
+    "description": "{{ description | escape }}", {# Uses the meta description from front matter #}
+    "url": "{{ site.url }}{{ page.url | url }}",
+    {% if cardImage %}
+    {# Use one of the generated image sizes for the structured data 'image' property #}
+    {# This assumes a 700px wide JPEG is generated and available for structured data crawlers #}
+    "image": "{{ site.url }}/img/{{ cardImage | split('.') | first }}-700w.jpeg",
+    {% elif site.default_og_image_path %}
+    {# Fallback to site's default Open Graph image if no specific cardImage is provided #}
+    "image": "{{ site.url }}{{ site.default_og_image_path | url }}",
+    {% endif %}
+    "provider": {
+      "@type": "{{ site.contact.schemaType | default('Organization') }}",
+      "name": "{{ site.name | escape }}",
+      "url": "{{ site.url }}"
+    },
+    {% if serviceName %}
+    "serviceOutput": {
+        "@type": "Thing",
+        "name": "{{ serviceName | escape }}"
+    },
+    {% endif %}
+    {% if serviceType %}
+    "serviceType": "{{ serviceType | escape }}",
+    {% endif %}
+    {% if areaServed %}
+    "areaServed": {
+      "@type": "{{ areaServed.type | default('Place') }}",
+      "name": "{{ areaServed.name | escape }}"
+      {% if areaServed.address %}
+      ,"address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ areaServed.address.streetAddress | escape }}",
+        "addressLocality": "{{ areaServed.address.addressLocality | escape }}",
+        "postalCode": "{{ areaServed.address.postalCode | escape }}",
+        "addressCountry": "{{ areaServed.address.addressCountry | escape }}"
+      }
+      {% endif %}
+    }
+    {% endif %}
+  }
+  </script>
+{% endblock %}

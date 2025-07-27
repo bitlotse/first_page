@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    {% include "partials/head.njk" %}
+
+    {% block css %}
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/client.css">
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/utils.css">
+    {# Add responsive.css if it's global, or link it on specific pages if preferred #}
+    {# <link rel="stylesheet" href="/css/responsive.css"> #}
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+  </head>
+
+  {# --- BEGIN CHANGE --- #}
+  {# Combine page.fileSlug with any custom bodyClass from front matter #}
+  {% set bodyClasses = [page.fileSlug] %}
+  {% if bodyClass %}{% set bodyClasses = bodyClasses | push(bodyClass) %}{% endif %}
+  <body id="top" class="{{ bodyClasses | join(' ') }}">
+  {# --- END CHANGE --- #}
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% include "partials/header.njk" %}
+
+    <div class="page-right-background-image"></div>
+    <div class="page-complete-background-image"></div>
+
+    <main id="main-content">
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include "partials/footer.njk" %}
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

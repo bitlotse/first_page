@@ -1,0 +1,988 @@
+/* === Service Page - Using Home Page Service Carousel Styles === */
+/* These styles are for layout adjustments specific to the Service Page's carousel,
+   while the core card and Swiper component styles are in components.css */
+
+/* Wrapper for the swiper column on service page */
+.services-page-carousel {
+    flex: 2 1 65%;
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-md);
+}
+
+/* Swiper container for service page carousel - specific width for desktop */
+.services-page-carousel .services-home-swiper {
+    width: 940px;
+    max-width: 100%;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-lg);
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-page-carousel .services-home-swiper .swiper-wrapper {
+    width: auto;
+    display: flex;
+    box-sizing: content-box;
+}
+
+.services-page-carousel .service-card-home {
+    width: 300px;
+    height: 450px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--theme-text-on-primary);
+    box-shadow: var(--theme-shadow-lg);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.services-page-carousel .service-card-home:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--theme-shadow-xl);
+}
+
+.services-page-carousel .service-card-home:hover .service-card-home__title,
+.services-page-carousel .service-card-home:hover .service-card-home__description {
+    color: var(--theme-color-accent);
+}
+
+.services-page-carousel .service-card-home picture,
+.services-page-carousel .service-card-home .service-card-home__background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: inherit;
+}
+
+.services-page-carousel .service-card-home__banner--bottom {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: var(--space-sm);
+    box-sizing: border-box;
+    background-color: var(--home-service-card-banner-bottom-color);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 180px;
+    border-top-left-radius: var(--border-radius-lg);
+    border-top-right-radius: var(--border-radius-xs);
+    border-bottom-left-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+    transform: translateY(2px);
+    box-shadow: 0 -3px 8px rgba(0,0,0,0.2);
+}
+
+.services-page-carousel .service-card-home__banner--bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid var(--home-service-card-banner-bottom-color-darker, rgba(0,0,0,0.1));
+    border-left: 20px solid transparent;
+    border-top-right-radius: var(--border-radius-xs);
+    transform: translateY(-1px);
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.services-page-carousel .service-card-home__title {
+    margin-bottom: var(--space-xxs);
+    color: inherit;
+    text-shadow: none;
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-heading);
+    margin-top: 0;
+    align-self: flex-start;
+    text-align: left;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    position: relative;
+    z-index: 3;
+}
+
+.services-page-carousel .service-card-home__description {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-base);
+    color: inherit;
+    flex-grow: 1;
+    width: 100%;
+    text-align: left;
+    margin-bottom: var(--space-xs);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    position: relative;
+    z-index: 3;
+    align-self: flex-start;
+}
+
+.services-page-carousel .service-card-home .service-card-home__icon {
+    margin-top: auto;
+    margin-left: auto;
+    align-self: flex-end;
+    display: block;
+    width: var(--font-size-xl);
+    height: var(--font-size-xl);
+    filter: var(--footer-icon-filter);
+    position: relative;
+    z-index: 3;
+}
+
+.services-page-carousel .swiper-pagination-bullet {
+    background-color: var(--theme-color-accent);
+    opacity: 0.7;
+}
+
+.services-page-carousel .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.services-page-carousel .swiper-button-next,
+.services-page-carousel .swiper-button-prev {
+    color: var(--theme-color-accent);
+}
+
+@keyframes pulse-left-arrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-4px); }
+}
+
+@keyframes pulse-right-arrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+}
+
+.services-page-carousel .swiper-button-prev {
+    animation: pulse-left-arrow 1.5s infinite ease-in-out;
+}
+
+.services-page-carousel .swiper-button-next {
+    animation: pulse-right-arrow 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-page-carousel .services-home-swiper {
+        max-width: none;
+        width: 100vw;
+        margin-left: calc(-1 * var(--space-sm));
+        margin-right: calc(-1 * var(--space-sm));
+    }
+
+    .services-page-carousel .service-card-home {
+        width: 280px;
+        height: 410px;
+    }
+
+    .services-page-carousel .service-card-home__banner--bottom {
+        height: 170px;
+    }
+}
+
+
+
+
+
+/* === Service Detail Page Layout === */
+.service-detail {
+    padding-top: var(--space-md); /* Set to 32px for consistent vertical padding */
+    padding-bottom: var(--space-md); /* Set to 32px for consistent vertical padding */
+}
+
+.service-detail-layout {
+    display: flex;
+    gap: var(--space-md); /* Consistent gap between elements */
+    align-items: stretch; /* Ensures all direct children stretch to the same height */
+}
+
+.icon-column {
+    flex-basis: 320px; /* Define the width of the left image column */
+    flex-shrink: 0;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-sm)); /* Stick below the header + a small gap */
+    height: calc(100vh - var(--header-height) - (var(--space-md) * 2)); /* Full viewport height minus header and larger gaps for a slightly shorter image */
+    overflow: hidden;    /* Clip the image to the column's bounds and border-radius */
+    border-radius: var(--border-radius-lg); /* Apply rounded corners to the image container */
+    align-self: flex-start; /* Prevent flexbox from stretching the sticky item */
+}
+
+.service-detail-card-image {
+    display: block;
+    width: 100%;
+    height: 100%; /* Image fills the full height of the .icon-column */
+    object-fit: cover;
+    opacity: 0.7; /* Apply slight transparency */
+}
+
+.image-placeholder {
+    background-color: var(--theme-color-surface); /* Mapped from old --color-grey-light */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-color-neutral); /* Mapped from old --color-grey-dark */
+    font-style: italic;
+    width: 100%;
+    height: 100%; /* Placeholder also fills the full height */
+    opacity: 0.7; /* Match transparency */
+    border-radius: var(--border-radius-lg); /* Ensure consistency */
+}
+
+.service-detail-vertical-rule {
+    width: var(--intro-section-rule-height, 3px);
+    background-color: var(--theme-color-accent);
+    border-radius: var(--border-radius-pill, 50px);
+    /* align-self: stretch; is default for flex items, so it will take full height */
+}
+
+.content-column {
+    position: relative;
+    flex: 1; /* Takes up remaining space next to the icon column and rule */
+    padding: 0 var(--space-md) var(--space-md); /* Removed top padding to align the text box with the top of the image */
+    box-sizing: border-box;
+}
+
+.content-column h1 {
+    margin-top: 0;
+    margin-bottom: var(--space-md); /* Use theme variable */
+    /* font-family and font-size inherit from global h1 styles */
+}
+
+.service-description {
+    /* Container for the main text content of the service */
+}
+
+.service-description p {
+    line-height: var(--line-height-base);
+    margin-bottom: var(--space-sm); /* Use theme variable */
+}
+
+/* Container for the CTA button and return arrow at the bottom of the service description */
+.service-actions-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-lg); /* Space above this action bar */
+}
+
+/* Return Arrow Link */
+.return-arrow-link {
+    display: inline-block;
+}
+
+.return-arrow-link img {
+    width: 24px;
+    height: auto;
+    display: block;
+    animation: pulse-return-arrow-left 1.5s infinite ease-in-out;
+    filter: var(--footer-icon-filter); /* Apply the filter from client.css */
+}
+
+/* Keyframes for pulsing return arrow */
+@keyframes pulse-return-arrow-left {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-5px); /* Pulse 5px to the left */
+    }
+}
+
+/* Responsive adjustments for service detail page */
+@media (max-width: 992px) {
+    .service-detail-layout {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+        gap: var(--space-md); /* Maintain gap when stacked */
+    }
+
+    .icon-column,
+    .content-column {
+        flex-basis: auto;
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: var(--space-lg); /* Consistent margin when stacked */
+    }
+
+    .icon-column {
+        order: 1; /* Image appears first */
+        position: relative; /* Reset sticky positioning for stacked layout */
+        top: auto; /* Reset top value */
+        height: auto; /* Let the image determine the height on mobile */
+        max-height: 350px; /* Optional: constrain image height on mobile */
+        /* margin-bottom is handled by the general rule above */
+    }
+
+    .service-detail-card-image,
+    .image-placeholder {
+        opacity: 1; /* Full opacity on mobile */
+        height: auto; /* Height is determined by image content and width */
+        /* width: 100%; is already set */
+    }
+
+    .content-column {
+        order: 2;
+        padding: var(--space-sm); /* Adjust padding for mobile view */
+    }
+
+    .service-detail-vertical-rule {
+        display: none; /* Hide the vertical rule when layout is stacked */
+    }
+}
+
+
+
+
+/* About Page Specific Styles */
+
+/* Define background color variables and other layout specifics */
+:root {
+    --about-custom-box-1-bg: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-primary) 12%);
+    --about-custom-box-2-bg: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-secondary) 12%);
+    --about-custom-box-3-bg: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-accent) 12%);
+    --about-image-fade-width: 40px; /* Reduced width for a more subtle fade effect */
+}
+
+.about-page-section .container {
+    /* No specific styles needed here if your global .container is sufficient */
+}
+
+.about-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: stretch;
+    position: relative;
+}
+
+.about-text-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    position: relative;
+    padding-top: calc(var(--font-size-xxxl) + var(--space-lg));
+}
+
+.about-text-content-wrapper > h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 90%;
+    text-align: center;
+    margin: 0;
+    z-index: 20;
+}
+
+/* General styling for all custom boxes */
+.custom-box {
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--theme-shadow-sm);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-duration) var(--transition-timing-function),
+                box-shadow var(--transition-duration) var(--transition-timing-function);
+    margin-bottom: 0;
+}
+
+.custom-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--theme-shadow-lg);
+}
+
+.custom-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        transparent 15%,
+        rgba(255, 255, 255, 0.35) 40%,
+        rgba(255, 255, 255, 0.35) 60%,
+        transparent 85%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.custom-box:hover::after {
+    transform: translateX(100%);
+}
+
+.custom-box:last-child {
+    margin-bottom: 0;
+}
+
+.custom-box h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-xs);
+    color: var(--theme-color-heading-text);
+}
+
+.custom-box h3 {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+    color: var(--theme-color-heading-text);
+    font-size: var(--font-size-lg);
+}
+
+.custom-box p {
+    margin-bottom: 0;
+    line-height: var(--line-height-base);
+    text-align: justify;
+    hyphens: auto;
+    overflow-wrap: break-word;
+}
+
+.custom-box > *:not(::after) {
+    position: relative;
+    z-index: 1;
+}
+
+.custom-box-1 {
+    background-color: var(--about-custom-box-1-bg);
+    z-index: 5;
+}
+
+.custom-box-2 {
+    background: linear-gradient(
+        to right,
+        var(--about-custom-box-2-bg) 60%,
+        color-mix(in srgb, var(--about-custom-box-2-bg) 70%, transparent 30%) 100%
+    );
+    width: 100%;
+    transform: translateX(40%);
+    z-index: 15;
+}
+
+.custom-box-3 {
+    background-color: var(--about-custom-box-3-bg);
+    z-index: 5;
+}
+
+.about-image-column {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    margin-left: -40px;
+}
+
+.about-image-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--theme-shadow-sm);
+}
+
+/* Responsive adjustments for About Page */
+@media (max-width: 992px) {
+    .about-page-layout {
+        grid-template-columns: 1fr;
+    }
+    .about-text-content-wrapper {
+        order: 2;
+        padding-top: 0;
+    }
+    .about-text-content-wrapper > h1 {
+        position: static;
+        transform: none;
+        max-width: 100%;
+        width: auto;
+        text-align: center;
+        margin-bottom: var(--space-md);
+    }
+    .about-image-column {
+        order: 1;
+        max-height: 400px;
+        margin-left: 0;
+    }
+    .about-image-column img {
+        height: auto;
+        max-height: 100%;
+        mask-image: none !important;  /* Important to force disable fade mask on mobile */
+        -webkit-mask-image: none !important;
+        mask-composite: initial;
+    }
+    .custom-box-2 {
+        width: 100%;
+        transform: translateX(0);
+        z-index: auto;
+        background: var(--about-custom-box-2-bg);
+    }
+    .custom-box h2, .custom-box h3, .custom-box p {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-text-content-wrapper > h1 {
+        text-align: center;
+    }
+    .custom-box h2, .custom-box p {
+        text-align: center;
+    }
+}
+
+
+
+
+
+/* FAQ Page Specific Styles */
+:root {
+    /* Subtle background colors for FAQ boxes */
+    --faq-question-bg-color: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-accent) 15%);
+    --faq-answer-bg-color: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-secondary) 15%);
+    /* Consider a variable for icon color if needed, or style directly */
+    /* --faq-icon-color: var(--color-primary); */
+}
+
+.faq-page-section {
+    padding-top: var(--space-lg); /* Adjust as needed */
+    padding-bottom: var(--space-lg); /* Adjust as needed */
+}
+
+.faq-page-title {
+    margin-bottom: var(--space-lg); /* Space below the main page title */
+    /* Assuming the actual title element (e.g., h1) is inside this wrapper */
+}
+.faq-page-title h1 { /* Or h2 if that's the element used */
+    /* font-family inherits from global h1 styles */
+    /* font-size inherits from global h1 styles */
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs); /* Reduced vertical gap between Q&A items */
+}
+
+.faq-item {
+    position: relative;
+    /* Set a minimum height to accommodate the answer box's potential height.
+        Adjusted: answer-box-top-offset (30px) + estimated-answer-box-height (e.g., 120px) */
+    min-height: 150px; /* Reduced from 180px */
+    padding-bottom: 0; /* min-height now primarily controls the reserved space */
+}
+
+.faq-question-box,
+.faq-answer-box {
+    padding: var(--space-md); /* Increased padding inside boxes slightly */
+    border-radius: var(--border-radius);
+    box-shadow: var(--theme-shadow-md); /* Upgraded to medium shadow like testimonials */
+    display: flex;
+    align-items: flex-start; /* Align icon and text to the top */
+    gap: var(--space-sm); /* Space between icon and text */
+    position: relative; /* For shimmer pseudo-element */
+    overflow: hidden;    /* To clip shimmer pseudo-element */
+    transition: transform var(--transition-duration) var(--transition-timing-function),
+                box-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+.faq-question-box:hover,
+.faq-answer-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--theme-shadow-lg); /* Enhance shadow on hover */
+}
+
+.faq-question-box::after,
+.faq-answer-box::after { /* Shimmer effect */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        100deg, /* Angle of the shimmer */
+        transparent 15%,
+        rgba(255, 255, 255, 0.35) 40%, /* Shimmer color - slightly less opaque than testimonial for subtlety */
+        rgba(255, 255, 255, 0.35) 60%,
+        transparent 85%
+    );
+    transform: translateX(-100%); /* Start off-screen */
+    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    pointer-events: none; /* So it doesn't interfere with mouse events on the card */
+    z-index: 0; /* Ensure shimmer is behind content but above background */
+}
+
+.faq-question-box:hover::after,
+.faq-answer-box:hover::after {
+    transform: translateX(100%); /* Move shimmer across the card */
+}
+
+.faq-question-box {
+    background-color: var(--faq-question-bg-color);
+    width: 55%; /* Question box takes a bit more than half */
+    position: relative; /* For z-index stacking */
+    z-index: 1; /* Question box behind answer */
+    min-height: 80px; /* Ensure a minimum height, adjust as needed */
+}
+
+.faq-answer-box {
+    background-color: var(--faq-answer-bg-color);
+    position: absolute;
+    width: 55%; /* Answer box similar width */
+    top: 30px;    /* Reduced shift down from the top of faq-item */
+    left: 48%;    /* Shifted right for less overlap with the question box */
+    z-index: 2; /* Answer box in front */
+    min-height: 80px; /* Ensure a minimum height, adjust as needed */
+}
+
+.faq-icon {
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+    margin-top: 0.125em; /* Small adjustment to align with first line of text better */
+    /* If SVGs are single color, you can use filter to color them with theme colors */
+    /* filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(180deg) brightness(90%) contrast(90%); /* Example filter for blue */
+    position: relative; /* Ensure icon is above the shimmer pseudo-element */
+    z-index: 1;
+}
+
+.faq-text {
+    flex-grow: 1; /* Allow text container to grow */
+    position: relative; /* Ensure text is above the shimmer pseudo-element */
+    z-index: 1;
+}
+
+.faq-text h3 {
+    margin-top: 0;
+    /* font-family inherits from global h3 styles */
+    margin-bottom: var(--space-xs); /* Small space below question text */
+    font-size: var(--font-size-lg); /* INTENTIONAL OVERRIDE: Smaller than global h3 */
+}
+
+.faq-text p {
+    margin-top: 0;
+    margin-bottom: 0; /* Remove default paragraph margins */
+    line-height: var(--line-height-base);
+}
+.faq-text p:not(:last-child) {
+    margin-bottom: var(--space-xs); /* Add margin between paragraphs in an answer */
+}
+
+
+@media (min-width: 769px) {
+  .faq-question-box .faq-text {
+    padding-right: var(--space-lg); /* or even --space-xl if needed */
+  }
+}
+
+
+/* Responsive adjustments for FAQ Page */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .faq-list {
+        gap: var(--space-lg); /* Increase gap between items slightly on mobile */
+    }
+    .faq-item {
+        padding-bottom: var(--space-sm); /* Reset padding, natural flow will handle height */
+    }
+    .faq-question-box {
+        width: 100%;
+        margin-bottom: 0; /* No margin needed if answer is positioned relative to it */
+        z-index: 2; /* Question behind answer on mobile too */
+    }
+    .faq-answer-box {
+        position: relative; /* Change from absolute */
+        width: 95%;         /* Slightly narrower for indent effect */
+        top: -15px;         /* Pull up slightly to overlap question's bottom */
+        left: 5%;           /* Indent from the left */
+        margin-bottom: var(--space-md); /* Space before next faq-item */
+        z-index: 1;
+    }
+}
+
+
+
+
+
+
+/* Contact Page Specific Styles */
+
+/* Styles for the new contact page columns layout */
+.contact-page-columns-layout {
+    display: flex;
+    flex-direction: row; /* Default, but explicit for clarity */
+    flex-wrap: wrap;     /* Allow items to wrap to the next line on smaller screens */
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+    /* align-items: stretch; is the default, which makes flex items in a row the same height */
+}
+
+.contact-page-columns-layout > .contact-page-column {
+    flex-grow: 1;
+    flex-shrink: 1;
+    /* Calculate basis to aim for three columns, accounting for the gap.
+       Example: (100% container width - 2 gaps) / 3 columns.
+    */
+    flex-basis: calc((100% - (2 * var(--space-md))) / 3);
+    min-width: 220px; /* Allow columns to shrink to this width before wrapping or mobile styles apply.
+                           This should generally be less than the calculated flex-basis on wider screens.
+                           e.g., for an 800px container, basis is ~250px, so 220px min-width is fine.
+                        */
+
+    /* Make the column a flex container to manage its children's height distribution.
+       This is important for ensuring the content within the column can fill its height.
+    */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Ensure cards/content within the columns take up full width of their column container
+   and can grow to fill the vertical space of the .contact-page-column.
+*/
+.contact-page-columns-layout .contact-page-content-card,
+.contact-page-columns-layout .contact-page-map-card,
+.contact-page-columns-layout .contact-page-body-content {
+    width: 100%; /* Take full width of the flex item (.contact-page-column) */
+    flex-grow: 1; /* Allows these inner content blocks to expand vertically to fill the column */
+    box-sizing: border-box;
+}
+
+
+/* Ensure specific content areas within cards can also grow.
+   The iframe in .contact-page-map-card already has flex-grow: 1 from existing rules.
+*/
+.contact-page-content-card .contact-info {
+    flex-grow: 1; /* Allows the contact info block to expand within its card */
+    /* If .contact-info itself needs to manage children with flex, add:
+    display: flex;
+    flex-direction: column;
+    */
+}
+
+
+/* --- START OF CHANGES FOR BACKGROUND IMAGE OPTIMIZATION --- */
+
+/* Parent container for the background image */
+.contact-page-section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    position: relative; /* IMPORTANT: Establish a positioning context for the child image */
+    overflow: hidden; /* Ensures image doesn't overflow outside padding/borders */
+    /* Remove any old background-image properties if they were directly on this section */
+}
+
+/* Styles for the eleventy-image generated <picture> and <img> for the background */
+.contact-page-background-image {
+    position: absolute; /* Position the image absolutely within .contact-page-section */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the section area without distortion */
+    z-index: -1; /* Puts the image behind all other content in the section */
+    opacity: var(--page-complete-background-opacity, 0.7); /* Apply the opacity */
+}
+
+/* Explicitly remove the background image from .page-complete-background-image when on the contact page */
+/* This assumes .page-complete-background-image might be a global fixed background element */
+body.contact .page-complete-background-image {
+    background-image: none; /* Make sure the old CSS background is removed */
+}
+
+
+/* --- END OF CHANGES FOR BACKGROUND IMAGE OPTIMIZATION --- */
+
+
+.contact-page-main-title {
+    margin-bottom: var(--space-lg);
+    /* Assuming the actual title element (e.g., h1) is inside this wrapper */
+}
+.contact-page-main-title h1 { /* Or h2 if that's the element used */
+    /* font-family inherits from global h1 styles */
+    /* font-size inherits from global h1 styles */
+}
+
+.contact-page-top-card {
+    /* Set an evenly transparent background. Adjust 80% for desired opacity. */
+    /* This makes the card 80% opaque (20% transparent). */
+    background-color: color-mix(in srgb, var(--theme-color-surface) 80%, transparent);
+    padding: var(--space-md); /* EXAMPLE: Reduced top/bottom padding to 32px, unified */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--theme-shadow-lg); /* Standardized shadow variable */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center children (title, icons, cta) horizontally */
+    gap: var(--space-md); /* Space between title, icons, and cta within this card */
+    max-width: 600px; /* REDUCED: Constrain the width of this top card further */
+    margin-left: auto;     /* Center the card itself if max-width is applied */
+    margin-right: auto;    /* Center the card itself if max-width is applied */
+}
+
+
+.contact-page-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    /* margin-bottom is now handled by .contact-page-top-card */
+}
+
+.contact-page-icons {
+    display: flex;
+    gap: var(--space-lg); /* Generous gap between icons */
+}
+
+.contact-page-icons a img {
+    height: var(--contact-page-icon-size, 40px);
+    width: auto;
+    /* transition: transform 0.2s ease-in-out; Keep hover effect, animation is separate */
+    animation: pulse-icon 2s infinite ease-in-out; /* Apply the same pulse animation */
+    filter: var(--footer-icon-filter); /* Apply the filter from client.css for all contact page icons */
+}
+
+.contact-page-icons a:hover img {
+    transform: scale(1.1);
+}
+
+.contact-page-cta {
+    /* Uses .btn styles from main.css */
+    /* Styles for prominence are already good */
+    /* If you need it to be styled like a primary button and .btn isn't already primary: */
+    background-color: var(--theme-color-primary);
+    color: var(--theme-text-on-primary);
+    /* font-family inherits from global .btn styles */
+    padding: calc(var(--button-padding-y) * 1.1) calc(var(--button-padding-x) * 1.5); /* Slightly larger */
+    text-align: center; /* Center the text within the button */
+}
+
+.contact-page-cta:hover {
+    background-color: var(--theme-color-secondary);
+}
+/* Adjustments for elements now inside .contact-page-top-card */
+.contact-page-top-card .contact-page-main-title {
+    margin-bottom: 0; /* Gap is handled by .contact-page-top-card */
+}
+
+
+.contact-page-content-card,
+.contact-page-map-card {
+    background-color: var(--theme-color-surface);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--theme-shadow-lg); /* Standardized shadow variable */
+    display: flex; /* This is good, allows children to be managed by flex */
+    flex-direction: column; /* This is good */
+    /* flex, width, and min-width properties are now handled by .contact-page-column if these are direct children of it. */
+}
+
+.contact-page-content-card h3,
+.contact-page-map-card h3 {
+    margin-top: 0;
+    /* font-family inherits from global h3 styles */
+    margin-bottom: var(--space-sm);
+    color: var(--theme-color-heading-text); /* UPDATED: Now uses the dedicated heading text color */
+    /* font-size inherits from global h3 styles */
+    border-bottom: 2px solid var(--theme-text-on-surface); /* Adjusted: Horizontal rule color */
+    padding-bottom: var(--space-xs);
+}
+
+.contact-page-content-card .contact-info p {
+    margin-bottom: var(--space-sm);
+    /* font-family inherits from global p styles */
+    line-height: var(--line-height-base);
+    color: var(--theme-text-on-surface); /* Adjusted: General paragraph text color */
+}
+
+.contact-page-content-card .contact-info p strong {
+    color: var(--theme-color-primary); /* Or --theme-color-neutral */
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-primary); /* INTENTIONAL OVERRIDE: For emphasis */
+    display: block; /* Ensures the label takes its own line */
+    margin-bottom: 0;
+}
+
+.contact-page-content-card .contact-info a {
+    color: var(--theme-text-on-surface); /* Adjusted: Telefon, Email, WhatsApp text color */
+    text-decoration: none;
+    /* font-family inherits from global a/p styles */
+    font-weight: var(--font-weight-medium);
+}
+
+.contact-page-content-card .contact-info a:hover {
+    color: var(--theme-color-accent); /* Hover to accent */
+    text-decoration: underline;
+}
+
+.contact-page-content-card .contact-info p.contact-info-group-heading {
+    margin-bottom: 0.25em; /* Consistent small space for group headings */
+}
+
+.contact-page-content-card .opening-hours-list {
+    list-style: none;
+    padding-left: 0;
+    /* If the preceding p.contact-info-group-heading has minimal/no bottom margin,
+       this list should also have minimal/no top margin. */
+    margin-top: 0;
+    /* font-family inherits from global li/p styles */
+    color: var(--theme-text-on-surface); /* Adjusted: Opening hours list text color */
+}
+
+.contact-page-content-card .opening-hours-list li {
+    margin-bottom: var(--space-xxs);
+}
+
+.contact-page-map-card iframe { /* This is the .contact-map-iframe class */
+    border-radius: var(--border-radius-md);
+    display: block;
+    flex-grow: 1; /* Allow iframe to fill vertical space within its parent card */
+    min-height: 300px; /* Ensure map has a decent minimum height */
+    /* width: 100%; is handled by .contact-map-iframe at the top */
+}
+
+.contact-page-map-card .map-navigation-button {
+    margin-top: var(--space-sm);
+    align-self: center;
+    /* Uses .btn styles from main.css */
+}
+
+
+@media (max-width: 768px) {
+    /* This media query block already exists above for .contact-page-columns-layout.
+       These rules will be merged by the browser with those.
+    */
+    .contact-page-icons {
+        gap: var(--space-md);
+    }
+    .contact-page-icons a img {
+        height: 32px;
+    }
+}

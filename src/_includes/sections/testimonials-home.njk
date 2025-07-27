@@ -1,0 +1,107 @@
+<section class="testimonial-home-section">
+  <div class="container">
+    <div class="testimonial-home-grid">
+      <!-- Row 1 -->
+      <div class="testimonial-home-intro">
+        <h2>Das sagen unsere Kunden</h2>
+        <p>Wir sind stolz auf das Vertrauen unserer Kunden. Hier sind einige Stimmen aus Traunstein und Umgebung.</p>
+      </div>
+      <div class="testimonial-home-empty-cell">
+        <!-- This cell is intentionally empty to show the background -->
+      </div>
+      <div class="testimonial-home-card-wrapper">
+        <div class="testimonial-home-card">
+          <blockquote class="testimonial-text">
+            "Endlich habe ich meinen Traumfriseur gefunden! Die Haarmanufaktur Suszan hat mir einen wunderschönen Balayage-Look verpasst. Das Team ist super freundlich und nimmt sich wirklich Zeit für jeden Kunden."
+          </blockquote>
+          <h4 class="testimonial-author">- Maria S. aus Traunstein</h4>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="testimonial-home-empty-cell">
+        <!-- This cell is intentionally empty -->
+      </div>
+      <div class="testimonial-home-card-wrapper">
+        <div class="testimonial-home-card">
+          <blockquote class="testimonial-text">
+            "Seit Jahren bin ich Stammkunde bei der Haarmanufaktur Suszan. Die Qualität ist immer erstklassig und die Beratung ist persönlich und kompetent. Mein Herrenhaarschnitt ist immer perfekt!"
+          </blockquote>
+          <h4 class="testimonial-author">- Thomas K. aus Siegsdorf</h4>
+        </div>
+      </div>
+      <div class="testimonial-home-empty-cell">
+        <!-- This cell is intentionally empty -->
+      </div>
+      <div class="testimonial-home-card-wrapper">
+        <div class="testimonial-home-card">
+          <blockquote class="testimonial-text">
+            "Für meine Hochzeit war ich bei der Haarmanufaktur Suszan. Die Hochsteckfrisur war ein Traum und hat den ganzen Tag gehalten. Vielen Dank für diesen wunderschönen Tag!"
+          </blockquote>
+          <h4 class="testimonial-author">- Anna L. aus Waging</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "{{ site.contact.schemaType | default('Organization') }}",
+          "name": "{{ site.name }}",
+          "url": "{{ site.url }}"
+        },
+        "reviewBody": "Endlich habe ich meinen Traumfriseur gefunden! Die Haarmanufaktur Suszan hat mir einen wunderschönen Balayage-Look verpasst. Das Team ist super freundlich und nimmt sich wirklich Zeit für jeden Kunden.",
+        "author": {
+          "@type": "Person",
+          "name": "Maria S."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "{{ site.contact.schemaType | default('Organization') }}",
+          "name": "{{ site.name }}",
+          "url": "{{ site.url }}"
+        },
+        "reviewBody": "Seit Jahren bin ich Stammkunde bei der Haarmanufaktur Suszan. Die Qualität ist immer erstklassig und die Beratung ist persönlich und kompetent. Mein Herrenhaarschnitt ist immer perfekt!",
+        "author": {
+          "@type": "Person",
+          "name": "Thomas K."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "Review",
+        "itemReviewed": {
+          "@type": "{{ site.contact.schemaType | default('Organization') }}",
+          "name": "{{ site.name }}",
+          "url": "{{ site.url }}"
+        },
+        "reviewBody": "Für meine Hochzeit war ich bei der Haarmanufaktur Suszan. Die Hochsteckfrisur war ein Traum und hat den ganzen Tag gehalten. Vielen Dank für diesen wunderschönen Tag!",
+        "author": {
+          "@type": "Person",
+          "name": "Anna L."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        }
+      }
+    ]
+  }
+  </script>
+</section>

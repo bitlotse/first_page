@@ -1,0 +1,70 @@
+{% extends "layouts/default.njk" %}
+
+{% block css %}
+  {{ super() }}
+  <link rel="stylesheet" href="/css/underpages.css">
+{% endblock %}
+
+{% block content %}
+<section class="faq-page-section">
+  <div class="container">
+    {# Assuming 'title' is set in faq.md front matter, otherwise hardcode "Frequently Asked Questions" #}
+    <h1 class="text-center faq-page-title">{{ title | default("Häufig gestellte Fragen") }}</h1>
+
+    {# Optional: Render any general content from faq.md before the list #}
+    {% if content and content | striptags | trim %}
+      <div class="page-content rich-text faq-intro-content">
+        {{ content | safe }}
+      </div>
+    {% endif %}
+
+    {% if faqs and faqs.length > 0 %}
+    <div class="faq-list">
+      {% for item in faqs %}
+      <div class="faq-item">
+        <div class="faq-question-box">
+          <img src="/img/icons/help-circle.svg" alt="Fragezeichen Icon" class="faq-icon">
+          <div class="faq-text">
+            <h3>{{ item.question }}</h3>
+          </div>
+        </div>
+        <div class="faq-answer-box">
+          <img src="/img/icons/check-circle.svg" alt="Häkchen Icon" class="faq-icon">
+          <div class="faq-text">
+            <p>{{ item.answer | safe }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+      <p>Momentan sind keine FAQs verfügbar.</p>
+    {% endif %}
+
+  </div>
+</section>
+
+{% if faqs and faqs.length > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "{{ title | escape }}",
+  "description": "{{ description | escape }}",
+  "url": "{{ site.url }}{{ page.url | url }}",
+  "mainEntity": [
+    {% for item in faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ item.question | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.answer | striptags(true) | replace('\"', '\\\"') | escape | replace('\n', ' ') | safe }}"
+      }
+    }{{ "," if not loop.last }}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endblock %}

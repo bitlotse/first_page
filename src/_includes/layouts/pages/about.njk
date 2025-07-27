@@ -1,0 +1,88 @@
+{% extends "layouts/default.njk" %}
+
+{% block css %}
+  {{ super() }}
+<link rel="stylesheet" href="/css/underpages.css">
+{% endblock %}
+
+{% block content %}
+<section class="about-page-section">
+  <div class="container">
+    <div class="about-page-layout">
+      <div class="about-text-content-wrapper">
+        <h1>{{ title | default("Über Uns") }}</h1>
+
+        {# Optional: Render main content from the about.md file's body #}
+        {# If you want to display Markdown content from about.md, uncomment the block below #}
+        {# <div class="page-content rich-text about-page-main-content"> #}
+        {#   {{ content | safe }} #}
+        {# </div> #}
+
+        {# New Box Structure #}
+        {# Box 1: Header, Header, Text #}
+        {% if about.box1 and (about.box1.heading or about.box1.text) %}
+        <div class="custom-box custom-box-1">
+          {% if about.box1.heading %}<h2>{{ about.box1.heading }}</h2>{% endif %}
+          {% if about.box1.text %}<p>{{ about.box1.text | replace("\n", "<br>") | safe }}</p>{% endif %}
+        </div>
+        {% endif %}
+
+        {# Box 2: Header, Text #}
+        {% if about.box2 and (about.box2.heading or about.box2.text) %}
+        <div class="custom-box custom-box-2">
+          {% if about.box2.heading %}<h2>{{ about.box2.heading }}</h2>{% endif %}
+          {% if about.box2.text %}<p>{{ about.box2.text | replace("\n", "<br>") | safe }}</p>{% endif %}
+        </div>
+        {% endif %}
+
+        {# Box 3: Header, Text #}
+        {% if about.box3 and (about.box3.heading or about.box3.text) %}
+        <div class="custom-box custom-box-3">
+          {% if about.box3.heading %}<h2>{{ about.box3.heading }}</h2>{% endif %}
+          {% if about.box3.text %}<p>{{ about.box3.text | replace("\n", "<br>") | safe }}</p>{% endif %}
+        </div>
+        {% endif %}
+
+      </div>
+      <div class="about-image-column">
+        {# Use dynamic image source and alt text from front matter #}
+        {# Ensure image_src is relative to the Eleventy input directory (e.g., "img/about.jpg") #}
+        {% set image_src_for_shortcode = about_image.src | default("img/about.jpg") %}
+        {# If about_image.src in front matter starts with '/', strip it for the shortcode #}
+        {% if image_src_for_shortcode.startsWith('/') %}
+          {% set image_src_for_shortcode = image_src_for_shortcode | replace_first('/', '') %}
+        {% endif %}
+        
+        {% set image_alt = about_image.alt | default(title + " Das ist unser Team") %}
+        
+        {# Add a class for specific styling #}
+        {# Adjust sizes based on layout #}
+        {% image image_src_for_shortcode, image_alt, {
+            class: "about-page-main-image",
+            sizes: "(min-width: 1000px) 40vw, 90vw",
+            widths: [400, 800, 1200, "auto"]
+        } %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "{{ title | escape }}",
+  "description": "{{ description | escape }}",
+  "url": "{{ site.url }}{{ page.url | url }}",
+  {% if about_image.src %}
+  "image": "{{ site.url }}{{ about_image.src | url }}",
+  {% elif site.default_og_image_path %}
+  "image": "{{ site.url }}{{ site.default_og_image_path | url }}",
+  {% endif %}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url | url }}"
+  }
+}
+</script>
+{% endblock %}

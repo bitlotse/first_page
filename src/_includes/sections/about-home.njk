@@ -1,0 +1,24 @@
+<section class="about-home-section">
+  <div class="container">
+    <div class="about-home-image-wrapper">
+      {# Use eleventy-image for optimization #}
+      {% set altText = "Erfahrenes Friseurteam der Haarmanufaktur Suszan in Traunstein - Professionelle Haarpflege mit Leidenschaft" %}
+      {# Example widths: adjust based on typical display size #}
+      {# Example sizes: adjust based on your layout #}
+      {# Add a class for specific styling #}
+      {% image "img/about.jpg", altText, {
+          widths: [300, 600, 900, "auto"],
+          sizes: "(min-width: 768px) 50vw, 100vw",
+          class: "about-home-image"
+      } %}
+    </div>
+    <div class="about-home-text-wrapper">
+      <hr class="about-home-horizontal-rule rule-above-heading">
+      <h2>Ihr Friseur in Traunstein</h2>
+      <p>Die Haarmanufaktur Suszan ist mehr als nur ein Friseursalon – wir sind Ihre Experten für individuelle Haarpflege in Traunstein. Mit über 15 Jahren Erfahrung und kontinuierlicher Weiterbildung bieten wir Ihnen die neuesten Trends und bewährte Techniken.</p>
+      <p>Unser Team versteht, dass jeder Kunde einzigartig ist. Deshalb nehmen wir uns Zeit für eine persönliche Beratung und entwickeln gemeinsam mit Ihnen den perfekten Look, der zu Ihrem Stil und Ihrer Persönlichkeit passt.</p>
+      <a href="{{ '/about' | url }}" class="btn btn--secondary">Mehr über uns</a>
+      <hr class="about-home-horizontal-rule rule-below-text">
+    </div>
+  </div>
+</section>

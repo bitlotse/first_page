@@ -1,0 +1,128 @@
+{# Title Tag #}
+<title>{{ page.seo.title or page.title or site.default_title or "Fallback Page Title" }} | {{ site.name or "Default Site Name" }}</title>
+
+{# Meta Description #}
+<meta name="description" content="{{ page.seo.description or page.description or site.default_description or 'Generic default description for the website.' }}">
+
+{# Robots #}
+<meta name="robots" content="{{ page.seo.robots or 'index, follow' }}">
+
+{# Canonical #}
+{% set pageUrl = page.url | url %} {# Ensures page.url is a valid path #}
+<link rel="canonical" href="{{ page.seo.canonical or site.url ~ pageUrl }}">
+
+{# Open Graph (Facebook, LinkedIn) #}
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page.seo.og_title or page.title or site.default_title or (site.name | default('')) }}">
+<meta property="og:description" content="{{ page.seo.og_description or page.description or site.default_description }}">
+{% set og_image_path = page.seo.og_image or page.og_image or site.default_og_image_path or '/img/default-og-image.jpg' %}
+<meta property="og:image" content="{{ site.url }}{{ og_image_path | url }}">
+<meta property="og:url" content="{{ page.seo.og_url or site.url ~ pageUrl }}">
+<meta property="og:site_name" content="{{ site.name | default('Default Site Name') }}">
+
+{# Twitter Card #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.seo.twitter_title or page.title or site.default_title or (site.name | default('')) }}">
+<meta name="twitter:description" content="{{ page.seo.twitter_description or page.description or site.default_description }}">
+{% set twitter_image_path = page.seo.twitter_image or page.og_image or site.default_og_image_path or '/img/default-og-image.jpg' %}
+<meta name="twitter:image" content="{{ site.url }}{{ twitter_image_path | url }}">
+<meta name="twitter:url" content="{{ page.seo.twitter_url or site.url ~ pageUrl }}">
+<meta name="twitter:creator" content="{{ site.twitter_handle or '@default_handle' }}">
+
+{# JSON-LD Structured Data - Enhanced with @graph for multiple types #}
+{% set schemaImage = site.url ~ (page.seo.og_image or page.og_image or site.default_og_image_path | url) %}
+{% set schemaLogo = site.url ~ (page.seo.logo_url or site.logo_path | url) %}
+{% set currentUrl = site.url ~ pageUrl %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url | url }}/#website",
+      "url": "{{ site.url | url }}/",
+      "name": "{{ site.name }}",
+      "description": "{{ site.default_description }}",
+      "publisher": { "@id": "{{ site.url | url }}/#organization" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url | url }}/#organization",
+      "name": "{{ site.name }}",
+      "url": "{{ site.url | url }}/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ schemaLogo }}"
+      },
+      "sameAs": [
+        {% for socialLink in site.social %}
+        "{{ socialLink.url }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    },
+    {
+      "@type": "WebPage", {# This will be the default type for most pages #}
+      "name": "{{ page.seo.title or page.title or site.default_title }}",
+      "description": "{{ page.seo.description or page.description or site.default_description }}",
+      "url": "{{ currentUrl }}",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ schemaImage }}"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ currentUrl }}"
+      }
+    },
+    {
+      "@type": "BeautySalon", {# Specific type for a hairdresser, linked to Organization #}
+      "@id": "{{ site.url | url }}/#localbusiness",
+      "name": "{{ site.name }}",
+      "image": "{{ site.url | url }}{{ site.default_og_image_path | url }}", {# Using OG image as main image for LocalBusiness #}
+      "url": "{{ site.url | url }}/",
+      "telephone": "{{ site.contact.phoneLink }}",
+      "email": "{{ site.contact.email }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ site.contact.address.street }}",
+        "addressLocality": "{{ site.contact.address.city }}",
+        "postalCode": "{{ site.contact.address.zip }}",
+        "addressCountry": "{{ site.contact.address.country }}"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "{{ site.contact.address.geo.latitude }}",
+        "longitude": "{{ site.contact.address.geo.longitude }}"
+      },
+      "openingHoursSpecification": [
+        {% for day in site.contact.openingHoursSchema %}
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            {% for dow in day.dayOfWeek %}
+            "{{ dow }}"{% if not loop.last %},{% endif %}
+            {% endfor %}
+          ],
+          "opens": "{{ day.opens }}",
+          "closes": "{{ day.closes }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ],
+      "priceRange": "$$", {# Example: adjust based on business pricing #}
+      "hasMap": "{{ site.contact.mapEmbedUrl }}",
+      "publicAccess": true,
+      "areaServed": {
+        "@type": "Place",
+        "name": "{{ site.contact.address.city }}" {# Or broader area if applicable #}
+      },
+      "sameAs": [
+        "{{ site.googleBusinessProfileURL }}",
+        {% for socialLink in site.social %}
+        "{{ socialLink.url }}"{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>

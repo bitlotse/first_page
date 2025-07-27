@@ -1,0 +1,1031 @@
+/* src/css/home.css */
+
+/* === Hero Section === */
+.hero {
+    position: relative; /* Needed for absolute positioning of children like .hero-background */
+    height: calc(100vh - var(--header-height)); /* Full viewport height minus header */
+    min-height: 500px; /* Minimum height for smaller viewports */
+    overflow: hidden; /* Clip any overflowing video/image */
+    display: flex; /* To help center content if needed */
+    padding-top: 0; /* Override general section padding */
+    padding-bottom: 0; /* Override general section padding */
+    align-items: stretch; /* Stretch children to fill height */
+    justify-content: flex-start; /* Align content to the left */
+    color: var(--theme-text-on-primary, #ffffff); /* Assuming hero background is dark or primary */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Background elements behind content */
+    background-color: var(--theme-color-primary); /* Or a specific dark surface for hero */
+}
+
+.hero-snapshot,
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the area, might crop */
+    transform: translate(-50%, -50%); /* Center the media */
+}
+
+.hero-snapshot {
+    z-index: 3; /* Snapshot on top initially */
+    opacity: 1;
+    transition: opacity 0.5s var(--transition-timing-function, ease-in-out);
+    /* Removed: .hero-snapshot:not(.is-visible) as JS directly controls opacity/visibility */
+}
+
+
+.hero-video {
+    z-index: 2; /* Video underneath snapshot initially */
+    opacity: 0; /* Initially hidden, will be faded in by JS */
+    transition: opacity 0.5s var(--transition-timing-function, ease-in-out);
+}
+
+.hero-video.is-loaded {
+    opacity: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 4; /* Content on top of everything */
+    background-color: var(--theme-color-surface);
+    background-image: var(--theme-background-texture-url); /* Apply the texture */
+    background-repeat: repeat; /* Ensure texture repeats */
+    background-position: center center; /* Center the texture pattern */
+    color: var(--theme-text-on-surface); /* Ensure text contrast on new background */
+    height: 100%; /* Full height of the hero section */
+    width: 30%; /* Adjust as needed, e.g., 350px */
+    max-width: 400px; /* Prevent it from becoming too wide */
+    padding: var(--space-lg); /* Consistent padding */
+    text-align: left;
+    display: flex; /* Added for better internal alignment */
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start; /* Align children (h1, p, button) to the left */
+    justify-content: center; /* Vertically center the content block within the sidebar */
+    border-radius: 0; /* No rounded corners for a full-height sidebar */
+}
+
+.hero-content h1 {
+    /* font-family and font-size inherit from global h1 styles */
+    margin-bottom: var(--space-sm);
+}
+
+.hero-content p {
+    /* font-family inherits from global p styles */
+    font-size: var(--font-size-lg); /* INTENTIONAL OVERRIDE: Larger than default p */
+    margin-bottom: var(--space-md);
+}
+
+.hero-content .cta-button {
+    border-radius:var(--button-border-radius);
+}
+
+/* Responsive adjustments for the hero section */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh; /* Adjust height for smaller screens */
+        flex-direction: column;    /* Stack flex items vertically */
+        justify-content: flex-end; /* Push hero-content to the bottom of the hero section */
+        align-items: center;       /* Center hero-content horizontally (it's width: 100%) */
+    }
+    .hero-content {
+        width: 100%; /* Full width on mobile */
+        max-width: none; /* Remove max-width constraint for full width */
+        height: auto; /* Auto height for mobile */
+        padding: var(--space-md); /* Adjust padding for mobile */
+        border-radius: 0; /* No border-radius for a full-width bottom bar */
+        text-align: center; /* Center text on mobile */
+        align-items: center; /* Center children on mobile */
+    }
+    .hero-content h1 { /* Adjust h1 size for mobile */
+        font-size: var(--font-size-xxl); /* INTENTIONAL OVERRIDE for mobile */
+    }
+    .hero-content p { /* Adjust p size for mobile */
+        font-size: var(--font-size-md); /* INTENTIONAL OVERRIDE: Back to default p size for mobile */
+    }
+    .hero-content .cta-button { /* Adjust button for mobile if needed, or let it inherit .btn styles */
+        padding: var(--button-padding-y) var(--button-padding-x);
+        /* font-size inherits from global .btn styles (var(--font-size-md)) */
+    }
+}
+
+/* Intro Section Styles */
+.intro {
+    background-color: var(--theme-color-surface);
+    background-image: var(--theme-background-texture-url);
+    color: var(--theme-text-on-surface, --theme-color-neutral);
+    padding-top: var(--intro-section-padding-y);
+    padding-bottom: var(--intro-section-padding-y);
+    position: relative; /* For positioning the ::after pseudo-element */
+    /* The section itself doesn't need to be flex if its content is wrapped in a .container */
+}
+
+.intro .container { /* Assuming you'll wrap .intro-content and .intro-image in a .container for centering */
+    display: flex;
+    align-items: center; /* Vertically align items if they have different heights */
+    gap: var(--intro-section-column-gap);
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.intro-content {
+    flex: 1; /* Allows content to take up available space */
+    min-width: 300px; /* Minimum width before wrapping/stacking */
+    padding-right: var(--space-md); /* Add some space if image is on the right */
+}
+
+.intro-content h2 {
+    /* font-size and color inherit from global h2 styles */
+    margin-bottom: var(--space-md);
+}
+
+.intro-content p {
+    /* font-family and font-size inherit from global p styles */
+    line-height: var(--line-height-base);
+    margin-bottom: var(--space-sm);
+}
+
+.intro-content .cta-button {
+    margin-top: var(--space-sm);
+    /* Uses .btn styles from main.css, can be overridden here if needed */
+}
+.intro-content .btn--secondary { /* Specific styling for the secondary button in intro if needed */
+    /* It already gets its themeable styles from components.css and main.css */
+}
+
+.intro-image {
+    flex: 1; /* Allows image to take up available space */
+    min-width: 300px; /* Minimum width */
+    text-align: center; /* Center image if it's smaller than its container */
+}
+
+.intro-image img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove bottom space under image */
+    border-radius: var(--border-radius); /* Optional: rounded corners for the image */
+    box-shadow: var(--theme-shadow-lg); /* Optional: add a shadow */
+}
+
+/* Responsive adjustments for the intro section */
+@media (max-width: 768px) {
+    .intro .container {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center; /* Center text content when stacked */
+    }
+    .intro-content {
+        padding-right: 0; /* Remove right padding when stacked */
+        margin-bottom: var(--space-md); /* Add space below content when stacked */
+            }
+}
+
+/* Base style for section rules implemented as <hr> or <div> */
+.section-rule {
+  display: block;
+  border: none; /* Remove default HR border */
+  height: var(--intro-section-rule-height, 3px);
+  background-color: var(--theme-color-accent);
+  border-radius: var(--border-radius-pill, 50px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bottom rule for the intro section - now targets the <hr> element */
+.intro-bottom-rule {
+    /* Inherits base styles from .section-rule */
+    display: block;
+    width: var(--intro-section-rule-width);
+    margin-top: var(--space-lg); /* Space above the rule, after the content */
+    /* Other properties like height, background-color, border-radius,
+        and centering margins are handled by the .section-rule base class.
+        If specific overrides are needed for the intro rule, add them here. */
+}
+
+
+
+
+/* Services Home Section */
+.services-home-section {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-lg);
+    background-image: var(--theme-background-texture-url);
+    background-color: var(--theme-color-surface);
+}
+
+.services-home-layout {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.services-home-text-content {
+    flex: 1 1 33%;
+    padding-right: var(--space-md);
+}
+
+.services-home-text-content h2 {
+    text-align: left;
+    margin-bottom: var(--space-md);
+}
+
+.services-home-text-content p {
+    text-align: left;
+    line-height: var(--line-height-base);
+}
+
+.services-home-slider-column {
+    flex: 2 1 65%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Swiper container for home services */
+.services-home-swiper {
+    width: 600px; /* Keep this if 280px card width is desired */
+    max-width: 100%;
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    align-items: stretch;
+}
+
+.service-card-home {
+    width: 280px; /* Keep this if 280px card width is desired */
+    height: 450px; /* Fixed height for the overall card */
+    border-radius: var(--border-radius-lg);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push content wrapper to the bottom */
+    color: var(--theme-text-on-primary); /* Default text color for the banner content */
+    box-shadow: var(--theme-shadow-lg);
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.service-card-home:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--theme-shadow-lg);
+}
+
+/* Hover state for text elements inside the card */
+.service-card-home:hover .service-card-home__title,
+.service-card-home:hover .service-card-home__description {
+    color: var(--theme-color-accent); /* Change text color to accent on hover */
+}
+
+
+/* Styles for the eleventy-image generated <picture> and <img> backgrounds */
+.service-card-home picture,
+.service-card-home .service-card-home__background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: inherit;
+}
+
+.service-card-home__banner--bottom {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    /* ADJUSTED: Top and bottom padding now match left/right */
+    padding: var(--space-sm); /* Using --space-sm for all sides */
+    box-sizing: border-box;
+    background-color: var(--home-service-card-banner-bottom-color);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 180px; /* Fixed height for the bottom banner */
+    /* Folder Cover Effect */
+    border-top-left-radius: var(--border-radius-lg);
+    border-top-right-radius: var(--border-radius-xs);
+    border-bottom-left-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
+    transform: translateY(2px);
+    box-shadow: 0 -3px 8px rgba(0,0,0,0.2);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-bottom: 20px solid var(--home-service-card-banner-bottom-color-darker, rgba(0,0,0,0.1));
+        border-left: 20px solid transparent;
+        border-top-right-radius: var(--border-radius-xs);
+        transform: translateY(-1px);
+        box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+    }
+}
+
+.service-card-home__title {
+    margin-bottom: var(--space-xxs); /* Smaller space between title and description */
+    color: inherit;
+    text-shadow: none; /* REMOVED TEXT SHADOW */
+    /* ADJUSTED: Reduced font size for better fit */
+    font-size: var(--font-size-lg); /* Changed from --font-size-xl to --font-size-lg */
+    line-height: var(--line-height-heading);
+    margin-top: 0;
+    align-self: stretch;
+    text-align: left;
+
+    /* Removed -webkit-line-clamp from h3 to ensure it always tries to display fully */
+    white-space: normal; /* Allow text to wrap naturally */
+    overflow: visible; /* Ensure content is not hidden unless explicitly forced by parent */
+    text-overflow: clip; /* Prevent ellipsis on title, let it wrap */
+}
+
+.service-card-home__description {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-base);
+    color: inherit;
+    flex-grow: 1; /* Allow description to take up available space before the icon */
+    width: 100%;
+    text-align: left;
+    margin-bottom: var(--space-xs); /* Space above the icon */
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Allows up to 3 lines, adjust as needed */
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.service-card-home__icon {
+    margin-top: auto; /* Pushes the icon to the bottom if description is short */
+    margin-left: auto; /* Pushes icon to the right */
+    align-self: flex-end; /* Ensures it's at the end of the cross-axis */
+    display: block;
+    width: var(--font-size-xl);
+    height: var(--font-size-xl);
+    filter: var(--footer-icon-filter); /* Use the existing filter variable */
+}
+
+/* Swiper Navigation and Pagination Styling (Generic for service carousels) */
+.services-home-swiper .swiper-pagination-bullet {
+    background-color: var(--theme-color-accent);
+    opacity: 0.7;
+}
+
+.services-home-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.services-home-swiper .swiper-button-next,
+.services-home-swiper .swiper-button-prev {
+    color: var(--theme-color-accent);
+}
+
+/* Keyframes for pulsing navigation arrows (also moved here as they are generic for Swiper arrows) */
+@keyframes pulse-left-arrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(-4px); }
+}
+
+@keyframes pulse-right-arrow {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+}
+
+.services-home-swiper .swiper-button-prev {
+    animation: pulse-left-arrow 1.5s infinite ease-in-out;
+}
+.services-home-swiper .swiper-button-next {
+    animation: pulse-right-arrow 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for icon pulsing animation (used by service card icon and contact icons) */
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive for service cards slider - basic stacking */
+@media (max-width: 768px) {
+    .services-home-layout {
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    .services-home-text-content {
+        flex-basis: auto;
+        margin-bottom: var(--space-md);
+        padding-right: 0;
+        text-align: center;
+    }
+    .services-home-text-content h2,
+    .services-home-text-content p {
+        text-align: center;
+    }
+    .services-home-slider-column {
+        flex-basis: auto;
+        width: 80%;
+    }
+    .services-home-swiper {
+        max-width: none;
+        width: 100vw;
+        margin-left: calc(-1 * var(--space-sm));
+        margin-right: calc(-1 * var(--space-sm));
+    }
+    .service-card-home {
+        width: 280px;
+        height: 410px;
+    }
+
+    /* Adjust bottom banner for mobile if needed */
+    .service-card-home__banner--bottom {
+        height: 170px; /* Adjusted fixed height for mobile banner */
+    }
+}
+
+
+
+
+/* About Home Section */
+.about-home-section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    background-image: var(--theme-background-texture-url);
+    background-color: var(--theme-color-surface); /* Standard body background */
+}
+
+.about-home-section .container {
+    display: flex;
+    align-items: center; /* Vertically align content of columns */
+    justify-content: center; /* Center the two columns as a group */
+    gap: var(--space-md); /* Gap between columns */
+}
+
+.about-home-image-wrapper {
+    flex: 0 1 40%; /* Takes up to 40% of space, can shrink */
+    /* Consider max-width if image is very large and you want to constrain it */
+}
+
+.about-home-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove bottom space under image */
+    border-radius: var(--border-radius-lg); /* Nice rounded corners */
+    box-shadow: var(--theme-shadow-lg);
+}
+
+.about-home-text-wrapper {
+    flex: 0 1 40%; /* Match image wrapper's flex-basis, allow shrink, don't grow */
+    /* This makes the text column aim for the same width as the image column */
+}
+
+.about-home-text-wrapper h2 {
+    /* font-family, font-size, and color inherit from global h2 styles */
+    margin-bottom: var(--space-md);
+}
+
+.about-home-text-wrapper p {
+    /* font-family, font-size, and color inherit from global p styles */
+    line-height: var(--line-height-base);
+}
+
+.about-home-text-wrapper .btn {
+    /* Standard button styles apply */
+}
+
+/* Horizontal rules for About Home Section */
+.about-home-horizontal-rule {
+    display: block;
+    border: none;
+    height: var(--intro-section-rule-height);
+    width: 100%; /* Rule will now be 100% of the text wrapper's width */
+    background-color: var(--theme-color-accent); /* Use accent color */
+    margin-left: 0; /* Default to left-aligned for desktop */
+    margin-right: 0; /* Rule is 100% width, so auto is not needed here */
+}
+
+.about-home-horizontal-rule.rule-above-heading {
+    margin-bottom: var(--space-md); /* Space between rule and H2 */
+}
+
+.about-home-horizontal-rule.rule-below-text {
+    margin-top: var(--space-md);    /* Space between button and this rule */
+    margin-bottom: 0; /* No bottom margin needed if it's the last element in the wrapper */
+}
+
+/* Responsive for About Home Section */
+@media (max-width: 992px) { /* Tablet breakpoint, adjust as needed */
+    .about-home-section .container {
+        gap: var(--space-sm); /* Reduce gap for tablets */
+    }
+    /* Removed specific font-size override for .about-home-text-wrapper h2 here.
+        It will now follow global h2 responsive rules or remain --font-size-xxl from its base style,
+        matching the behavior of the .intro section's h2. */
+}
+
+@media (max-width: 768px) { /* Mobile breakpoint */
+    .about-home-section .container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center text content when stacked */
+    }
+    .about-home-image-wrapper {
+        order: 1; /* Image first */
+        margin-bottom: var(--space-md);
+        width: 85%; /* Control image width on mobile */
+        max-width: 450px; /* Max width for the image */
+    }
+
+    .about-home-text-wrapper { order: 3; /* Text third */ }
+    .about-home-horizontal-rule {
+        margin-left: auto; /* Center the rule on mobile */
+        margin-right: auto; /* Center the rule on mobile */
+        width: 90%; /* Adjust width for mobile when text wrapper is full-width */
+    }
+}
+
+
+
+
+
+/* Testimonial Home Section */
+.testimonial-home-section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    background-color: var(--theme-color-surface); /* Fallback background color */
+
+    /* Animated Gradient Setup */
+    /* The gradient is defined twice to create a seamless loop over a 200% width */
+    background-image: linear-gradient(135deg, /* Diagonal from top-left to bottom-right feeling movement */
+        /* Wave 1 - Using --theme-color-secondary-rgb */
+        rgba(var(--theme-color-secondary-rgb), 0.05) 0%,
+        rgba(var(--theme-color-secondary-rgb), 0.1)  10%,
+        rgba(var(--theme-color-secondary-rgb), 0.3)  20%,
+        rgba(var(--theme-color-secondary-rgb), 0.3)  30%,
+        rgba(var(--theme-color-secondary-rgb), 0.1)  40%,
+        rgba(var(--theme-color-secondary-rgb), 0.05) 50%,
+        /* Wave 2 (identical, for seamless looping) - Using --theme-color-secondary-rgb */
+        rgba(var(--theme-color-secondary-rgb), 0.05) 50%,
+        rgba(var(--theme-color-secondary-rgb), 0.1)  60%,
+        rgba(var(--theme-color-secondary-rgb), 0.3)  70%,
+        rgba(var(--theme-color-secondary-rgb), 0.3)  80%,
+        rgba(var(--theme-color-secondary-rgb), 0.1)  90%,
+        rgba(var(--theme-color-secondary-rgb), 0.05) 100%
+    );
+    background-size: 200% 200%; /* Make the gradient pattern twice as wide and tall for diagonal movement */
+    animation: move-testimonial-gradient 10s linear infinite; /* Apply the animation, even faster */
+}
+@keyframes move-testimonial-gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%; /* Moves the background from its top-left to its bottom-right */
+                                         /* This creates the visual effect of the pattern moving from top-left to bottom-right of the element */
+    }
+}
+
+
+.testimonial-home-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Changed to 8 columns */
+    /* grid-template-rows: auto auto; /* Implicitly two rows based on content */
+    row-gap: var(--space-md); /* Increased vertical gap to match column-gap */
+    column-gap: var(--space-md); /* Kept original horizontal gap */
+    align-items: stretch; /* Make grid items stretch to fill row height */
+}
+
+.testimonial-home-intro {
+    /* grid-column will be handled by grid-area below */
+    grid-row: 1;
+    color: var(--theme-color-primary); /* Or --theme-color-neutral if gradient is light */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content if row is tall */
+    /* padding-right: var(--space-md); Removed as grid gap should suffice */
+}
+
+.testimonial-home-intro h2 {
+    /* font-family and font-size inherit from global h2 styles */
+    margin-bottom: var(--space-md);
+}
+
+.testimonial-home-intro p {
+    /* font-family and font-size inherit from global p styles */
+    line-height: var(--line-height-base);
+    margin-bottom: var(--space-sm);
+    color: var(--theme-text-on-surface); /* <--- ADJUSTED THIS LINE */
+}
+
+.testimonial-home-card-wrapper {
+    /* This wrapper helps with consistent alignment if needed, and applies to specific grid cells */
+    position: relative; /* Establishes stacking context for z-index */
+    z-index: 1; /* Default stacking order */
+}
+
+/* Explicit placement for each grid item based on the HTML structure */
+/* Updated grid areas for 8-column layout */
+/* Row 1 */
+.testimonial-home-grid > div:nth-child(1) { grid-area: 1 / 1 / 2 / 4; } /* Intro (R1, C1-3, 3 cols wide) - Narrower */
+.testimonial-home-grid > div:nth-child(3) { grid-area: 1 / 5 / 2 / 8; } /* Testimonial 1 (R1, C5-7, 3 cols wide) - HTML child 3 */
+.testimonial-home-grid > div:nth-child(2) { grid-area: 1 / 8 / 2 / 9; } /* Empty Cell 1 (R1, C8, 1 col wide) - HTML child 2 */
+
+/* Row 2 - Testimonials pushed right, each 3 cols wide */
+.testimonial-home-grid > div:nth-child(4) { grid-area: 2 / 1 / 3 / 2; } /* Empty Cell 2 (HTML child 4) in R2, C1 (1 col wide) */
+.testimonial-home-grid > div:nth-child(5) { grid-area: 2 / 3 / 3 / 6; } /* Testimonial 2 (HTML child 5) in R2, C3-5 (3 cols wide) - Shifted slightly right */
+.testimonial-home-grid > div:nth-child(6) { grid-area: 2 / 1 / 3 / 1; } /* Empty Cell 3 (HTML child 6) - now zero-width in R2, effectively hidden */
+.testimonial-home-grid > div:nth-child(7) { grid-area: 2 / 6 / 3 / 9; } /* Testimonial 3 (HTML child 7) in R2, C6-8 (3 cols wide) - Stays in place */
+
+
+.testimonial-home-card {
+    position: relative; /* For shimmer pseudo-element */
+    overflow: hidden;    /* To clip shimmer pseudo-element */
+    background-color: var(--theme-color-surface); /* Standard card background */
+    padding: var(--space-sm); /* Reduced padding for more content space */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--theme-shadow-md);
+    /* display: flex; and flex-direction: column; removed to allow natural text flow */
+    height: 100%; /* Make card fill the wrapper/grid cell height */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added existing card hover transitions */
+    z-index: 2; /* Ensure card is above default wrapper z-index, helps with hover effect */
+}
+
+.testimonial-home-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--theme-shadow-lg);
+}
+
+.testimonial-home-card-wrapper:hover {
+    z-index: 10; /* Bring hovered wrapper (and its card) to the front */
+}
+
+.testimonial-home-card::after { /* Shimmer effect */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        100deg, /* Angle of the shimmer */
+        transparent 15%,
+        rgba(255, 255, 255, 0.45) 40%, /* Shimmer color - more potent */
+        rgba(255, 255, 255, 0.45) 60%, /* Shimmer color - more potent */
+        transparent 85%
+    );
+    transform: translateX(-100%); /* Start off-screen */
+    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+    pointer-events: none; /* So it doesn't interfere with mouse events on the card */
+    z-index: 1; /* Ensure shimmer is above background but below text if text had z-index */
+}
+
+.testimonial-home-card:hover::after {
+    transform: translateX(100%); /* Move shimmer across the card */
+}
+
+.testimonial-home-card .testimonial-text {
+    /* font-family, font-size, and color inherit from global p styles */
+    line-height: var(--line-height-base);
+    /* margin-bottom: var(--space-sm); /* Removed to allow text to flow closer to author */
+    font-style: italic;
+    /* flex-grow: 1; /* No longer needed as card is not flex container for text/author */
+    /* Text will naturally fill the card's padding. */
+    /* If text is very long, it will flow behind the author overlay, which is the desired effect. */
+}
+
+/* Styles for the new author overlay */
+.testimonial-home-card .testimonial-author-overlay {
+    position: absolute;
+    top: 50%; /* Vertically center */
+    right: var(--space-xs);    /* Position from the card's right padding edge */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    background-color: var(--theme-testimonial-author-overlay-bg); /* Use themeable transparent background */
+    padding: 2px 8px; /* Further reduced top/bottom padding, kept horizontal padding */
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-sm); /* INTENTIONAL OVERRIDE: Smaller text for author */
+    color: var(--theme-testimonial-author-text-color); /* Uses client.css defined variable */
+    line-height: 1.2; /* Compact line height */
+    font-style: normal; /* Remove italic if previously used */
+    z-index: 3; /* Ensure it's above the text and shimmer effect */
+    box-shadow: var(--theme-shadow-sm); /* Optional: subtle shadow for the overlay itself */
+}
+
+/* Responsive adjustments for Testimonial Home Section */
+@media (max-width: 1024px) { /* Tablet: 2 columns */
+    .testimonial-home-grid { /* Revert to 2 columns for tablet */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .testimonial-home-intro {
+        grid-column: 1 / span 2; /* Full width */
+        grid-row: 1;
+        text-align: center;
+        padding-right: 0;
+    }
+    /* .testimonial-home-intro h2 font size will now inherit global responsive h2 or remain var(--font-size-xxl) */
+    /* If global h2 styles reduce size on tablet, this will follow. Otherwise, it stays xxl. */
+    /* This matches the .intro section's behavior which doesn't have a specific h2 font size change here. */
+    .testimonial-home-intro p {
+        text-align: center;
+        padding-right: 0; /* Keep this for layout */
+        /* Font size will now inherit global responsive p or remain var(--font-size-md) */
+    }
+    .testimonial-home-empty-cell {
+        display: none; /* Hide empty cells on tablet and mobile */
+    }
+    /* Reset explicit grid areas for tablet to allow natural flow into 2 columns */
+    .testimonial-home-grid > div {
+        grid-area: auto !important; /* Allow items to flow naturally */
+    }
+    /* Reset card overlap styling for tablet and mobile */
+    .testimonial-home-card {
+        width: 100%;
+        right: auto;
+        position: relative; /* Ensure 'right' is reset properly if it was absolute due to overlap */
+    }
+}
+
+@media (max-width: 767px) { /* Mobile: 1 column */
+    /* Tablet styles for .testimonial-home-grid > div (grid-area: auto) will also apply here,
+       which is fine as they will stack into a single column.
+    */
+    .testimonial-home-grid {
+        grid-template-columns: 1fr;
+    }
+    .testimonial-home-intro {
+        grid-column: span 1; /* Full width */
+    }
+    /* Empty cells are already hidden from tablet styles */
+}
+
+/* Keyframes for the shimmering animation */
+@keyframes shimmer-pulse {
+    0%, 100% {
+        opacity: 0.7; /* Original full opacity for the symbols */
+    }
+    50% {
+        opacity: 0.3; /* Dimmer opacity for the pulse effect */
+    }
+}
+
+/* CTA Home Section */
+.cta-section {
+    padding: var(--space-lg) var(--space-sm); /* Generous padding above/below and some on sides */
+    text-align: center; /* Center all inline/inline-block children */
+    position: relative;           /* For positioning pseudo-elements */
+    color: var(--theme-text-on-surface, --theme-color-neutral); /* Text on default surface */
+}
+
+/* Rule below the CTA button - now targets the <hr> element */
+.cta-bottom-rule {
+    /* Inherits base styles from .section-rule */
+    width: calc(var(--intro-section-rule-width, 80vw) * 0.6); /* Reduced length by 40% */
+    margin-top: var(--space-lg); /* Increased space below the button, above the rule */
+    margin-bottom: 0; /* Remove bottom margin from rule; space to edge now controlled by section padding */
+    /* Other properties like height, background-color, border-radius,
+       and centering margins are handled by the .section-rule base class. */
+}
+
+
+.cta-section h2 {
+    /* font-family inherits from global h2 styles */
+    /* color: inherit; /* Inherits from .cta-section, which is --color-text-on-primary */
+    /* Font size is handled by global h2 styles, can be overridden if a different size is desired */
+    margin-bottom: var(--space-sm);
+}
+
+.cta-section p {
+    /* font-family inherits from global p styles */
+    /* color: inherit; /* Inherits from .cta-section */
+    font-size: var(--font-size-lg); /* INTENTIONAL OVERRIDE: Larger than default p */
+    line-height: var(--line-height-base);
+    margin-bottom: var(--space-md);
+    max-width: 700px;             /* Constrain line length for better readability */
+    margin-left: auto;            /* Center the paragraph block if max-width is applied */
+    margin-right: auto;           /* Center the paragraph block if max-width is applied */
+}
+
+/* Styling for the button within the CTA section to make it a prominent, primary-style button */
+.cta-section .cta-button.cta-button-prominent {
+    display: inline-block; /* Behaves like a button */
+    background-color: var(--theme-color-primary); /* Main button background color */
+    color: var(--theme-text-on-primary);          /* Main button text color */
+    padding: calc(var(--button-padding-y) * 1.2) calc(var(--button-padding-x) * 1.8); /* Slightly larger padding for prominence */
+    border-radius: var(--button-border-radius);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-lg); /* INTENTIONAL OVERRIDE: Larger than default button */
+    text-transform: var(--button-text-transform);
+    line-height: var(--line-height-base);
+    border: none; /* Ensure no default border from user agent styles for <a> */
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cta-section .cta-button.cta-button-prominent:hover {
+    background-color: var(--theme-color-secondary); /* Main button hover background */
+    color: var(--theme-text-on-secondary);
+}
+
+/* Hide symbols on mobile */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .cta-section::before,
+    .cta-section::after {
+        display: none;
+    }
+}
+
+
+
+/* ============================================= */
+/* Contact Section (Home Page)                   */
+/* Styles adapted from underpages.css for consistency */
+/* ============================================= */
+
+.contact-section.contact-page-section {
+    padding-top: var(--space-md); /* Reduced top padding to bring it closer to section above */
+    /* padding-bottom: var(--space-lg); /* This is already in .contact-page-section from underpages.css */
+}
+
+/* CSS for .contact-section .contact-home-horizontal-rule.rule-above-heading removed */
+
+/* Title styling */
+.contact-section .contact-page-main-title {
+    /* font-family inherits from global h2 styles (assuming this contains an h2) */
+    /* font-size is now controlled by global h2 styles in main.css */
+    margin-bottom: var(--space-lg); /* Ensure consistent space below title before actions */
+    /* text-align: center; is handled by .text-center class */
+}
+/* CSS for .contact-section .section-title-with-rule-above removed */
+
+/* Actions: Icons and (previously) CTA Button */
+.contact-section .contact-page-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm); /* Reduced gap as CTA button is removed */
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-lg); /* Reduced space before the cards */
+}
+
+.contact-section .contact-page-icons {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.contact-section .contact-page-icons a img {
+    height: var(--icon-size-contact-home, 40px);
+    width: auto;
+    /* transition: transform 0.2s ease-in-out; Keep hover effect, animation is separate */
+    animation: pulse-icon 2s infinite ease-in-out;
+    filter: var(--footer-icon-filter); /* Apply the filter from client.css */
+}
+
+.contact-section .contact-page-icons a:hover img {
+    transform: scale(1.1);
+}
+
+/* CTA button was removed from contact-home.njk, so its styles can be omitted here if not used elsewhere */
+/*
+.contact-section .contact-page-cta {
+    background-color: var(--dm-button-primary-bg);
+    color: var(--dm-button-primary-text);
+    padding: calc(var(--button-padding-y) * 1.1) calc(var(--button-padding-x) * 1.5);
+    font-size: var(--font-size-lg);
+}
+
+.contact-section .contact-page-cta:hover {
+    background-color: var(--dm-button-primary-hover-bg);
+}
+*/
+
+/* Layout for the two cards (Direktkontakt and Map) */
+.contact-section .contact-page-cards-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    justify-content: center;
+}
+
+/* Styling for individual cards */
+.contact-section .contact-page-content-card,
+.contact-section .contact-page-map-card {
+    background-color: var(--theme-color-surface);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--theme-shadow-lg);
+    flex: 1 1 var(--contact-card-basis-home, 420px);
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section .contact-page-content-card h3,
+.contact-section .contact-page-map-card h3 {
+    margin-top: 0;
+    /* font-family inherits from global h3 styles */
+    margin-bottom: var(--space-sm);
+    color: var(--theme-color-heading-text); /* UPDATED: Now uses the dedicated heading text color */
+    /* font-size inherits from global h3 styles */
+    border-bottom: 2px solid var(--theme-text-on-surface); /* <--- ADJUSTED THIS LINE (horizontal rule color) */
+    padding-bottom: var(--space-xs);
+}
+
+/* Styling for the "Direktkontakt" card content */
+.contact-section .contact-page-content-card .contact-info p {
+    /* font-family inherits from global p styles */
+    margin-bottom: var(--space-sm);
+    line-height: var(--line-height-base);
+    color: var(--theme-text-on-surface); /* <--- ADJUSTED THIS LINE (general paragraph color) */
+}
+
+.contact-section .contact-page-content-card .contact-info p strong {
+    color: var(--theme-color-primary); /* Or --theme-color-neutral */
+    font-family: var(--font-primary); /* Labels can use primary font for emphasis - INTENTIONAL OVERRIDE */
+    font-weight: var(--font-weight-bold);
+    display: block;
+    margin-bottom: 0;
+}
+
+.contact-section .contact-page-content-card .contact-info a {
+    color: var(--theme-text-on-surface); /* <--- ADJUSTED THIS LINE (telefon, email, whatsapp color) */
+    text-decoration: none;
+    /* font-family inherits from global a styles or p styles */
+    font-weight: var(--font-weight-medium);
+}
+
+.contact-section .contact-page-content-card .contact-info a:hover {
+    color: var(--theme-color-accent); /* Hover to accent */
+    text-decoration: underline;
+}
+
+.contact-section .contact-page-content-card .contact-info p.contact-info-group-heading {
+    margin-bottom: 0.25em;
+}
+
+.contact-section .contact-page-content-card .opening-hours-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    /* font-family inherits from global li/p styles */
+    color: var(--theme-text-on-surface); /* <--- ADJUSTED THIS LINE (opening hours list color) */
+}
+
+.contact-section .contact-page-content-card .opening-hours-list li {
+    margin-bottom: var(--space-xxs);
+}
+
+/* Styling for the Map card */
+.contact-section .contact-page-map-card iframe {
+    border-radius: var(--border-radius-md);
+    display: block;
+    flex-grow: 1;
+    min-height: 300px;
+}
+
+.contact-section .contact-page-map-card .map-navigation-button {
+    margin-top: var(--space-sm);
+    align-self: center;
+}
+
+/* Responsive adjustments for home page contact section */
+@media (max-width: 768px) {
+    .contact-section .contact-page-icons {
+        gap: var(--space-md);
+    }
+    .contact-section .contact-page-icons a img {
+        height: 32px;
+    }
+    .contact-section .contact-page-content-card,
+    .contact-section .contact-page-map-card {
+        flex-basis: 100%;
+    }
+}
+
+/* Keyframes for icon pulsing animation */
+@keyframes pulse-icon {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Pulse to 110% size */
+    }
+}
