@@ -44,22 +44,7 @@
       "url": "{{ site.url | url }}/",
       "name": "{{ site.name }}",
       "description": "{{ site.default_description }}",
-      "publisher": { "@id": "{{ site.url | url }}/#organization" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "{{ site.url | url }}/#organization",
-      "name": "{{ site.name }}",
-      "url": "{{ site.url | url }}/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "{{ schemaLogo }}"
-      },
-      "sameAs": [
-        {% for socialLink in site.social %}
-        "{{ socialLink.url }}"{% if not loop.last %},{% endif %}
-        {% endfor %}
-      ]
+      "publisher": { "@id": "{{ site.url | url }}/#localbusiness" } {# Changed publisher to point to the localbusiness ID #}
     },
     {
       "@type": "WebPage", {# This will be the default type for most pages #}
@@ -76,11 +61,16 @@
       }
     },
     {
-      "@type": "BeautySalon", {# Specific type for a hairdresser, linked to Organization #}
-      "@id": "{{ site.url | url }}/#localbusiness",
+      // Combine BeautySalon, LocalBusiness, and Organization into one primary entity
+      "@type": ["BeautySalon", "LocalBusiness", "Organization"],
+      "@id": "{{ site.url | url }}/#localbusiness", // Use a consistent ID
       "name": "{{ site.name }}",
-      "image": "{{ site.url | url }}{{ site.default_og_image_path | url }}", {# Using OG image as main image for LocalBusiness #}
+      "image": "{{ site.url | url }}{{ site.default_og_image_path | url }}",
       "url": "{{ site.url | url }}/",
+      "logo": { // Add logo directly to this combined entity
+        "@type": "ImageObject",
+        "url": "{{ schemaLogo }}"
+      },
       "telephone": "{{ site.contact.phoneLink }}",
       "email": "{{ site.contact.email }}",
       "address": {
@@ -109,12 +99,12 @@
         }{% if not loop.last %},{% endif %}
         {% endfor %}
       ],
-      "priceRange": "$$", {# Example: adjust based on business pricing #}
+      "priceRange": "$$",
       "hasMap": "{{ site.contact.mapEmbedUrl }}",
       "publicAccess": true,
       "areaServed": {
         "@type": "Place",
-        "name": "{{ site.contact.address.city }}" {# Or broader area if applicable #}
+        "name": "{{ site.contact.address.city }}"
       },
       "sameAs": [
         "{{ site.googleBusinessProfileURL }}",

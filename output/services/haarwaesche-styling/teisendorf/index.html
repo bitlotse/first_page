@@ -51,24 +51,7 @@
       "url": "https://www.haarmanufaktur-suszan.de/",
       "name": "Haarmanufaktur Suszan",
       "description": "Professioneller Friseursalon in Traunstein. Haarschnitt, Färben, Styling und mehr. Jetzt Termin vereinbaren!",
-      "publisher": { "@id": "https://www.haarmanufaktur-suszan.de/#organization" }
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.haarmanufaktur-suszan.de/#organization",
-      "name": "Haarmanufaktur Suszan",
-      "url": "https://www.haarmanufaktur-suszan.de/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.haarmanufaktur-suszan.de/img/icons/logo.svg"
-      },
-      "sameAs": [
-        
-        "https://facebook.com/haarmanufaktursuszan",
-        
-        "https://instagram.com/haarmanufaktur_suszan"
-        
-      ]
+      "publisher": { "@id": "https://www.haarmanufaktur-suszan.de/#localbusiness" } 
     },
     {
       "@type": "WebPage", 
@@ -85,11 +68,16 @@
       }
     },
     {
-      "@type": "BeautySalon", 
-      "@id": "https://www.haarmanufaktur-suszan.de/#localbusiness",
+      // Combine BeautySalon, LocalBusiness, and Organization into one primary entity
+      "@type": ["BeautySalon", "LocalBusiness", "Organization"],
+      "@id": "https://www.haarmanufaktur-suszan.de/#localbusiness", // Use a consistent ID
       "name": "Haarmanufaktur Suszan",
-      "image": "https://www.haarmanufaktur-suszan.de/img/default-og-image.jpg", 
+      "image": "https://www.haarmanufaktur-suszan.de/img/default-og-image.jpg",
       "url": "https://www.haarmanufaktur-suszan.de/",
+      "logo": { // Add logo directly to this combined entity
+        "@type": "ImageObject",
+        "url": "https://www.haarmanufaktur-suszan.de/img/icons/logo.svg"
+      },
       "telephone": "+4986190951242",
       "email": "info@haarmanufaktur-suszan.de",
       "address": {
@@ -135,12 +123,12 @@
         }
         
       ],
-      "priceRange": "$$", 
+      "priceRange": "$$",
       "hasMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5352.751484302269!2d12.642817675733928!3d47.87105206967952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47767ada3fb5a84d%3A0x15e11b75ae99648a!2sMaximilianstra%C3%9Fe%2035%2C%2083278%20Traunstein!5e0!3m2!1sde!2sde!4v1747496128638!5m2!1sde!2sde",
       "publicAccess": true,
       "areaServed": {
         "@type": "Place",
-        "name": "Traunstein" 
+        "name": "Traunstein"
       },
       "sameAs": [
         "https://maps.google.com/?cid=YOUR_CID_NUMBER",
