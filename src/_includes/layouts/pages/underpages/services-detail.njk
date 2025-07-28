@@ -96,6 +96,15 @@
         "addressCountry": "{{ areaServed.address.addressCountry | escape }}"
       }
       {% endif %}
+    },
+    {% endif %}
+    {% if price %}
+    "offers": {
+      "@type": "Offer",
+      "price": "{{ price }}",
+      "priceCurrency": "{{ priceCurrency | default('EUR') }}",
+      "url": "{{ site.url }}{{ page.url | url }}", {# Link to the service page itself #}
+      "availability": "https://schema.org/InStoreOnly" {# Or InStock, OnlineOnly, etc. depending on how it's offered #}
     }
     {% endif %}
   }
