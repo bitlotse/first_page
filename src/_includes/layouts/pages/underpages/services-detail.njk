@@ -60,52 +60,50 @@
     "@type": "Service",
     "name": "{{ title | escape }}",
     "description": "{{ description | escape }}", {# Uses the meta description from front matter #}
-    "url": "{{ site.url }}{{ page.url | url }}",
+    "url": "{{ site.url }}{{ page.url | url }}"
+    {# Conditional properties are preceded by a comma #}
     {% if cardImage %}
-    {# Use one of the generated image sizes for the structured data 'image' property #}
-    {# This assumes a 700px wide JPEG is generated and available for structured data crawlers #}
-    "image": "{{ site.url }}/img/{{ cardImage | split('.') | first }}-700w.jpeg",
+    , "image": "{{ site.url }}/img/{{ cardImage | split('.') | first }}-700w.jpeg"
     {% elif site.default_og_image_path %}
-    {# Fallback to site's default Open Graph image if no specific cardImage is provided #}
-    "image": "{{ site.url }}{{ site.default_og_image_path | url }}",
+    , "image": "{{ site.url }}{{ site.default_og_image_path | url }}"
     {% endif %}
-    "provider": {
+    , "provider": {
       "@type": "{{ site.contact.schemaType | default('Organization') }}",
       "name": "{{ site.name | escape }}",
       "url": "{{ site.url }}"
-    },
+    }
     {% if serviceName %}
-    "serviceOutput": {
+    , "serviceOutput": {
         "@type": "Thing",
         "name": "{{ serviceName | escape }}"
-    },
+      }
     {% endif %}
     {% if serviceType %}
-    "serviceType": "{{ serviceType | escape }}",
+    , "serviceType": "{{ serviceType | escape }}"
     {% endif %}
     {% if areaServed %}
-    "areaServed": {
-      "@type": "{{ areaServed.type | default('Place') }}",
-      "name": "{{ areaServed.name | escape }}"
-      {% if areaServed.address %}
-      ,"address": {
-        "@type": "PostalAddress",
-        "streetAddress": "{{ areaServed.address.streetAddress | escape }}",
-        "addressLocality": "{{ areaServed.address.addressLocality | escape }}",
-        "postalCode": "{{ areaServed.address.postalCode | escape }}",
-        "addressCountry": "{{ areaServed.address.addressCountry | escape }}"
+    , "areaServed": {
+        "@type": "{{ areaServed.type | default('Place') }}",
+        "name": "{{ areaServed.name | escape }}"
+        {% if areaServed.address %}
+        ,"address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ areaServed.address.streetAddress | escape }}",
+          "addressLocality": "{{ areaServed.address.addressLocality | escape }}",
+          "postalCode": "{{ areaServed.address.postalCode | escape }}",
+          "addressCountry": "{{ areaServed.address.addressCountry | escape }}"
+        }
+        {% endif %}
       }
-      {% endif %}
-    },
     {% endif %}
     {% if price %}
-    "offers": {
-      "@type": "Offer",
-      "price": "{{ price }}",
-      "priceCurrency": "{{ priceCurrency | default('EUR') }}",
-      "url": "{{ site.url }}{{ page.url | url }}", {# Link to the service page itself #}
-      "availability": "https://schema.org/InStoreOnly" {# Or InStock, OnlineOnly, etc. depending on how it's offered #}
-    }
+    , "offers": {
+        "@type": "Offer",
+        "price": "{{ price }}",
+        "priceCurrency": "{{ priceCurrency | default('EUR') }}",
+        "url": "{{ site.url }}{{ page.url | url }}",
+        "availability": "https://schema.org/InStoreOnly"
+      }
     {% endif %}
   }
   </script>
