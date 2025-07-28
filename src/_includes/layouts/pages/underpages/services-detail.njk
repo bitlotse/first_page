@@ -57,54 +57,135 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "{{ title | escape }}",
-    "description": "{{ description | escape }}", {# Uses the meta description from front matter #}
-    "url": "{{ site.url }}{{ page.url | url }}"
-    {# Conditional properties are preceded by a comma #}
-    {% if cardImage %}
-    , "image": "{{ site.url }}/img/{{ cardImage | split('.') | first }}-700w.jpeg"
-    {% elif site.default_og_image_path %}
-    , "image": "{{ site.url }}{{ site.default_og_image_path | url }}"
-    {% endif %}
-    , "provider": {
-      "@type": "{{ site.contact.schemaType | default('Organization') }}",
-      "name": "{{ site.name | escape }}",
-      "url": "{{ site.url }}"
-    }
-    {% if serviceName %}
-    , "serviceOutput": {
-        "@type": "Thing",
-        "name": "{{ serviceName | escape }}"
-      }
-    {% endif %}
-    {% if serviceType %}
-    , "serviceType": "{{ serviceType | escape }}"
-    {% endif %}
-    {% if areaServed %}
-    , "areaServed": {
-        "@type": "{{ areaServed.type | default('Place') }}",
-        "name": "{{ areaServed.name | escape }}"
-        {% if areaServed.address %}
-        ,"address": {
-          "@type": "PostalAddress",
-          "streetAddress": "{{ areaServed.address.streetAddress | escape }}",
-          "addressLocality": "{{ areaServed.address.addressLocality | escape }}",
-          "postalCode": "{{ areaServed.address.postalCode | escape }}",
-          "addressCountry": "{{ areaServed.address.addressCountry | escape }}"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}/",
+        "name": "{{ site.name }}",
+        "description": "{{ site.default_description }}", {# Corrected path #}
+        "publisher": { "@id": "{{ site.url }}/#localbusiness" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "{{ site.url }}{{ page.url | url }}#webpage",
+        "name": "{{ title }} - {{ site.name }}",
+        "description": "{{ description | escape }}",
+        "url": "{{ site.url }}{{ page.url | url }}",
+        "image": {
+          "@type": "ImageObject",
+          "url": "{% if cardImage %}{{ site.url }}/img/{{ cardImage | split('.') | first }}-700w.jpeg{% else %}{{ site.url }}{{ site.default_og_image_path | url }}{% endif %}"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "{{ site.url }}{{ page.url | url }}"
         }
+      },
+      {
+        "@type": ["BeautySalon", "LocalBusiness", "Organization"],
+        "@id": "{{ site.url }}/#localbusiness",
+        "name": "{{ site.name }}",
+        "image": "{{ site.url }}{{ site.default_og_image_path | url }}",
+        "url": "{{ site.url }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ site.url }}{{ site.logo_path | url }}" {# Used logo_path #}
+        },
+        "telephone": "{{ site.contact.phoneLink }}", {# Used phoneLink for full number #}
+        "email": "{{ site.contact.email }}",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ site.contact.address.street }}", {# Corrected path #}
+          "addressLocality": "{{ site.contact.address.city }}", {# Corrected path #}
+          "postalCode": "{{ site.contact.address.zip }}", {# Corrected path #}
+          "addressCountry": "{{ site.contact.address.country }}" {# Corrected path #}
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "{{ site.contact.address.geo.latitude }}", {# Corrected path #}
+          "longitude": "{{ site.contact.address.geo.longitude }}" {# Corrected path #}
+        },
+        "openingHoursSpecification": [
+          {% for spec in site.contact.openingHoursSchema %} {# Iterate directly over pre-formatted schema #}
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              {% for day in spec.dayOfWeek %}
+              "http://schema.org/{{ day }}"{% if not loop.last %},{% endif %} {# Add schema.org prefix #}
+              {% endfor %}
+            ],
+            "opens": "{{ spec.opens }}",
+            "closes": "{{ spec.closes }}"
+          }{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ],
+        "priceRange": "{{ site.priceRange }}",
+        "hasMap": "{{ site.googleBusinessProfileURL }}", {# Used direct URL #}
+        "publicAccess": true,
+        "areaServed": {
+          "@type": "Place",
+          "name": "{{ site.contact.address.city }}" {# Used city from contact address #}
+        },
+        "sameAs": [
+          "{{ site.googleBusinessProfileURL }}", {# Included GMB profile URL #}
+          {% for social in site.social %}
+          "{{ social.url }}"{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ]
+      },
+      {# START OF SERVICE SCHEMA - ADDED TO @GRAPH #}
+      {
+        "@type": "Service",
+        "name": "{{ title | escape }}",
+        "description": "{{ description | escape }}",
+        "url": "{{ site.url }}{{ page.url | url }}",
+        {% if cardImage %}
+        "image": "{{ site.url }}/img/{{ cardImage | split('.') | first }}-700w.jpeg",
+        {% elif site.default_og_image_path %}
+        "image": "{{ site.url }}{{ site.default_og_image_path | url }}",
+        {% endif %}
+        "provider": {
+          "@type": "{{ site.contact.schemaType | default('Organization') }}", {# Using site.contact.schemaType, default to Organization #}
+          "name": "{{ site.name | escape }}",
+          "url": "{{ site.url }}",
+          "@id": "{{ site.url }}/#localbusiness" {# Link to the LocalBusiness entity in the graph #}
+        }
+        {% if serviceName %}
+        , "serviceOutput": {
+            "@type": "Thing",
+            "name": "{{ serviceName | escape }}"
+          }
+        {% endif %}
+        {% if serviceType %}
+        , "serviceType": "{{ serviceType | escape }}"
+        {% endif %}
+        {% if areaServed %}
+        , "areaServed": {
+            "@type": "{{ areaServed.type | default('Place') }}",
+            "name": "{{ areaServed.name | escape }}"
+            {% if areaServed.address %}
+            ,"address": {
+              "@type": "PostalAddress",
+              "streetAddress": "{{ areaServed.address.streetAddress | escape }}",
+              "addressLocality": "{{ areaServed.address.addressLocality | escape }}",
+              "postalCode": "{{ areaServed.address.postalCode | escape }}",
+              "addressCountry": "{{ areaServed.address.addressCountry | escape }}"
+            }
+            {% endif %}
+          }
+        {% endif %}
+        {% if price %}
+        , "offers": {
+            "@type": "Offer",
+            "price": "{{ price }}",
+            "priceCurrency": "{{ priceCurrency | default('EUR') }}",
+            "url": "{{ site.url }}{{ page.url | url }}",
+            "availability": "https://schema.org/InStoreOnly"
+          }
         {% endif %}
       }
-    {% endif %}
-    {% if price %}
-    , "offers": {
-        "@type": "Offer",
-        "price": "{{ price }}",
-        "priceCurrency": "{{ priceCurrency | default('EUR') }}",
-        "url": "{{ site.url }}{{ page.url | url }}",
-        "availability": "https://schema.org/InStoreOnly"
-      }
-    {% endif %}
+      {# END OF SERVICE SCHEMA #}
+    ]
   }
   </script>
 {% endblock %}
