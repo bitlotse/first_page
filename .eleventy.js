@@ -23,11 +23,13 @@ async function imageShortcode(src, alt, options = {}) {
     formats: mergedOptions.formats,
     urlPath: "/img/",
     outputDir: "./output/img/",
-    filenameFormat: function (id, imgSrc, width, format, imgOptions) {
-      const extension = path.extname(imgSrc);
-      const name = path.basename(imgSrc, extension);
-      return `${name}-${width}w.${format}`;
-    }
+    // REMOVED OR COMMENTED OUT: filenameFormat function
+    // If you ever want a custom format WITH the hash, you'd include `id` like this:
+    // filenameFormat: function (id, imgSrc, width, format, imgOptions) {
+    //   const extension = path.extname(imgSrc);
+    //   const name = path.basename(imgSrc, extension);
+    //   return `${name}-${id}-${width}w.${format}`; // Example with id
+    // }
   });
 
   const { widths, formats, ...htmlAttributes } = mergedOptions;
@@ -72,7 +74,6 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
-    // Removed 'js' from templateFormats as the generator file is no longer used for pagination.
     templateFormats: ["md", "njk", "html"],
   };
 };
