@@ -26,9 +26,9 @@ async function imageShortcode(src, alt, options = {}) {
     // REMOVED OR COMMENTED OUT: filenameFormat function
     // If you ever want a custom format WITH the hash, you'd include `id` like this:
     // filenameFormat: function (id, imgSrc, width, format, imgOptions) {
-    //   const extension = path.extname(imgSrc);
-    //   const name = path.basename(imgSrc, extension);
-    //   return `${name}-${id}-${width}w.${format}`; // Example with id
+    //   const extension = path.extname(imgSrc);
+    //   const name = path.basename(imgSrc, extension);
+    //   return `${name}-${id}-${width}w.${format}`; // Example with id
     // }
   });
 
@@ -63,6 +63,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/site.webmanifest"); // <--- ADDED THIS LINE
 
   return {
     dir: {
