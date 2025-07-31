@@ -1,3 +1,6 @@
+
+@import 'fonts.css';
+
 :root {
     /* Default Font Families */
     --font-family-primary-default: 'Garamond', Garamond, serif; /* For headings and buttons */

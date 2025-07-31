@@ -31,8 +31,16 @@
 
     /* --- FONT OVERRIDES --- */
     /* Uncomment and change these to use different fonts */
+    --override-font-primary: 'Playfair Display', serif;
+    --override-font-secondary: 'Lato', sans-serif;
     /* --override-font-primary: 'Merriweather', serif; */
-    /* --override-font-secondary: 'Lato', sans-serif; */
+    /* --override-font-primary: 'Lora', serif; */
+    /* --override-font-primary: 'Arvo', serif; */
+    /* --override-font-secondary: 'Roboto', sans-serif; */
+    /* --override-font-secondary: 'Montserrat', sans-serif; */
+    /* --override-font-secondary: 'Poppins', sans-serif; */
+    /* --override-font-primary: 'Oswald', sans-serif; */
+    /* --override-font-primary: 'Rubik', sans-serif; */
 
     /* --- BACKGROUND TEXTURE (DESKTOP) --- */
     /* Desktop baseFrequency: 0.75. Opacity: 0.30 */
