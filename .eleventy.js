@@ -23,13 +23,11 @@ async function imageShortcode(src, alt, options = {}) {
     formats: mergedOptions.formats,
     urlPath: "/img/",
     outputDir: "./output/img/",
-    // REMOVED OR COMMENTED OUT: filenameFormat function
-    // If you ever want a custom format WITH the hash, you'd include `id` like this:
-    // filenameFormat: function (id, imgSrc, width, format, imgOptions) {
-    //   const extension = path.extname(imgSrc);
-    //   const name = path.basename(imgSrc, extension);
-    //   return `${name}-${id}-${width}w.${format}`; // Example with id
-    // }
+    filenameFormat: function (id, imgSrc, width, format, imgOptions) {
+      const extension = path.extname(imgSrc);
+      const name = path.basename(imgSrc, extension);
+      return `${name}-${id}-${width}w.${format}`;
+    }
   });
 
   const { widths, formats, ...htmlAttributes } = mergedOptions;
@@ -64,7 +62,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("src/site.webmanifest");
-  eleventyConfig.addPassthroughCopy("src/fonts"); // <--- ADDED THIS LINE
+  eleventyConfig.addPassthroughCopy("src/fonts");
 
   return {
     dir: {
