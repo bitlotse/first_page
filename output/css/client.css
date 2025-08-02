@@ -2,12 +2,12 @@
 :root {
     /* --- CORE THEME COLORS - LIGHT MODE --- */
     --theme-color-primary: #C2B5A5;      /* (header, footer, buttons, service-card banner) */
-    --theme-color-secondary: #6E8894; /* (main button when hover, ) */
+    --theme-color-secondary: #315659; /* (main button when hover, ) */
     --theme-color-accent: #F4F0EF;       /* (nav when hover, rules, faq-questions) */
     --theme-color-neutral: #E4FF1A;      /* (text in testimonial, tel+mail+whatsapp + rules in contact box) */
     --theme-color-surface: #4C3842;      /* (for page backgrounds) */
 
-    /* --- TEXT COLORS ON CORE BACKGROUNDS - LIGHT MODE --- */
+    /* --- TEXT COLORS ON CORE BACKGROUNDS - LIGHT MODE --- */6E8894
     --theme-text-on-primary: #FFFFFF;
     --theme-text-on-secondary: #F4F0EF; /*Text on main button when hover */
     --theme-text-on-accent: #2A2129;     /* Dark mauve text on light beige accent */
