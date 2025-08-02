@@ -51,6 +51,22 @@
   src: url('/fonts/roboto-v48-latin-700.woff2') format('woff2');
 }
 
+/* --- ROBOTO (Serif) --- */
+@font-face {
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/roboto-serif-v16-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Roboto Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/roboto-serif-v16-latin-600.woff2') format('woff2');
+}
+
 /* --- POPPINS (Sans-serif) --- */
 @font-face {
   font-family: 'Poppins';

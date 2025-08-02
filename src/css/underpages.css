@@ -510,6 +510,47 @@
     box-shadow: var(--theme-shadow-sm);
 }
 
+/* ---------------------------------------------------------------------- */
+/* ----- STICKY LAYOUT FOR DESKTOP AND TABLETS (NEW CODE BELOW) ----- */
+/* ---------------------------------------------------------------------- */
+@media (min-width: 992px) {
+    .about-page-layout {
+        /* Crucial for sticky positioning to work properly within the grid */
+        align-items: start;
+    }
+
+    .about-image-column {
+        /* Makes the column stick to the top, right below the header */
+        position: sticky;
+        top: var(--header-height);
+
+        /* Sets the height of the column to the full viewport minus the header height */
+        height: calc(100vh - var(--header-height));
+        
+        /* Ensures the column doesn't stretch past the grid row's height */
+        align-self: start;
+
+        /* Removes padding-top since we are now correctly positioned below the header */
+        padding-top: 0;
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* This targets the image inside the sticky column */
+    .about-image-column .about-page-main-image,
+    .about-image-column picture,
+    .about-image-column img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+/* ---------------------------------------------------------------------- */
+/* ----- END OF NEW CODE ----- */
+/* ---------------------------------------------------------------------- */
+
+
 /* Responsive adjustments for About Page */
 @media (max-width: 992px) {
     .about-page-layout {
@@ -531,11 +572,13 @@
         order: 1;
         max-height: 400px;
         margin-left: 0;
+        position: relative; /* Revert position for mobile */
+        margin-inline: auto; /* <-- NEW: This will center the image column */
     }
     .about-image-column img {
         height: auto;
         max-height: 100%;
-        mask-image: none !important;  /* Important to force disable fade mask on mobile */
+        mask-image: none !important;   /* Important to force disable fade mask on mobile */
         -webkit-mask-image: none !important;
         mask-composite: initial;
     }
@@ -547,15 +590,6 @@
     }
     .custom-box h2, .custom-box h3, .custom-box p {
         text-align: left;
-    }
-}
-
-@media (max-width: 768px) {
-    .about-text-content-wrapper > h1 {
-        text-align: center;
-    }
-    .custom-box h2, .custom-box p {
-        text-align: center;
     }
 }
 
