@@ -2,10 +2,10 @@
 :root {
     /* --- CORE THEME COLORS - LIGHT MODE --- */
     --theme-color-primary: #C2B5A5;      /* (header, footer, buttons, service-card banner) */
-    --theme-color-secondary: #9C776D; /* (main button when hover, ) */
+    --theme-color-secondary: #6E8894; /* (main button when hover, ) */
     --theme-color-accent: #F4F0EF;       /* (nav when hover, rules, faq-questions) */
     --theme-color-neutral: #E4FF1A;      /* (text in testimonial, tel+mail+whatsapp + rules in contact box) */
-    --theme-color-surface: #513C38;      /* (for page backgrounds) */
+    --theme-color-surface: #4C3842;      /* (for page backgrounds) */
 
     /* --- TEXT COLORS ON CORE BACKGROUNDS - LIGHT MODE --- */
     --theme-text-on-primary: #FFFFFF;
@@ -123,18 +123,20 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        /* --- CORE THEME COLORS - DARK MODE --- */
-        --theme-color-primary: #CDC3B6;      /* TEST - Bright Red - Used for backgrounds (e.g., header, buttons) */
-        --theme-color-secondary: #906B62; /* Lighter Mauve/Brown */
-        --theme-color-accent: #F4F0EF;       /* Muted Lavender */
-        --theme-color-neutral: #E4FF1A;      /* Light Beige/Pink (for general text/elements) */
-        --theme-color-surface: #6C514B;      /* Very Dark Brown/Purple (for page backgrounds) */
+        --theme-color-primary: #C2B5A5;      /* (A lighter version of your secondary color for visibility) */
+        --theme-color-secondary: #6E8894;   /* (Your light mode primary color, works well as an accent) */
+        --theme-color-accent: #F4F0EF;      /* (Your light mode text-on-accent color, now used as a dark accent) */
+        --theme-color-neutral: #E4FF1A;      /* (High contrast yellow-green, kept for consistency) */
+        --theme-color-surface: #4C3842;      /* (Your light mode text-on-accent, now a dark background) */
 
         /* --- TEXT COLORS ON CORE BACKGROUNDS - DARK MODE --- */
-        --theme-text-on-primary: #FFFFFF; /* Dark text on lighter primary */
-        --theme-text-on-secondary: #EDFFD9;
-        --theme-text-on-accent: #2A2129;     /* Dark text on lavender accent */
-        --theme-text-on-surface: #F4F0EF; /* Text on main page background */
+        --theme-text-on-primary: #FFFFFF;
+        --theme-text-on-secondary: #F4F0EF;
+        --theme-text-on-accent: #2A2129;      /* (Your light mode accent, now text on a dark accent) */
+        --theme-text-on-surface: #F4F0EF;      /* (Your light mode accent, now text on a dark background) */
+        
+        /* Heading Text Color */
+        --theme-color-heading-text: #F4F0EF; /* (White for headings on a dark background) */
 
         /* Define RGB versions of colors if you use them in rgba() for gradients etc. */
         --theme-color-primary-rgb: 255,0,0;

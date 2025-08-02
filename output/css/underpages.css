@@ -365,10 +365,11 @@
 
 /* Define background color variables and other layout specifics */
 :root {
-    --about-custom-box-1-bg: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-primary) 12%);
-    --about-custom-box-2-bg: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-secondary) 12%);
-    --about-custom-box-3-bg: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-accent) 12%);
-    --about-image-fade-width: 40px; /* Reduced width for a more subtle fade effect */
+    /* To increase contrast, reduce the surface percentage and increase the theme color percentage */
+    --about-custom-box-1-bg: color-mix(in srgb, var(--theme-color-surface) 65%, var(--theme-color-primary) 35%);
+    --about-custom-box-2-bg: color-mix(in srgb, var(--theme-color-surface) 65%, var(--theme-color-secondary) 35%);
+    --about-custom-box-3-bg: color-mix(in srgb, var(--theme-color-surface) 65%, var(--theme-color-accent) 35%);
+    --about-image-fade-width: 40px;
 }
 
 .about-page-section .container {
@@ -510,6 +511,9 @@
     box-shadow: var(--theme-shadow-sm);
 }
 
+
+
+
 /* ---------------------------------------------------------------------- */
 /* ----- STICKY LAYOUT FOR DESKTOP AND TABLETS (NEW CODE BELOW) ----- */
 /* ---------------------------------------------------------------------- */
@@ -600,8 +604,8 @@
 /* FAQ Page Specific Styles */
 :root {
     /* Subtle background colors for FAQ boxes */
-    --faq-question-bg-color: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-accent) 15%);
-    --faq-answer-bg-color: color-mix(in srgb, var(--theme-color-surface) 90%, var(--theme-color-secondary) 15%);
+    --faq-question-bg-color: color-mix(in srgb, var(--theme-color-surface) 70%, var(--theme-color-accent) 30%);
+    --faq-answer-bg-color: color-mix(in srgb, var(--theme-color-surface) 70%, var(--theme-color-secondary) 30%);
     /* Consider a variable for icon color if needed, or style directly */
     /* --faq-icon-color: var(--color-primary); */
 }
@@ -774,9 +778,9 @@
     display: flex;
     flex-direction: row; /* Default, but explicit for clarity */
     flex-wrap: wrap;     /* Allow items to wrap to the next line on smaller screens */
-    gap: var(--space-md);
-    margin-top: var(--space-md);
-    /* align-items: stretch; is the default, which makes flex items in a row the same height */
+    gap: 2rem;           /* UPDATED: Using rem for responsive gap */
+    margin-top: 2rem;      /* UPDATED: Using rem for responsive margin */
+    align-items: stretch; /* EXPLICITLY SET to ensure equal heights on the same row */
 }
 
 .contact-page-columns-layout > .contact-page-column {
@@ -784,16 +788,15 @@
     flex-shrink: 1;
     /* Calculate basis to aim for three columns, accounting for the gap.
        Example: (100% container width - 2 gaps) / 3 columns.
-    */
+     */
     flex-basis: calc((100% - (2 * var(--space-md))) / 3);
     min-width: 220px; /* Allow columns to shrink to this width before wrapping or mobile styles apply.
-                           This should generally be less than the calculated flex-basis on wider screens.
-                           e.g., for an 800px container, basis is ~250px, so 220px min-width is fine.
-                        */
+                         e.g., for an 800px container, basis is ~250px, so 220px min-width is fine.
+                       */
 
     /* Make the column a flex container to manage its children's height distribution.
        This is important for ensuring the content within the column can fill its height.
-    */
+     */
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -801,7 +804,7 @@
 
 /* Ensure cards/content within the columns take up full width of their column container
    and can grow to fill the vertical space of the .contact-page-column.
-*/
+ */
 .contact-page-columns-layout .contact-page-content-card,
 .contact-page-columns-layout .contact-page-map-card,
 .contact-page-columns-layout .contact-page-body-content {
@@ -813,13 +816,13 @@
 
 /* Ensure specific content areas within cards can also grow.
    The iframe in .contact-page-map-card already has flex-grow: 1 from existing rules.
-*/
+ */
 .contact-page-content-card .contact-info {
     flex-grow: 1; /* Allows the contact info block to expand within its card */
     /* If .contact-info itself needs to manage children with flex, add:
     display: flex;
     flex-direction: column;
-    */
+     */
 }
 
 
@@ -827,8 +830,8 @@
 
 /* Parent container for the background image */
 .contact-page-section {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
+    padding-top: 5vh;    /* UPDATED: Using vh for responsive padding */
+    padding-bottom: 5vh; /* UPDATED: Using vh for responsive padding */
     position: relative; /* IMPORTANT: Establish a positioning context for the child image */
     overflow: hidden; /* Ensures image doesn't overflow outside padding/borders */
     /* Remove any old background-image properties if they were directly on this section */
@@ -998,7 +1001,7 @@ body.contact .page-complete-background-image {
     border-radius: var(--border-radius-md);
     display: block;
     flex-grow: 1; /* Allow iframe to fill vertical space within its parent card */
-    min-height: 300px; /* Ensure map has a decent minimum height */
+    min-height: 40vh; /* UPDATED: Use vh to ensure the map scales with screen height */
     /* width: 100%; is handled by .contact-map-iframe at the top */
 }
 
@@ -1012,7 +1015,7 @@ body.contact .page-complete-background-image {
 @media (max-width: 768px) {
     /* This media query block already exists above for .contact-page-columns-layout.
        These rules will be merged by the browser with those.
-    */
+     */
     .contact-page-icons {
         gap: var(--space-md);
     }
