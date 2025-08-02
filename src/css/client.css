@@ -57,13 +57,20 @@
     /*--theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cline x1='0' y1='12' x2='12' y2='0' stroke='%23000000' stroke-width='0.3' opacity='0.04'/%3E%3Cline x1='0' y1='0' x2='12' y2='12' stroke='%23000000' stroke-width='0.3' opacity='0.10'/%3E%3C/svg%3E"); */ /* Soft Crosshatch: Delicate intersecting diagonal lines (X pattern) */
     /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='8' height='8' fill='%23000000' opacity='0.02'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23000000' opacity='0.02'/%3E%3C/svg%3E"); */ /* Barely Visible Weave: Subtle checkerboard/weave pattern */
 
+
+
     /* --- SPECIFIC COMPONENT STYLING (EXAMPLES) --- */
     /* Hero Section Gradients (main.css uses these if defined) */
-    --theme-hero-gradient-start: rgba(0, 0, 0, 0.1);
-    --theme-hero-gradient-end: rgba(0, 0, 0, 0.7);
+    /* --theme-hero-gradient-start: rgba(0, 0, 0, 0); */
+    /* --theme-hero-gradient-end: rgba(0, 0, 0, 0); */
     /* Hero Content Box Gradient */
-    --theme-hero-content-gradient-center: rgba(var(--theme-color-neutral-rgb), 0.65);
-    --theme-hero-content-gradient-edge: rgba(var(--theme-color-neutral-rgb), 0.3);
+    /* --theme-hero-content-gradient-center: rgba(var(--theme-color-neutral-rgb), 0.65); */
+    /* --theme-hero-content-gradient-edge: rgba(var(--theme-color-neutral-rgb), 0.3); */
+
+    /* Or no gradiant */
+    /* Hero Content Box Gradient */
+    --theme-hero-content-gradient-center: rgba(var(--theme-color-neutral-rgb), 0);
+    --theme-hero-content-gradient-edge: rgba(var(--theme-color-neutral-rgb), 0);
 
     /* Service Card Banner Gradients (Applies to both top and bottom banners on service page) */
     --theme-service-card-banner-gradient-start: rgba(0, 0, 0, 0.0); /* Default dark overlay for banners */
