@@ -1,205 +1,196 @@
 /* Client-specific Theme Overrides */
 :root {
-    /* --- CORE THEME COLORS - LIGHT MODE --- */
-    --theme-color-primary: #C2B5A5;      /* (header, footer, buttons, service-card banner) */
-    --theme-color-secondary: #735664; /* (main button when hover, about and faq boxes) */
-    --theme-color-accent: #F4F0EF;       /* (nav when hover, rules, faq-questions) */
-    --theme-color-neutral: #E4FF1A;      /* (text in testimonial, tel+mail+whatsapp + rules in contact box) */
-    --theme-color-surface: #4C3842;      /* (for page backgrounds) */
+  /* --- CORE THEME COLORS - LIGHT MODE --- */
+  --theme-color-primary: #C2B5A5;   /* (header, footer, buttons, service-card banner) */
+  --theme-color-secondary: #735664; /* (main button when hover, about and faq boxes) */
+  --theme-color-accent: #F4F0EF;    /* (nav when hover, rules, faq-questions) */
+  --theme-color-neutral: #E4FF1A;   /* (text in testimonial, tel+mail+whatsapp + rules in contact box, I think it's not used anymore) */
+  --theme-color-surface: #4C3842;   /* (for page backgrounds) */
 
-    /* --- TEXT COLORS ON CORE BACKGROUNDS - LIGHT MODE --- */
-    --theme-text-on-primary: #FFFFFF;
-    --theme-text-on-secondary: #F4F0EF; /*Text on main button when hover */
-    --theme-text-on-accent: #2A2129;     /* Dark mauve text on light beige accent */
-    --theme-text-on-surface: #F4F0EF; /* Text on main page background */
+  /* --- TEXT COLORS ON CORE BACKGROUNDS - LIGHT MODE --- */
+  --theme-text-on-primary: #FFFFFF;
+  --theme-text-on-secondary: #F4F0EF; /*Text on main button when hover */
+  --theme-text-on-accent: #2A2129;   /* Dark mauve text on light beige accent */
+  --theme-text-on-surface: #F4F0EF; /* Text on main page background */
 
-    /* Heading Text Color */
-   --theme-color-heading-text: #F4F0EF; /* Set your desired color for h1, h2, h3 here (e.g., your neutral color) */
+  /* Heading Text Color */
+ --theme-color-heading-text: #F4F0EF; /* Set your desired color for h1, h2, h3 here (e.g., your neutral color) */
 
-    /* Define RGB versions of colors if you use them in rgba() for gradients etc. */
-    --theme-color-primary-rgb: 108,78,72;
-    --theme-color-secondary-rgb: 147,163,146;
-    --theme-color-accent-rgb: 87,167,115;
-    --theme-color-neutral-rgb: 231,218,211;
-    --theme-color-surface-rgb: 53,49,60;
+  /* Define RGB versions of colors if you use them in rgba() for gradients etc. */
+  --theme-color-primary-rgb: 108,78,72;
+  --theme-color-secondary-rgb: 147,163,146;
+  --theme-color-accent-rgb: 87,167,115;
+  --theme-color-neutral-rgb: 231,218,211;
+  --theme-color-surface-rgb: 53,49,60;
 
-    /* --- SHADOWS - LIGHT MODE --- */
-    --theme-shadow-sm: 0 1px 3px rgba(0,0,0,0.07);
-    --theme-shadow-md: 0 4px 10px rgba(0,0,0,0.1);
-    --theme-shadow-lg: 0 10px 20px rgba(0,0,0,0.12);
+  /* --- SHADOWS - LIGHT MODE --- */
+  --theme-shadow-sm: 0 1px 3px rgba(0,0,0,0.07);
+  --theme-shadow-md: 0 4px 10px rgba(0,0,0,0.1);
+  --theme-shadow-lg: 0 10px 20px rgba(0,0,0,0.12);
 
-    /* --- FONT OVERRIDES --- */
-    /* Uncomment and change these to use different fonts */
-     --override-font-primary: 'Playfair Display', serif; */
-    /* --override-font-secondary: 'Playfair Display', serif; */
-    /* --override-font-secondary: 'Lato', sans-serif; */
-    /* --override-font-primary: 'Lato', sans-serif; */
-    /* --override-font-primary: 'Merriweather', serif; */
-    /* --override-font-primary: 'Lora', serif; */
-    /* --override-font-secondary: 'Lora', serif; */
-    /* --override-font-primary: 'Arvo', serif; */
-    /* --override-font-primary: 'Roboto', sans-serif; */
-       --override-font-secondary: 'Roboto', sans-serif;
-    /*   --override-font-primary: 'Roboto Serif', serif; */
-    /*   --override-font-secondary: 'Roboto Serif', serif; */
-    /* --override-font-primary: 'Montserrat', sans-serif; */
-    /* --override-font-secondary: 'Montserrat', sans-serif; */
-    /* --override-font-primary: 'Poppins', sans-serif; */
-    /* --override-font-secondary: 'Poppins', sans-serif; */
-    /* --override-font-primary: 'Oswald', sans-serif; */
-    /* --override-font-primary: 'Rubik', sans-serif; */
+  /* --- FONT OVERRIDES --- */
+  /* Uncomment and change these to use different fonts */
+  --override-font-primary: 'Playfair Display', serif; */
+  /* --override-font-secondary: 'Playfair Display', serif; */
+  /* --override-font-secondary: 'Lato', sans-serif; */
+  /* --override-font-primary: 'Lato', sans-serif; */
+  /* --override-font-primary: 'Merriweather', serif; */
+  /* --override-font-primary: 'Lora', serif; */
+  /* --override-font-secondary: 'Lora', serif; */
+  /* --override-font-primary: 'Arvo', serif; */
+  /* --override-font-primary: 'Roboto', sans-serif; */
+   --override-font-secondary: 'Roboto', sans-serif;
+  /*  --override-font-primary: 'Roboto Serif', serif; */
+  /*  --override-font-secondary: 'Roboto Serif', serif; */
+  /* --override-font-primary: 'Montserrat', sans-serif; */
+  /* --override-font-secondary: 'Montserrat', sans-serif; */
+  /* --override-font-primary: 'Poppins', sans-serif; */
+  /* --override-font-secondary: 'Poppins', sans-serif; */
+  /* --override-font-primary: 'Oswald', sans-serif; */
+  /* --override-font-primary: 'Rubik', sans-serif; */
 
-    /* --- BACKGROUND TEXTURE (DESKTOP) --- */
-    /* Desktop baseFrequency: 0.75. Opacity: 0.30 */
-     --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cdefs%3E%3Cfilter id='n-desktop'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' filter='url(%23n-desktop)' opacity='0.10'/%3E%3C/svg%3E"); */ /* Subtle Noise: Fine, soft static/grain */
-    /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cline x1='-1' y1='1' x2='11' y2='9' stroke='%23000000' stroke-width='0.5' opacity='0.05'/%3E%3Cline x1='-1' y1='6' x2='11' y2='14' stroke='%23000000' stroke-width='0.5' opacity='0.05'/%3E%3Cline x1='-1' y1='-4' x2='11' y2='4' stroke='%23000000' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E"); */ /* Faint Diagonal Lines: Thin, light diagonal strokes */
-    /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='0.5' fill='%23000000' opacity='0.07'/%3E%3Ccircle cx='6' cy='6' r='0.5' fill='%23000000' opacity='0.07'/%3E%3C/svg%3E"); */ /* Tiny Dots Grid: Regular pattern of small, faint dots */
-    /*--theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cline x1='0' y1='12' x2='12' y2='0' stroke='%23000000' stroke-width='0.3' opacity='0.04'/%3E%3Cline x1='0' y1='0' x2='12' y2='12' stroke='%23000000' stroke-width='0.3' opacity='0.10'/%3E%3C/svg%3E"); */ /* Soft Crosshatch: Delicate intersecting diagonal lines (X pattern) */
-    /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='8' height='8' fill='%23000000' opacity='0.02'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23000000' opacity='0.02'/%3E%3C/svg%3E"); */ /* Barely Visible Weave: Subtle checkerboard/weave pattern */
-
-
-
-    /* --- SPECIFIC COMPONENT STYLING (EXAMPLES) --- */
-    /* Hero Section Gradients (main.css uses these if defined) */
-    /* --theme-hero-gradient-start: rgba(0, 0, 0, 0); */
-    /* --theme-hero-gradient-end: rgba(0, 0, 0, 0); */
-    /* Hero Content Box Gradient */
-    /* --theme-hero-content-gradient-center: rgba(var(--theme-color-neutral-rgb), 0.65); */
-    /* --theme-hero-content-gradient-edge: rgba(var(--theme-color-neutral-rgb), 0.3); */
-
-    /* Or no gradiant */
-    /* Hero Content Box Gradient */
-    --theme-hero-content-gradient-center: rgba(var(--theme-color-neutral-rgb), 0);
-    --theme-hero-content-gradient-edge: rgba(var(--theme-color-neutral-rgb), 0);
-
-    /* Service Card Banner Gradients (Applies to both top and bottom banners on service page) */
-    --theme-service-card-banner-gradient-start: rgba(0, 0, 0, 0.0); /* Default dark overlay for banners */
-    --theme-service-card-banner-gradient-end: transparent;
-
-    /* Home Service Card Bottom Banner Color */
-    --home-service-card-banner-bottom-color: var(--theme-color-primary); /* Default to primary theme color */
-    --home-service-card-banner-bottom-color-rgb: var(--theme-color-primary-rgb); /* Corresponding RGB */
-
-    /* Contact Page Top Field Background */
-    --theme-contact-top-field-bg: rgba(0, 0, 0, 0.25);
-
-    /* Testimonial Styles */
-    --theme-testimonial-author-overlay-bg: rgba(244, 240, 239, 0.95);
-    --theme-testimonial-author-text-color: var(--theme-color-secondary); /* Using secondary for author text */
-
-    /* Icon filter control for header and footer */
-    --header-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
-    --footer-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
-    --header-logo-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
+  /* --- BACKGROUND TEXTURE (DESKTOP) --- */
+  /* Desktop baseFrequency: 0.75. Opacity: 0.30 */
+  --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cdefs%3E%3Cfilter id='n-desktop'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' filter='url(%23n-desktop)' opacity='0.10'/%3E%3C/svg%3E"); */ /* Subtle Noise: Fine, soft static/grain */
+  /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cline x1='-1' y1='1' x2='11' y2='9' stroke='%23000000' stroke-width='0.5' opacity='0.05'/%3E%3Cline x1='-1' y1='6' x2='11' y2='14' stroke='%23000000' stroke-width='0.5' opacity='0.05'/%3E%3Cline x1='-1' y1='-4' x2='11' y2='4' stroke='%23000000' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E"); */ /* Faint Diagonal Lines: Thin, light diagonal strokes */
+  /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='0.5' fill='%23000000' opacity='0.07'/%3E%3Ccircle cx='6' cy='6' r='0.5' fill='%23000000' opacity='0.07'/%3E%3C/svg%3E"); */ /* Tiny Dots Grid: Regular pattern of small, faint dots */
+  /*--theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cline x1='0' y1='12' x2='12' y2='0' stroke='%23000000' stroke-width='0.3' opacity='0.04'/%3E%3Cline x1='0' y1='0' x2='12' y2='12' stroke='%23000000' stroke-width='0.3' opacity='0.10'/%3E%3C/svg%3E"); */ /* Soft Crosshatch: Delicate intersecting diagonal lines (X pattern) */
+  /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='8' height='8' fill='%23000000' opacity='0.02'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23000000' opacity='0.02'/%3E%3C/svg%3E"); */ /* Barely Visible Weave: Subtle checkerboard/weave pattern */
 
 
-    /* Example: If you want to override the header's justify-content from main.css defaults */
-    /* --override-header-layout-justify-content: flex-start; */
 
-    /* Header Scroll Behavior Control - This will hide the header when a user scrolls down */
-    --header-on-hide-transform: translateY(-100%);
-    --header-on-hide-shadow: none; /* Shadow disappears when header is hidden */
-    --header-content-on-hide-children-transform: translateY(0);
-    --header-content-on-hide-children-opacity: 1;
-    --header-content-on-hide-children-pointer-events: auto;
+  /* --- SPECIFIC COMPONENT STYLING (EXAMPLES) --- */
+  /* Hero Section Gradients (main.css uses these if defined) */
+  /* --theme-hero-gradient-start: rgba(0, 0, 0, 0); */
+  /* --theme-hero-gradient-end: rgba(0, 0, 0, 0); */
+  /* Hero Content Box Gradient */
+  /* --theme-hero-content-gradient-center: rgba(var(--theme-color-neutral-rgb), 0.65); */
+  /* --theme-hero-content-gradient-edge: rgba(var(--theme-color-neutral-rgb), 0.3); */
 
-    /* Mobile Navigation Menu Width - Client override */
-    /* --override-mobile-nav-width: 50vw; */ /* Example: override default 36vw */
+  /* Or no gradiant */
+  /* Hero Content Box Gradient */
+  --theme-hero-content-gradient-center: rgba(var(--theme-color-neutral-rgb), 0);
+  --theme-hero-content-gradient-edge: rgba(var(--theme-color-neutral-rgb), 0);
 
-    /* --- BUTTON STYLING OVERRIDES --- */
-    /*
-        Available options from main.css:
-        --border-radius-sm: 4px;
-        --border-radius: 8px;
-        --border-radius-lg: 12px;
-        --border-radius-pill: 50px;
-    */
-    /* --button-border-radius: var(--border-radius); */
-       --button-border-radius: var(--border-radius-sm); 
-    /* --button-border-radius: var(--border-radius-lg); */
-    /* --button-border-radius: var(--border-radius-pill); */
+  /* Service Card Banner Gradients (Applies to both top and bottom banners on service page) */
+  --theme-service-card-banner-gradient-start: rgba(0, 0, 0, 0.0); /* Default dark overlay for banners */
+  --theme-service-card-banner-gradient-end: transparent;
+
+  /* Home Service Card Bottom Banner Color */
+  --home-service-card-banner-bottom-color: var(--theme-color-primary); /* Default to primary theme color */
+  --home-service-card-banner-bottom-color-rgb: var(--theme-color-primary-rgb); /* Corresponding RGB */
+
+  /* Contact Page Top Field Background */
+  --theme-contact-top-field-bg: rgba(0, 0, 0, 0.25);
+
+  /* Testimonial Styles */
+  --theme-testimonial-author-overlay-bg: rgba(244, 240, 239, 0.95);
+  --theme-testimonial-author-text-color: var(--theme-color-secondary); /* Using secondary for author text */
+
+  /* Icon filter control for header and footer */
+  --header-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
+  --footer-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
+  --header-logo-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
+
+
+  /* Example: If you want to override the header's justify-content from main.css defaults */
+  /* --override-header-layout-justify-content: flex-start; */
+
+  /* Header Scroll Behavior Control - This will hide the header when a user scrolls down */
+  --header-on-hide-transform: translateY(-100%);
+  --header-on-hide-shadow: none; /* Shadow disappears when header is hidden */
+  --header-content-on-hide-children-transform: translateY(0);
+  --header-content-on-hide-children-opacity: 1;
+  --header-content-on-hide-children-pointer-events: auto;
+
+  /* Mobile Navigation Menu Width - Client override */
+  /* --override-mobile-nav-width: 50vw; */ /* Example: override default 36vw */
+
+  /* --- BUTTON STYLING OVERRIDES --- */
+  /*
+    Available options from main.css:
+    --border-radius-sm: 4px;
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-pill: 50px;
+  */
+  /* --button-border-radius: var(--border-radius); */
+   --button-border-radius: var(--border-radius-sm); 
+  /* --button-border-radius: var(--border-radius-lg); */
+  /* --button-border-radius: var(--border-radius-pill); */
 }
 
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --theme-color-primary: #C2B5A5;      /* (A lighter version of your secondary color for visibility) */
-        --theme-color-secondary: #735664;   /* (Your light mode primary color, works well as an accent) */
-        --theme-color-accent: #F4F0EF;      /* (Your light mode text-on-accent color, now used as a dark accent) */
-        --theme-color-neutral: #E4FF1A;      /* (High contrast yellow-green, kept for consistency) */
-        --theme-color-surface: #4C3842;      /* (Your light mode text-on-accent, now a dark background) */
+ :root {
+  /* --- CORE THEME COLORS - DARK MODE --- */
+  --theme-color-primary: #C2B5A5;
+  --theme-color-secondary: #735664;
+  --theme-color-accent: #F4F0EF;
+  --theme-color-neutral: #E4FF1A;
+  --theme-color-surface: #4C3842;
 
-        /* --- TEXT COLORS ON CORE BACKGROUNDS - DARK MODE --- */
-        --theme-text-on-primary: #FFFFFF;
-        --theme-text-on-secondary: #F4F0EF;
-        --theme-text-on-accent: #2A2129;      /* (Your light mode accent, now text on a dark accent) */
-        --theme-text-on-surface: #F4F0EF;      /* (Your light mode accent, now text on a dark background) */
-        
-        /* Heading Text Color */
-        --theme-color-heading-text: #F4F0EF; /* (White for headings on a dark background) */
+  /* --- TEXT COLORS ON CORE BACKGROUNDS - DARK MODE --- */
+  --theme-text-on-primary: #FFFFFF;
+  --theme-text-on-secondary: #F4F0EF;
+  --theme-text-on-accent: #2A2129;
+  --theme-text-on-surface: #F4F0EF;
 
-        /* Define RGB versions of colors if you use them in rgba() for gradients etc. */
-        --theme-color-primary-rgb: 255,0,0;
-        --theme-color-secondary-rgb: 140,115,117;
-        --theme-color-accent-rgb: 192,175,192;
-        --theme-color-neutral-rgb: 232,219,212;
-        --theme-color-surface-rgb: 50,35,40;
+  /* Heading Text Color */
+  --theme-color-heading-text: #F4F0EF; /* Correctly defining the variable */
 
-
-        /* --- SHADOWS - DARK MODE --- */
-        --theme-shadow-sm: 0 1px 3px rgba(0,0,0,0.25);
-        --theme-shadow-md: 0 4px 10px rgba(0,0,0,0.35);
-        --theme-shadow-lg: 0 10px 20px rgba(0,0,0,0.3);
+  /* Define RGB versions of colors if you use them in rgba() for gradients etc. */
+  --theme-color-primary-rgb: 108,78,72;
+  --theme-color-secondary-rgb: 147,163,146;
+  --theme-color-accent-rgb: 87,167,115;
+  --theme-color-neutral-rgb: 231,218,211;
+  --theme-color-surface-rgb: 53,49,60;
 
 
-        /* --- SPECIFIC COMPONENT STYLING - DARK MODE (EXAMPLES) --- */
-        /* Hero Section Gradients */
-        --theme-hero-gradient-start: rgba(0, 0, 0, 0.3);
-        --theme-hero-gradient-end: rgba(0, 0, 0, 0.85);
-        /* Hero Content Box Gradient */
-        --theme-hero-content-gradient-center: rgba(var(--theme-color-surface-rgb), 0.75);
-        --theme-hero-content-gradient-edge: rgba(var(--theme-color-surface-rgb), 0.45);
+  /* --- SHADOWS - DARK MODE --- */
+  --theme-shadow-sm: 0 1px 3px rgba(0,0,0,0.25);
+  --theme-shadow-md: 0 4px 10px rgba(0,0,0,0.35);
+  --theme-shadow-lg: 0 10px 20px rgba(0,0,0,0.3);
 
-        /* Service Card Banner Gradients (Dark Mode) - Applies to both top and bottom banners on service page */
-        --theme-service-card-banner-gradient-start: rgba(0, 0, 0, 0.7); /* Darker overlay in dark mode */
-        --theme-service-card-banner-gradient-end: transparent;
 
-        /* Home Service Card Bottom Banner Color in Dark Mode */
-        --home-service-card-banner-bottom-color: var(--theme-color-primary); /* Use dark mode primary */
-        --home-service-card-banner-bottom-color-rgb: var(--theme-color-primary-rgb);
+  /* --- SPECIFIC COMPONENT STYLING - DARK MODE (EXAMPLES) --- */
+  /* Hero Section Gradients */
+  --theme-hero-gradient-start: rgba(0, 0, 0, 0.3);
+  --theme-hero-gradient-end: rgba(0, 0, 0, 0.85);
+  /* Hero Content Box Gradient */
+  --theme-hero-content-gradient-center: rgba(var(--theme-color-surface-rgb), 0.75);
+  --theme-hero-content-gradient-edge: rgba(var(--theme-color-surface-rgb), 0.45);
 
-        /* Contact Page Top Field Background */
-        --theme-contact-top-field-bg: rgba(20, 10, 13, 0.65); /* Darker, more opaque for dark mode */
+  /* Service Card Banner Gradients (Dark Mode) - Applies to both top and bottom banners on service page */
+  --theme-service-card-banner-gradient-start: rgba(0, 0, 0, 0.7);
+  --theme-service-card-banner-gradient-end: transparent;
 
-        /* Testimonial Styles */
-        --theme-testimonial-author-overlay-bg: rgba(var(--theme-color-surface-rgb), 0.75);
-        --theme-testimonial-author-text-color: var(--theme-color-accent);
+  /* Home Service Card Bottom Banner Color in Dark Mode */
+  --home-service-card-banner-bottom-color: var(--theme-color-primary);
+  --home-service-card-banner-bottom-color-rgb: var(--theme-color-primary-rgb);
 
-        /* Heading Text Color in Dark Mode */
-        --theme-color-heading-text: var(--theme-color-neutral); /* Example: Use neutral color for headings in dark mode */
+  /* Contact Page Top Field Background */
+  --theme-contact-top-field-bg: rgba(20, 10, 13, 0.65);
 
-        /* --- BACKGROUND TEXTURE - MOBILE DARK MODE --- */
-        /* Mobile baseFrequency is approx. 0.6 * desktop baseFrequency (0.75 * 0.6 = 0.45) */
-        /* This makes the noise pattern coarser on mobile to appear visually similar in density. Opacity: 0.30 */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cdefs%3E%3Cfilter id='n-dark-mobile'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.45' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' filter='url(%23n-dark-mobile)' opacity='0.02'/%3E%3C/svg%3E"); */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cline x1='-1' y1='1' x2='11' y2='9' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3Cline x1='-1' y1='6' x2='11' y2='14' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3Cline x1='-1' y1='-4' x2='11' y2='4' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3C/svg%3E"); */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='0.6' fill='%23000000' opacity='0.09'/%3E%3Ccircle cx='6' cy='6' r='0.6' fill='%23000000' opacity='0.09'/%3E%3C/svg%3E"); */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cline x1='0' y1='12' x2='12' y2='0' stroke='%23000000' stroke-width='0.4' opacity='0.05'/%3E%3Cline x1='0' y1='0' x2='12' y2='12' stroke='%23000000' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E");
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='8' height='8' fill='%23000000' opacity='0.04'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23000000' opacity='0.04'/%3E%3C/svg%3E"); */
-    }
-}
+  /* Testimonial Styles */
+  --theme-testimonial-author-overlay-bg: rgba(var(--theme-color-surface-rgb), 0.75);
+  --theme-testimonial-author-text-color: var(--theme-color-accent);
 
-/* Specific adjustments for smaller screens / mobile */
-@media (max-width: 768px) {
-    :root {
-        /* --- BACKGROUND TEXTURE (MOBILE) --- */
-        /* Mobile baseFrequency is approx. 0.6 * desktop baseFrequency (0.75 * 0.6 = 0.45) */
-        /* This makes the noise pattern coarser on mobile to appear visually similar in density. Opacity: 0.30 */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cdefs%3E%3Cfilter id='n-mobile'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.45' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' filter='url(%23n-mobile)' opacity='0.30'/%3E%3C/svg%3E"); */ /* Subtle Noise for Mobile: Coarser */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cline x1='-1' y1='1' x2='11' y2='9' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3Cline x1='-1' y1='6' x2='11' y2='14' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3Cline x1='-1' y1='-4' x2='11' y2='4' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3C/svg%3E"); */ /* Faint Diagonal Lines: Adapted for mobile visibility */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='0.6' fill='%23000000' opacity='0.09'/%3E%3Ccircle cx='6' cy='6' r='0.6' fill='%23000000' opacity='0.09'/%3E%3C/svg%3E"); */ /* Tiny Dots Grid: Adapted for mobile visibility */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cline x1='0' y1='12' x2='12' y2='0' stroke='%23000000' stroke-width='0.4' opacity='0.05'/%3E%3Cline x1='0' y1='0' x2='12' y2='12' stroke='%23000000' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E"); */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cline x1='0' y1='12' x2='12' y2='0' stroke='%23000000' stroke-width='0.4' opacity='0.05'/%3E%3Cline x1='0' y1='0' x2='12' y2='12' stroke='%23000000' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E"); /* Soft Crosshatch: Adapted for mobile visibility */
-        /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='8' height='8' fill='%23000000' opacity='0.04'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23000000' opacity='0.04'/%3E%3C/svg%3E"); */ /* Barely Visible Weave: Adapted for mobile visibility */
-    }
+  /* --- BACKGROUND TEXTURE - MOBILE DARK MODE --- */
+  /* Mobile baseFrequency is approx. 0.6 * desktop baseFrequency (0.75 * 0.6 = 0.45) */
+  /* This makes the noise pattern coarser on mobile to appear visually similar in density. Opacity: 0.30 */
+  /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cdefs%3E%3Cfilter id='n-dark-mobile'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.45' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100' height='100' filter='url(%23n-dark-mobile)' opacity='0.02'/%3E%3C/svg%3E"); */
+  /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Cline x1='-1' y1='1' x2='11' y2='9' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3Cline x1='-1' y1='6' x2='11' y2='14' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3Cline x1='-1' y1='-4' x2='11' y2='4' stroke='%23000000' stroke-width='0.6' opacity='0.07'/%3E%3C/svg%3E"); */
+  /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Ccircle cx='2' cy='2' r='0.6' fill='%23000000' opacity='0.09'/%3E%3Ccircle cx='6' cy='6' r='0.6' fill='%23000000' opacity='0.09'/%3E%3C/svg%3E"); */
+  /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cline x1='0' y1='12' x2='12' y2='0' stroke='%23000000' stroke-width='0.4' opacity='0.05'/%3E%3Cline x1='0' y1='0' x2='12' y2='12' stroke='%23000000' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E");
+  /* --theme-background-texture-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Crect width='8' height='8' fill='%23000000' opacity='0.04'/%3E%3Crect x='8' y='8' width='8' height='8' fill='%23000000' opacity='0.04'/%3E%3C/svg%3E"); */
+ }
+
+  /*
+   * This is the correct place for your heading styles.
+   * It is outside the :root block but still inside the dark mode media query.
+   */
+  h1, h2, h3 {
+    color: var(--theme-color-heading-text);
+  }
 }
