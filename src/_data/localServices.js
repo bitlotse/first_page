@@ -109,6 +109,8 @@ module.exports = {
       priceCurrency: "EUR"
     },
 
+
+    /*
     // --- Standort: Siegsdorf (Alle Dienste) ---
     {
       service: "Haarschnitt Damen",
@@ -423,5 +425,7 @@ module.exports = {
       price: "20.00",
       priceCurrency: "EUR"
     }
+
+    */
   ]
 };
