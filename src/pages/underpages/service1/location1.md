@@ -2,7 +2,7 @@
 permalink: /services/haarschnitt-damen/traunstein/
 layout: layouts/pages/underpages/services-detail.njk
 title: Haarschnitt Damen in Traunstein
-description: Professioneller Damenhaarschnitt in Traunstein. Individuelle Beratung, moderne Schnitttechniken und perfekte Formgebung für Ihren persönlichen Stil.
+description: Professioneller Damenhaarschnitt in Traunstein. Individuelle Beratung, moderne Schnitttechniken und perfekte Formgebung für deinen persönlichen Stil.
 cardImage: card1.jpg
 cardImageAlt: Professioneller Damenhaarschnitt in Traunstein
 serviceName: Haarschnitt Damen
@@ -14,15 +14,15 @@ areaServed:
 
 ## Professioneller Damenhaarschnitt in Traunstein
 
-In der Haarmanufaktur Suszan in Traunstein bieten wir Ihnen erstklassige Damenhaarschnitte – präzise, individuell und stilbewusst. Unser erfahrenes Team kennt die neuesten Trends und Techniken, um Ihren Look zu perfektionieren.
+In der Haarmanufaktur Suszan in Traunstein bieten wir dir erstklassige Damenhaarschnitte – präzise, individuell und stilbewusst. Unser erfahrenes Team kennt die neuesten Trends und Techniken, um deinen Look zu perfektionieren.
 
 ### Warum unser Damenhaarschnitt in Traunstein?
 
 **Individuelle Beratung**
-Jeder Kunde ist einzigartig – deshalb nehmen wir uns Zeit für eine persönliche Beratung. Gemeinsam entwickeln wir den perfekten Schnitt, der zu Ihrem Gesichtstyp, Haartextur und Lebensstil passt.
+Jeder Kunde ist einzigartig – deshalb nehmen wir uns Zeit für eine persönliche Beratung. Gemeinsam entwickeln wir den perfekten Schnitt, der zu deinem Gesichtstyp, Haartextur und Lebensstil passt.
 
 **Moderne Schnitttechniken**
-Von klassischen Bob-Schnitten bis zu trendigen Pixie-Cuts – wir beherrschen alle aktuellen Schnitttechniken. Unser Team bildet sich kontinuierlich weiter, um Ihnen die neuesten Trends zu bieten.
+Von klassischen Bob-Schnitten bis zu trendigen Pixie-Cuts – wir beherrschen alle aktuellen Schnitttechniken. Unser Team bildet sich kontinuierlich weiter, um dir die neuesten Trends zu bieten.
 
 **Perfekte Formgebung**
 Mit präzisen Schnitttechniken und hochwertigen Werkzeugen sorgen wir für eine perfekte Formgebung, die auch nach dem Waschen lange hält.
@@ -47,9 +47,9 @@ Mit präzisen Schnitttechniken und hochwertigen Werkzeugen sorgen wir für eine 
 - Razor Cutting
 - Scissor Over Comb
 
-### Ablauf Ihres Damenhaarschnitts in Traunstein
+### Ablauf deines Damenhaarschnitts in Traunstein
 
-1. **Beratungsgespräch**: Wir analysieren Ihr Haar und besprechen Ihre Wünsche
+1. **Beratungsgespräch**: Wir analysieren dein Haar und besprechen deine Wünsche
 2. **Haarwäsche**: Professionelle Reinigung mit hochwertigen Produkten
 3. **Schnitt**: Präzise Ausführung mit modernsten Techniken
 4. **Styling**: Perfekte Formgebung und Finish
@@ -62,11 +62,11 @@ Mit präzisen Schnitttechniken und hochwertigen Werkzeugen sorgen wir für eine 
 - **Langhaarschnitt**: ab 45€
 - **Trockenschnitt**: ab 30€
 
-*Die genauen Preise erfahren Sie bei der Beratung vor Ort.*
+*Die genauen Preise erfährst du bei der Beratung vor Ort.*
 
 ### Terminvereinbarung
 
-Vereinbaren Sie jetzt Ihren Termin für einen professionellen Damenhaarschnitt in Traunstein:
+Vereinbare jetzt deinen Termin für einen professionellen Damenhaarschnitt in Traunstein:
 
 - **Telefon**: 0861/90951242
 - **E-Mail**: info@haarmanufaktur-suszan.de
@@ -82,4 +82,4 @@ Maximilianstraße 35
 Dienstag - Freitag: 09:00 - 18:00 Uhr  
 Samstag: 08:00 - 13:00 Uhr
 
-Besuchen Sie uns in Traunstein – wir freuen uns darauf, Ihnen den perfekten Damenhaarschnitt zu verleihen!
+Besuche uns in Traunstein – wir freuen uns darauf, dir den perfekten Damenhaarschnitt zu verleihen!

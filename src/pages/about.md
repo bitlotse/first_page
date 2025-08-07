@@ -1,13 +1,13 @@
 ---
 layout: layouts/pages/about.njk
 title: "Über uns"
-description: "Erfahren Sie mehr über die Haarmanufaktur Suszan in Traunstein. Über 15 Jahre Erfahrung in professioneller Haarpflege und individueller Beratung."
+description: "Erfahren Sie mehr über uns, die Haarmanufaktur Suszan in Traunstein. Über 5 Jahre Erfahrung in professioneller Haarpflege und individueller Beratung."
 permalink: /about/
 about:
   box1:
-    heading: "Ihr Friseur in Traunstein"
+    heading: "Dein Friseur in Traunstein"
     text: |
-      Unser erfahrenes Team versteht, dass jeder Kunde einzigartig ist. Deshalb nehmen wir uns Zeit für eine persönliche Beratung und entwickeln gemeinsam mit Ihnen den perfekten Look, der zu Ihrem Stil und Ihrer Persönlichkeit passt.
+      Unser erfahrenes Team versteht, dass jeder Kunde einzigartig ist. Deshalb nehmen wir uns Zeit für eine persönliche Beratung und entwickeln gemeinsam mit dir den perfekten Look, der zu deinem Stil und deiner Persönlichkeit passt.
   box2:
     heading: "Was uns besonders macht"
     text: |
@@ -17,13 +17,13 @@ about:
       • Entspannte Atmosphäre und professioneller Service
       • Faire Preise und transparente Abrechnung
       
-      Wir verwenden nur die besten Produkte und arbeiten mit den neuesten Trends und Techniken. Unser Ziel ist es, dass Sie sich bei uns wohlfühlen und mit einem strahlenden Lächeln unseren Salon verlassen.
+      Wir verwenden nur die besten Produkte und arbeiten mit den neuesten Trends und Techniken. Unser Ziel ist es, dass du dich bei uns wohlfühlst und mit einem strahlenden Lächeln unseren Salon verlässt.
   box3:
-    heading: "Besuchen Sie uns in Traunstein"
+    heading: "Besuche uns in Traunstein"
     text: |
-      Wir freuen uns darauf, Sie in unserem Salon in der Maximilianstraße 35 in Traunstein begrüßen zu dürfen. Vereinbaren Sie jetzt Ihren Termin und lassen Sie sich von unserem erfahrenen Team verwöhnen.
+      Wir freuen uns darauf, dich in unserem Salon in der Maximilianstraße 35 in Traunstein begrüßen zu dürfen. Vereinbare jetzt deinen Termin und lass dich von unserem erfahrenen Team verwöhnen.
       
-      Für Fragen stehen wir Ihnen gerne telefonisch unter 0861/90951242 oder per E-Mail zur Verfügung.
+      Für Fragen stehen wir dir gerne telefonisch unter 0861/90951242 oder per E-Mail zur Verfügung.
 ---
 
 {#

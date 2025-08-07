@@ -15,12 +15,12 @@ areaServed:
 
 ## Professioneller Herrenhaarschnitt in Traunstein
 
-In der Haarmanufaktur Suszan in Traunstein bieten wir Ihnen erstklassige Herrenhaarschnitte – von klassischen Schnitten bis zu modernen Styles. Unser erfahrenes Team beherrscht alle Techniken für den perfekten Herrenlook.
+In der Haarmanufaktur Suszan in Traunstein bieten wir dir erstklassige Herrenhaarschnitte – von klassischen Schnitten bis zu modernen Styles. Unser erfahrenes Team beherrscht alle Techniken für den perfekten Herrenlook.
 
 ### Warum unser Herrenhaarschnitt in Traunstein?
 
 **Klassische und moderne Schnitte**
-Von traditionellen Herrenschnitten bis zu trendigen Styles – wir beherrschen alle Techniken. Unser Team bildet sich kontinuierlich weiter, um Ihnen die neuesten Trends zu bieten.
+Von traditionellen Herrenschnitten bis zu trendigen Styles – wir beherrschen alle Techniken. Unser Team bildet sich kontinuierlich weiter, um dir die neuesten Trends zu bieten.
 
 **Präzise Schnitttechniken**
 Mit hochwertigen Werkzeugen und präzisen Techniken sorgen wir für einen perfekten Schnitt, der auch nach dem Waschen lange hält.
@@ -48,9 +48,9 @@ Zu jedem Herrenhaarschnitt gehört bei uns auch die professionelle Bartpflege un
 - Klassische Rasur
 - Styling
 
-### Ablauf Ihres Herrenhaarschnitts in Traunstein
+### Ablauf deines Herrenhaarschnitts in Traunstein
 
-1. **Beratungsgespräch**: Wir besprechen Ihren gewünschten Look und analysieren Ihr Haar
+1. **Beratungsgespräch**: Wir besprechen deinen gewünschten Look und analysieren dein Haar
 2. **Haarwäsche**: Professionelle Reinigung mit hochwertigen Produkten
 3. **Schnitt**: Präzise Ausführung mit modernsten Techniken
 4. **Bartpflege**: Professionelle Bartpflege und -formung
@@ -64,11 +64,11 @@ Zu jedem Herrenhaarschnitt gehört bei uns auch die professionelle Bartpflege un
 - **Trockenschnitt**: ab 20€
 - **Bartpflege**: ab 15€
 
-*Die genauen Preise erfahren Sie bei der Beratung vor Ort.*
+*Die genauen Preise erfährst du bei der Beratung vor Ort.*
 
 ### Terminvereinbarung
 
-Vereinbaren Sie jetzt Ihren Termin für einen professionellen Herrenhaarschnitt in Traunstein:
+Vereinbare jetzt deinen Termin für einen professionellen Herrenhaarschnitt in Traunstein:
 
 - **Telefon**: 0861/90951242
 - **E-Mail**: info@haarmanufaktur-suszan.de
@@ -84,4 +84,4 @@ Maximilianstraße 35
 Dienstag - Freitag: 09:00 - 18:00 Uhr  
 Samstag: 08:00 - 13:00 Uhr
 
-Besuchen Sie uns in Traunstein – wir freuen uns darauf, Ihnen den perfekten Herrenhaarschnitt zu verleihen!
+Besuche uns in Traunstein – wir freuen uns darauf, dir den perfekten Herrenhaarschnitt zu verleihen!

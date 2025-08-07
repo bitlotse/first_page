@@ -1,0 +1,112 @@
+# PowerShell script to update formal address (Sie) to informal address (Du) in all service location files
+
+$serviceDirs = @("service1", "service2", "service3", "service4", "service5", "service6", "service7", "service8")
+$locationFiles = @("location1.md", "location2.md", "location3.md", "location4.md")
+
+foreach ($serviceDir in $serviceDirs) {
+    foreach ($locationFile in $locationFiles) {
+        $filePath = "src/pages/underpages/$serviceDir/$locationFile"
+        
+        if (Test-Path $filePath) {
+            Write-Host "Processing: $filePath"
+            
+            # Read the file content
+            $content = Get-Content $filePath -Raw -Encoding UTF8
+            
+            # Replace formal address with informal address
+            $content = $content -replace "für Ihren", "für deinen"
+            $content = $content -replace "für Ihre", "für deine"
+            $content = $content -replace "Ihren", "deinen"
+            $content = $content -replace "Ihre", "deine"
+            $content = $content -replace "Ihrem", "deinem"
+            $content = $content -replace "Ihrer", "deiner"
+            $content = $content -replace "Ihres", "deines"
+            $content = $content -replace "Ihnen", "dir"
+            $content = $content -replace "Sie", "du"
+            $content = $content -replace "Ihr", "dein"
+            $content = $content -replace "Ihnen", "dir"
+            $content = $content -replace "Vereinbaren Sie", "Vereinbare"
+            $content = $content -replace "Besuchen Sie", "Besuche"
+            $content = $content -replace "erfahren Sie", "erfährst du"
+            $content = $content -replace "Ablauf Ihres", "Ablauf deines"
+            $content = $content -replace "Ihren gewünschten", "deinen gewünschten"
+            $content = $content -replace "Ihr Haar", "dein Haar"
+            $content = $content -replace "Ihre Wünsche", "deine Wünsche"
+            $content = $content -replace "Ihrem Gesichtstyp", "deinem Gesichtstyp"
+            $content = $content -replace "Ihrem Stil", "deinem Stil"
+            $content = $content -replace "Ihrer Persönlichkeit", "deiner Persönlichkeit"
+            $content = $content -replace "Ihren Look", "deinen Look"
+            $content = $content -replace "Ihren perfekten", "deinen perfekten"
+            $content = $content -replace "Ihren Termin", "deinen Termin"
+            $content = $content -replace "Ihren persönlichen", "deinen persönlichen"
+            $content = $content -replace "Ihren perfekten Auftritt", "deinen perfekten Auftritt"
+            $content = $content -replace "Ihren perfekten Look", "deinen perfekten Look"
+            $content = $content -replace "Ihren perfekten Damenhaarschnitt", "deinen perfekten Damenhaarschnitt"
+            $content = $content -replace "Ihren perfekten Herrenhaarschnitt", "deinen perfekten Herrenhaarschnitt"
+            $content = $content -replace "Ihren perfekten Look zu verleihen", "deinen perfekten Look zu verleihen"
+            $content = $content -replace "Ihnen den perfekten", "dir den perfekten"
+            $content = $content -replace "Ihnen zu verleihen", "dir zu verleihen"
+            $content = $content -replace "für Sie da", "für dich da"
+            $content = $content -replace "stehen wir Ihnen", "stehen wir dir"
+            $content = $content -replace "für Sie", "für dich"
+            $content = $content -replace "mit Ihnen", "mit dir"
+            $content = $content -replace "zu Ihnen", "zu dir"
+            $content = $content -replace "bei Ihnen", "bei dir"
+            $content = $content -replace "von Ihnen", "von dir"
+            $content = $content -replace "auf Sie", "auf dich"
+            $content = $content -replace "an Sie", "an dich"
+            $content = $content -replace "um Sie", "um dich"
+            $content = $content -replace "dass Sie", "dass du"
+            $content = $content -replace "damit Sie", "damit du"
+            $content = $content -replace "wenn Sie", "wenn du"
+            $content = $content -replace "ob Sie", "ob du"
+            $content = $content -replace "wie Sie", "wie du"
+            $content = $content -replace "wo Sie", "wo du"
+            $content = $content -replace "wann Sie", "wann du"
+            $content = $content -replace "warum Sie", "warum du"
+            $content = $content -replace "weshalb Sie", "weshalb du"
+            $content = $content -replace "weswegen Sie", "weswegen du"
+            $content = $content -replace "während Sie", "während du"
+            $content = $content -replace "bevor Sie", "bevor du"
+            $content = $content -replace "nachdem Sie", "nachdem du"
+            $content = $content -replace "seit Sie", "seit du"
+            $content = $content -replace "bis Sie", "bis du"
+            $content = $content -replace "ohne Sie", "ohne dich"
+            $content = $content -replace "gegen Sie", "gegen dich"
+            $content = $content -replace "für Sie", "für dich"
+            $content = $content -replace "über Sie", "über dich"
+            $content = $content -replace "unter Sie", "unter dich"
+            $content = $content -replace "hinter Sie", "hinter dich"
+            $content = $content -replace "vor Sie", "vor dich"
+            $content = $content -replace "neben Sie", "neben dich"
+            $content = $content -replace "zwischen Sie", "zwischen dich"
+            $content = $content -replace "innerhalb Sie", "innerhalb dich"
+            $content = $content -replace "außerhalb Sie", "außerhalb dich"
+            $content = $content -replace "trotz Sie", "trotz dich"
+            $content = $content -replace "wegen Sie", "wegen dich"
+            $content = $content -replace "dank Sie", "dank dich"
+            $content = $content -replace "entlang Sie", "entlang dich"
+            $content = $content -replace "entgegen Sie", "entgegen dich"
+            $content = $content -replace "gemäß Sie", "gemäß dich"
+            $content = $content -replace "laut Sie", "laut dich"
+            $content = $content -replace "zufolge Sie", "zufolge dich"
+            $content = $content -replace "entsprechend Sie", "entsprechend dich"
+            $content = $content -replace "entsprechend Sie", "entsprechend dich"
+            $content = $content -replace "Sie können", "du kannst"
+            $content = $content -replace "Sie haben", "du hast"
+            $content = $content -replace "Sie sind", "du bist"
+            $content = $content -replace "Sie werden", "du wirst"
+            $content = $content -replace "Sie möchten", "du möchtest"
+            $content = $content -replace "Sie wollen", "du willst"
+            $content = $content -replace "Sie müssen", "du musst"
+            $content = $content -replace "Sie sollen", "du sollst"
+            $content = $content -replace "Sie dürfen", "du darfst"
+            
+            # Write the updated content back to the file
+            Set-Content $filePath $content -Encoding UTF8
+            Write-Host "Updated: $filePath"
+        }
+    }
+}
+
+Write-Host "All files processed successfully!" 
