@@ -2,7 +2,7 @@
   <div class="footer-container">
     <!-- Contact Information -->
     <div class="footer-contact">
-      <h3><a href="{{ '/' | url }}">Haarmanufaktur Suszan</a></h3>
+      <h3><a href="{{ '/' | url }}">DACOSTA Gebäude- & Industrieservice</a></h3>
       <p>Telefon: <a href="tel:{{ site.contact.phoneLink }}">{{ site.contact.phone }}</a></p>
       <p>E-Mail: <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
       {# Ensure the address is linked to Google Maps and displays the full address string #}
@@ -14,7 +14,7 @@
 
     <!-- Social Media -->
     <div class="footer-social">
-      <h3>Folge uns</h3>
+      <h3>Folgen Sie uns</h3>
       <ul>
         {% for social_link in site.social %}
           {% if social_link.url and social_link.url != "#" %} {# Only render if URL is valid #}
@@ -46,6 +46,6 @@
   <!-- Copyright Notice -->
   <div class="footer-bottom">
     <p>Erstellt von <a href="https://mycompany.de" target="_blank" rel="noopener noreferrer">Company Name</a></p>
-    <p>&copy; {{ site.year }} Haarmanufaktur Suszan. Alle Rechte vorbehalten.</p>
+    <p>&copy; {{ site.year }} DACOSTA Gebäude- & Industrieservice GmbH. Alle Rechte vorbehalten.</p>
   </div>
 </footer>

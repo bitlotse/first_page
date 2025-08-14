@@ -1,36 +1,36 @@
 ---
 layout: layouts/pages/services.njk
-title: "Friseur-Dienstleistungen in Traunstein"
+title: "Gebäude- & Industrieservice in Bremen"
 permalink: /services/
-description: "Professionelle Friseur-Dienstleistungen in Traunstein. Haarschnitt, Färben, Styling, Bartpflege und mehr bei der Haarmanufaktur Suszan."
-intro_paragraph: "Entdecke unser umfassendes Angebot an professionellen Friseur-Dienstleistungen in Traunstein. Von klassischen Haarschnitten bis zu modernen Färbetechniken – wir bieten dir alles, was du für deinen perfekten Look benötigst."
+description: "Professionelle Gebäudereinigung, Hausmeisterdienste und Industrieservice in Bremen. DACOSTA – Ihr zuverlässiger Partner für alle Reinigungs- und Wartungsaufgaben."
+intro_paragraph: "Entdecken Sie unser umfassendes Angebot an professionellen Gebäude- und Industrieservices in Bremen. Von Gebäudereinigung bis Winterdienst – wir bieten Ihnen alles, was Sie für saubere und gepflegte Immobilien benötigen."
 bodyClass: service-page
 ---
 
-# Unsere Friseur-Dienstleistungen in Traunstein
+# Unsere Gebäude- & Industrieservices in Bremen
 
-Entdecke unser umfassendes Angebot an professionellen Friseur-Dienstleistungen bei der Haarmanufaktur Suszan in Traunstein.
+Entdecken Sie unser umfassendes Angebot an professionellen Gebäude- und Industrieservices bei DACOSTA in Bremen-Vegesack.
     
-## Haarschnitt Damen
-Professioneller Damenhaarschnitt mit individueller Beratung. Moderne Schnitttechniken und perfekte Formgebung für deinen persönlichen Stil.
+## Gebäudereinigung
+Professionelle Gebäudereinigung für Büros, Treppenhäuser und Gewerberäume. Regelmäßige Reinigung, Grundreinigung und spezielle Reinigungsmaßnahmen für saubere und hygienische Räumlichkeiten.
 
-## Haarschnitt Herren
-Klassische und moderne Herrenhaarschnitte mit präzisen Schnitttechniken. Inklusive Bartpflege und Styling für den perfekten Look.
+## Hausmeisterdienste
+Zuverlässige Hausmeisterdienste mit Wartung, Reparaturen und technischer Betreuung. Von kleinen Reparaturen bis zur kompletten Immobilienverwaltung – wir sind Ihr Partner für alle hausmeisterlichen Aufgaben.
 
-## Haare färben
-Professionelle Haarfärbung mit natürlichen Farben, Highlights, Balayage und Strähnen. Hochwertige Produkte für brillante Ergebnisse.
+## Winterdienst
+Professioneller Winterdienst mit Schneeräumung, Streudiensten und Eisbekämpfung. Sichere Wege und Zufahrten auch bei widrigen Witterungsbedingungen durch unseren zuverlässigen Winterdienst.
 
-## Bartpflege
-Professionelle Bartpflege und Bartformung. Klassische Rasur, Barttrimmen und Styling für den perfekten Look.
+## Industrieservice
+Spezialisierter Industrieservice für Produktionshallen, Maschinenreinigung und technische Reinigung. Wir verstehen die besonderen Anforderungen von Industriebetrieben und bieten maßgeschneiderte Lösungen.
 
-## Haarwäsche & Styling
-Entspannende Haarwäsche und professionelles Styling. Pflegende Behandlungen und perfekte Frisuren für jeden Anlass.
+## Grünanlagenpflege
+Professionelle Grünanlagenpflege mit Rasenmähen, Hecken schneiden und Gartenpflege. Gepflegte Außenanlagen durch unseren erfahrenen Garten- und Landschaftsservice.
 
-## Haarverlängerung
-Professionelle Haarverlängerungen mit natürlichen Extensions und Clip-in Haarverlängerungen für mehr Volumen und Fülle.
+## Glasreinigung
+Professionelle Glasreinigung für Fenster, Fassaden und Glasdächer. Kristallklare Sicht durch unsere spezialisierte Glasreinigung mit modernster Technik.
 
-## Hochsteckfrisuren
-Elegante Hochsteckfrisuren für Hochzeiten, Bälle und besondere Anlässe. Individuelle Kreationen für deinen perfekten Auftritt.
+## Teppichreinigung
+Professionelle Teppichreinigung mit Tiefenreinigung und Fleckentfernung. Saubere und hygienische Böden durch unsere spezielle Teppichpflege.
 
-## Haarkur & Behandlung
-Intensive Haarkuren und Behandlungen für Reparatur, Glanz, Volumen und Pflege. Für gesundes, schönes Haar.
+## Desinfektion & Hygiene
+Professionelle Desinfektion und Hygienemaßnahmen für höchste Hygienestandards. Virenschutz, Bakterienbekämpfung und hygienische Reinigung für besonders sensible Bereiche.

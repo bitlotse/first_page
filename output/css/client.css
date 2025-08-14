@@ -1,27 +1,27 @@
 /* Client-specific Theme Overrides */
 :root {
   /* --- CORE THEME COLORS - LIGHT MODE --- */
-  --theme-color-primary: #C2B5A5;   /* (header, footer, buttons, service-card banner) */
+  --theme-color-primary: #8C89A7;   /* (header, footer, buttons, service-card banner) */
   --theme-color-secondary: #735664; /* (main button when hover, about and faq boxes) */
-  --theme-color-accent: #F4F0EF;    /* (nav when hover, rules, faq-questions) */
+  --theme-color-accent: #597081;    /* (nav when hover, rules, faq-questions) */
   --theme-color-neutral: #E4FF1A;   /* (text in testimonial, tel+mail+whatsapp + rules in contact box, I think it's not used anymore) */
-  --theme-color-surface: #4C3842;   /* (for page backgrounds) */
+  --theme-color-surface: #E8DFE4;   /* (for page backgrounds) */
 
   /* --- TEXT COLORS ON CORE BACKGROUNDS - LIGHT MODE --- */
-  --theme-text-on-primary: #FFFFFF;
+  --theme-text-on-primary: #2E2127;
   --theme-text-on-secondary: #F4F0EF; /*Text on main button when hover */
   --theme-text-on-accent: #2A2129;   /* Dark mauve text on light beige accent */
-  --theme-text-on-surface: #F4F0EF; /* Text on main page background */
+  --theme-text-on-surface: #2E2127; /* Text on main page background */
 
   /* Heading Text Color */
- --theme-color-heading-text: #F4F0EF; /* Set your desired color for h1, h2, h3 here (e.g., your neutral color) */
+ --theme-color-heading-text: #2E2127; /* Set your desired color for h1, h2, h3 here (e.g., your neutral color) */
 
   /* Define RGB versions of colors if you use them in rgba() for gradients etc. */
   --theme-color-primary-rgb: 108,78,72;
   --theme-color-secondary-rgb: 147,163,146;
   --theme-color-accent-rgb: 87,167,115;
   --theme-color-neutral-rgb: 231,218,211;
-  --theme-color-surface-rgb: 53,49,60;
+  --theme-color-surface-rgb: 232, 223, 228; /* e.g. background hero-content */
 
   /* --- SHADOWS - LIGHT MODE --- */
   --theme-shadow-sm: 0 1px 3px rgba(0,0,0,0.07);

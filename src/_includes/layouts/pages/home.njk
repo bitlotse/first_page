@@ -1,30 +1,23 @@
-{% extends "layouts/default.njk" %} {# Inherit the default layout #}
+{% extends "layouts/default-home.njk" %}
 
 {% block css %}
-  {{ super() }} {# This will output the CSS links from default.njk #}
+  {{ super() }}
   <link rel="stylesheet" href="/css/home.css">
 {% endblock %}
 
 {% block content %}
-  <!-- Hero Section -->
   {% include "sections/hero-home.njk" %}
 
-  <!-- Intro Section -->
-  {% include "sections/intro-home.njk" %}
+  <section id="intro-section" class="intro-with-header">
+    {% include "partials/header.njk" %}
+    <div class="header-placeholder"></div>
 
-  <!-- Services Section -->
+    {% include "sections/intro-home.njk" %}
+  </section>
+
   {% include "sections/services-home.njk" %}
-
-  <!-- About Us Section -->
   {% include "sections/about-home.njk" %}
-
-  <!-- Testimonials Section -->
   {% include "sections/testimonials-home.njk" %}
-
-  <!-- Call-to-Action Section -->
   {% include "sections/cta-home.njk" %}
-
-    <!-- Contact Section -->
   {% include "sections/contact-home.njk" %}
-
 {% endblock %}

@@ -1,88 +1,89 @@
 ---
-permalink: /services/haarschnitt-damen/siegsdorf/
+permalink: /services/gebaeudereinigung/bremen-blumenthal/
 layout: layouts/pages/underpages/services-detail.njk
-title: Haarschnitt Damen in Siegsdorf
-description: Professioneller Damenhaarschnitt für Kunden aus Siegsdorf in Traunstein. Gute Erreichbarkeit, individuelle Beratung und moderne Schnitttechniken.
+title: Gebäudereinigung in Bremen-Blumenthal - DACOSTA Gebäude- & Industrieservice
+description: Professionelle Gebäudereinigung für Kunden aus Bremen-Blumenthal. Büroreinigung, Treppenhausreinigung und Grundreinigung. Jetzt anfragen!
 cardImage: card1.jpg
-cardImageAlt: Professioneller Damenhaarschnitt für Kunden aus Siegsdorf
-serviceName: Haarschnitt Damen
-serviceType: Haarschnitt
+cardImageAlt: Professionelle Gebäudereinigung für Kunden aus Bremen-Blumenthal
+serviceName: Gebäudereinigung
+serviceType: Reinigung
 areaServed:
   type: City
-  name: Siegsdorf
+  name: Bremen-Blumenthal
 ---
 
-## Damenhaarschnitt für Siegsdorf - Professioneller Friseur in Traunstein
+## Gebäudereinigung für Bremen-Blumenthal - Professioneller Service von DACOSTA
 
-Viele Kunden aus Siegsdorf schätzen unsere professionellen Damenhaarschnitte in der Haarmanufaktur Suszan in Traunstein. Mit nur wenigen Minuten Fahrtzeit von Siegsdorf nach Traunstein erreichen Sie unseren Salon bequem und schnell.
+Viele Kunden aus Bremen-Blumenthal schätzen unsere professionelle Gebäudereinigung. Mit nur wenigen Minuten Fahrtzeit von Bremen-Blumenthal nach Bremen-Vegesack erreichen Sie unser Team bequem und schnell.
 
-### Warum Kunden aus Siegsdorf zu uns nach Traunstein kommen?
+### Warum Kunden aus Bremen-Blumenthal DACOSTA wählen?
 
-**Gute Erreichbarkeit**
-Von Siegsdorf aus erreichen Sie unseren Salon in Traunstein in nur wenigen Minuten. Parkplätze sind direkt vor dem Salon verfügbar.
+**Lokale Nähe**
+Von Bremen-Blumenthal aus erreichen Sie unser Team in Bremen-Vegesack in nur wenigen Minuten. Wir sind schnell vor Ort und kennen die lokalen Gegebenheiten.
 
 **Professionelle Expertise**
-Unser erfahrenes Team in Traunstein bietet Ihnen erstklassige Damenhaarschnitte mit den neuesten Trends und Techniken.
+Unser erfahrenes Team bietet Ihnen erstklassige Gebäudereinigung mit modernster Technik und umweltfreundlichen Produkten.
 
-**Persönliche Betreuung**
-Jeder Kunde aus Siegsdorf erhält bei uns in Traunstein eine individuelle Beratung und den perfekten Schnitt für seinen persönlichen Stil.
+**Maßgeschneiderte Lösungen**
+Jeder Kunde aus Bremen-Blumenthal erhält bei uns eine individuelle Beratung und maßgeschneiderte Reinigungslösungen.
 
-### Unsere Damenhaarschnitt-Services für Siegsdorf
+### Unsere Gebäudereinigung-Services für Bremen-Blumenthal
 
-**Klassische Schnitte**
-- Bob und Long Bob
-- Stufenhaarschnitt
-- Pixie Cut
-- Kurzhaarschnitt
+**Büroreinigung**
+- Schreibtischreinigung und Desinfektion
+- Teppich- und Polsterreinigung
+- Küchen- und Sanitärreinigung
+- Fenster- und Glasreinigung
 
-**Moderne Trends**
-- Textured Cuts
-- Shag Cut
-- Wolf Cut
-- Butterfly Cut
+**Treppenhausreinigung**
+- Treppenstufen und Geländer
+- Flur- und Eingangsbereiche
+- Briefkastenanlagen
+- Aufzugreinigung
 
-**Spezielle Techniken**
-- Dry Cutting
-- Wet Cutting
-- Razor Cutting
-- Scissor Over Comb
+**Grundreinigung**
+- Tiefenreinigung aller Oberflächen
+- Entfernung hartnäckiger Verschmutzungen
+- Desinfektion und Hygienemaßnahmen
+- Spezialreinigung für sensible Bereiche
 
-### Ablauf Ihres Damenhaarschnitts
+### Ablauf der Gebäudereinigung
 
-1. **Beratungsgespräch**: Wir analysieren Ihr Haar und besprechen Ihre Wünsche
-2. **Haarwäsche**: Professionelle Reinigung mit hochwertigen Produkten
-3. **Schnitt**: Präzise Ausführung mit modernsten Techniken
-4. **Styling**: Perfekte Formgebung und Finish
-5. **Pflegeberatung**: Tipps für die optimale Haarpflege zu Hause
+1. **Beratungsgespräch**: Wir analysieren Ihre Räumlichkeiten und besprechen Ihre Anforderungen
+2. **Angebotserstellung**: Transparente Preisgestaltung ohne versteckte Kosten
+3. **Reinigungsplan**: Individueller Reinigungsplan mit festen Terminen
+4. **Ausführung**: Professionelle Reinigung durch unser qualifiziertes Team
+5. **Qualitätskontrolle**: Regelmäßige Überprüfung der Reinigungsqualität
 
-### Preise für Damenhaarschnitt
+### Preise für Gebäudereinigung
 
-- **Kurzhaarschnitt**: ab 35€
-- **Mittelhaarschnitt**: ab 40€
-- **Langhaarschnitt**: ab 45€
-- **Trockenschnitt**: ab 30€
+- **Büroreinigung**: ab 15€/m²
+- **Treppenhausreinigung**: ab 25€/Durchgang
+- **Grundreinigung**: ab 20€/m²
+- **Fensterreinigung**: ab 20€/m²
 
-*Die genauen Preise erfahren Sie bei der Beratung vor Ort.*
+*Alle Preise sind verhandelbar und werden individuell kalkuliert.*
 
 ### Terminvereinbarung
 
-Vereinbaren Sie jetzt Ihren Termin für einen professionellen Damenhaarschnitt:
+Vereinbaren Sie jetzt ein unverbindliches Beratungsgespräch für Ihre Gebäudereinigung:
 
-- **Telefon**: 0861/90951242
-- **E-Mail**: info@haarmanufaktur-suszan.de
-- **WhatsApp**: 0861/90951242
+- **Telefon**: 0421/12345678
+- **E-Mail**: info@dacosta-bremen.de
+- **Kontaktformular**: [Jetzt anfragen](/contact/)
 
-### Unser Standort in Traunstein
+### Unser Standort in Bremen-Vegesack
 
-Haarmanufaktur Suszan  
-Maximilianstraße 35  
-83278 Traunstein
+DACOSTA Gebäude- & Industrieservice GmbH  
+Vegesacker Straße 123  
+28757 Bremen
 
 **Öffnungszeiten**:  
-Dienstag - Freitag: 09:00 - 18:00 Uhr  
-Samstag: 08:00 - 13:00 Uhr
+Montag - Freitag: 07:00 - 17:00 Uhr  
+Samstag: 08:00 - 12:00 Uhr  
+Notdienst: 24/7 verfügbar
 
-**Anfahrt von Siegsdorf**:  
-Von Siegsdorf erreichen Sie uns in Traunstein bequem mit dem Auto oder öffentlichen Verkehrsmitteln.
+**Anfahrt von Bremen-Blumenthal**:  
+Von Bremen-Blumenthal erreichen Sie uns in Bremen-Vegesack bequem mit dem Auto oder öffentlichen Verkehrsmitteln.
 
-Besuchen Sie uns in Traunstein – wir freuen uns darauf, Ihnen den perfekten Damenhaarschnitt zu verleihen!
+Vertrauen Sie auf DACOSTA für professionelle Gebäudereinigung – wir sorgen für saubere und hygienische Räumlichkeiten!

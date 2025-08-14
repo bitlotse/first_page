@@ -1,7 +1,7 @@
 ---
 layout: layouts/pages/home.njk
-title: Haarmanufaktur Suszan - Professioneller Friseur in Traunstein
-description: Dein Friseursalon in Traunstein. Haarschnitt, Färben, Styling und mehr. Jetzt Termin vereinbaren bei der Haarmanufaktur Suszan!
+title: DACOSTA – Ihr Gebäude- & Industrieservice in Bremen
+description: Professionelle Gebäudereinigung, Hausmeisterdienste und Industrieservice in Bremen-Vegesack. Zuverlässig, kompetent und lokal verwurzelt. Jetzt anfragen!
 permalink: /
 eleventyNavigation:
   key: Home

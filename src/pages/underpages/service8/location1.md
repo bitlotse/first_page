@@ -1,86 +1,94 @@
 ---
-permalink: /services/haarkur-behandlung/traunstein/
+permalink: /services/desinfektion-hygiene/bremen/
 layout: layouts/pages/underpages/services-detail.njk
-title: Haarkur & Behandlung in Traunstein
-description: Intensive Haarkuren und Behandlungen in Traunstein. Reparatur, Glanz, Volumen und Pflege für gesundes, schönes Haar.
+title: Desinfektion & Hygiene in Bremen - DACOSTA Gebäude- & Industrieservice
+description: Professionelle Desinfektion und Hygienemaßnahmen in Bremen. Virenschutz, Bakterienbekämpfung und hygienische Reinigung für höchste Standards. Jetzt anfragen!
 cardImage: card8.jpg
-cardImageAlt: Intensive Haarkuren und Behandlungen in Traunstein
-serviceName: Haarkur & Behandlung
-serviceType: Haarkur
+cardImageAlt: Professionelle Desinfektion & Hygiene in Bremen
+serviceName: Desinfektion & Hygiene
+serviceType: Hygiene
 areaServed:
   type: City
-  name: Traunstein
+  name: Bremen
 ---
 
-## Intensive Haarkuren & Behandlungen in Traunstein
+## Professionelle Desinfektion & Hygiene in Bremen
 
-In der Haarmanufaktur Suszan in Traunstein bieten wir Ihnen erstklassige Haarkuren und Behandlungen – von Reparatur bis zu Volumenverstärkung. Unser erfahrenes Team verwöhnt Ihr Haar mit hochwertigen Pflegeprodukten.
+DACOSTA bietet Ihnen umfassende Desinfektion und Hygienemaßnahmen in Bremen – von der Virenbekämpfung bis zur hygienischen Reinigung. Unser erfahrenes Team sorgt für höchste Hygienestandards in sensiblen Bereichen.
 
-### Warum unsere Haarkuren & Behandlungen in Traunstein?
+### Warum DACOSTA Desinfektion & Hygiene in Bremen?
 
-**Hochwertige Produkte**
-Wir verwenden ausschließlich professionelle Pflegeprodukte namhafter Hersteller für optimale Ergebnisse und langanhaltende Wirkung.
+**Höchste Hygienestandards**
+Wir setzen auf zertifizierte Desinfektionsmittel und -verfahren, die den höchsten Hygienestandards entsprechen.
 
-**Professionelle Techniken**
-Von Reparaturbehandlungen bis zu Volumenkuren – unser Team beherrscht alle modernen Pflegetechniken.
+**Virenschutz**
+Unser Team ist spezialisiert auf die Bekämpfung von Viren und Bakterien, besonders in sensiblen Bereichen.
 
-**Individuelle Beratung**
-Jede Haarkur beginnt mit einer persönlichen Analyse Ihres Haars, um die perfekte Behandlung zu finden.
+**Zertifizierte Verfahren**
+Wir verwenden nur zertifizierte Desinfektionsmittel und -verfahren, die nachweislich wirksam sind.
 
-### Unsere Haarkur & Behandlung-Services in Traunstein
+### Unsere Desinfektion & Hygiene-Services in Bremen
 
-**Reparaturbehandlungen**
-- Keratin-Behandlung
-- Protein-Behandlung
-- Reparatur-Maske
-- Glanz-Behandlung
+**Virenbekämpfung**
+- COVID-19 Desinfektion
+- Grippeviren-Bekämpfung
+- Norovirus-Bekämpfung
+- Allgemeine Virenbekämpfung
 
-**Volumenbehandlungen**
-- Volumen-Kur
-- Volumen-Maske
-- Volumen-Spray
-- Volumen-Styling
+**Bakterienbekämpfung**
+- MRSA-Bekämpfung
+- Legionellen-Bekämpfung
+- Salmonellen-Bekämpfung
+- Allgemeine Bakterienbekämpfung
 
-**Spezielle Behandlungen**
-- Feuchtigkeitskur
-- Glanzkur
-- Anti-Schuppen-Behandlung
-- Kopfhaut-Behandlung
+**Hygienische Reinigung**
+- Reinräume und Labore
+- Krankenhäuser und Praxen
+- Lebensmittelbetriebe
+- Schulen und Kindergärten
 
-### Ablauf Ihrer Haarkur & Behandlung in Traunstein
+### Ablauf der Desinfektion & Hygiene in Bremen
 
-1. **Haaranalyse**: Wir analysieren Ihren Haartyp und -zustand
-2. **Haarwäsche**: Professionelle Reinigung mit hochwertigen Produkten
-3. **Behandlung**: Intensive Pflege mit speziellen Produkten
-4. **Einwirkzeit**: Optimale Einwirkzeit für maximale Wirkung
-5. **Nachbehandlung**: Styling und Pflegeberatung
+1. **Analyse**: Wir analysieren Ihre Räumlichkeiten und identifizieren Hygienerisiken
+2. **Konzept**: Erstellung eines maßgeschneiderten Hygienekonzepts
+3. **Desinfektion**: Professionelle Desinfektion mit zertifizierten Mitteln
+4. **Dokumentation**: Detaillierte Protokollierung aller Maßnahmen
+5. **Nachkontrolle**: Überprüfung der Hygienestandards
 
-### Preise für Haarkur & Behandlung in Traunstein
+### Preise für Desinfektion & Hygiene in Bremen
 
-- **Keratin-Behandlung**: ab 80€
-- **Protein-Behandlung**: ab 60€
-- **Volumen-Kur**: ab 70€
-- **Glanz-Behandlung**: ab 50€
-- **Reparatur-Maske**: ab 40€
+- **Virenbekämpfung**: ab 50€/Einsatz
+- **Bakterienbekämpfung**: ab 45€/Einsatz
+- **Hygienische Reinigung**: ab 40€/Stunde
+- **Spezialdesinfektion**: Individuelle Kalkulation
 
-*Die genauen Preise erfahren Sie bei der Beratung vor Ort.*
+*Alle Preise sind verhandelbar und werden individuell kalkuliert.*
+
+### Servicegebiete in Bremen
+
+Wir sind hauptsächlich in Bremen-Vegesack tätig und bedienen auch:
+- Bremen-Blumenthal
+- Bremen-Burglesum
+- Bremen-Grohn
+- Bremen-Schönebeck
 
 ### Terminvereinbarung
 
-Vereinbaren Sie jetzt Ihren Termin für eine intensive Haarkur & Behandlung in Traunstein:
+Vereinbaren Sie jetzt ein unverbindliches Beratungsgespräch für Ihre Desinfektion & Hygiene in Bremen:
 
-- **Telefon**: 0861/90951242
-- **E-Mail**: info@haarmanufaktur-suszan.de
-- **WhatsApp**: 0861/90951242
+- **Telefon**: 0421/12345678
+- **E-Mail**: info@dacosta-bremen.de
+- **Kontaktformular**: [Jetzt anfragen](/contact/)
 
-### Unser Standort in Traunstein
+### Unser Standort in Bremen
 
-Haarmanufaktur Suszan  
-Maximilianstraße 35  
-83278 Traunstein
+DACOSTA Gebäude- & Industrieservice GmbH  
+Vegesacker Straße 123  
+28757 Bremen
 
 **Öffnungszeiten**:  
-Dienstag - Freitag: 09:00 - 18:00 Uhr  
-Samstag: 08:00 - 13:00 Uhr
+Montag - Freitag: 07:00 - 17:00 Uhr  
+Samstag: 08:00 - 12:00 Uhr  
+Notdienst: 24/7 verfügbar
 
-Besuchen Sie uns in Traunstein – wir freuen uns darauf, Ihnen die perfekte Haarkur & Behandlung zu verleihen! 
+Vertrauen Sie auf DACOSTA für professionelle Desinfektion & Hygiene in Bremen – wir sorgen für höchste Hygienestandards! 

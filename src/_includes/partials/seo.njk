@@ -61,8 +61,8 @@
       }
     },
     {
-      // Combine BeautySalon, LocalBusiness, and Organization into one primary entity
-      "@type": ["BeautySalon", "LocalBusiness", "Organization"],
+      // Combine LocalBusiness and Organization into one primary entity for building services
+      "@type": ["LocalBusiness", "Organization"],
       "@id": "{{ site.url | url }}/#localbusiness", // Use a consistent ID
       "name": "{{ site.name }}",
       "image": "{{ site.url | url }}{{ site.default_og_image_path | url }}",

@@ -1,25 +1,25 @@
 ---
 layout: layouts/pages/faq.njk
-title: "FAQ - Häufige Fragen zur Haarmanufaktur Suszan"
+title: "FAQ - Häufige Fragen zu DACOSTA Gebäude- & Industrieservice"
 permalink: /faq/
-description: "Häufige Fragen zur Haarmanufaktur Suszan in Traunstein. Alles über Termine, Preise, Services und mehr."
+description: "Häufige Fragen zu DACOSTA Gebäude- und Industrieservice in Bremen. Alles über Gebäudereinigung, Hausmeisterdienste, Preise und mehr."
 faqs:
-  - question: "Wie kann ich einen Termin bei der Haarmanufaktur Suszan buchen?"
-    answer: "Du kannst telefonisch unter 0861/90951242, per E-Mail an info@haarmanufaktur-suszan.de oder über WhatsApp einen Termin vereinbaren. Wir sind gerne für dich da!"
-  - question: "Was kostet ein Haarschnitt bei euch?"
-    answer: "Die Preise variieren je nach Aufwand und Haarlänge. Ein Damenhaarschnitt kostet ab 35€, ein Herrenhaarschnitt ab 25€. Genaue Preise erfährst du bei der Beratung."
-  - question: "Welche Öffnungszeiten habt ihr?"
-    answer: "Wir sind Dienstag bis Freitag von 09:00 - 18:00 Uhr und Samstag von 08:00 - 13:00 Uhr für dich da. Montag und Sonntag haben wir geschlossen."
-  - question: "Kann ich meinen Termin kurzfristig absagen?"
-    answer: "Ja, bitte sage mindestens 24 Stunden vorher ab, damit wir den Termin an andere Kunden geben können. Bei kurzfristigen Absagen können wir leider nicht immer flexibel reagieren."
-  - question: "Welche Produkte verwendet ihr?"
-    answer: "Wir verwenden ausschließlich hochwertige, professionelle Produkte namhafter Hersteller. Diese sind besonders schonend für dein Haar und garantieren optimale Ergebnisse."
-  - question: "Bietet ihr auch Hochsteckfrisuren für Hochzeiten an?"
-    answer: "Ja, wir sind spezialisiert auf elegante Hochsteckfrisuren für Hochzeiten, Bälle und besondere Anlässe. Vereinbare frühzeitig einen Termin für eine ausführliche Beratung."
-  - question: "Kann ich auch ohne Termin vorbeikommen?"
-    answer: "Wir empfehlen eine Terminvereinbarung, um dir die bestmögliche Betreuung zu garantieren. Bei freien Kapazitäten können wir dich auch spontan bedienen."
-  - question: "Bietet ihr auch Haarfärbungen an?"
-    answer: "Ja, wir bieten professionelle Haarfärbungen, Highlights, Balayage und Strähnen an. Wir verwenden nur hochwertige Produkte für brillante und langanhaltende Ergebnisse."
+  - question: "Wie kann ich DACOSTA für einen Service beauftragen?"
+    answer: "Sie können uns telefonisch unter 0421/12345678, per E-Mail an info@dacosta-bremen.de oder über unser Kontaktformular erreichen. Wir erstellen Ihnen gerne ein unverbindliches Angebot."
+  - question: "Welche Gebiete in Bremen bedienen Sie?"
+    answer: "Wir sind hauptsächlich in Bremen-Vegesack tätig und bedienen auch die umliegenden Stadtteile wie Bremen-Blumenthal, Bremen-Burglesum, Bremen-Grohn und Bremen-Schönebeck."
+  - question: "Welche Öffnungszeiten haben Sie?"
+    answer: "Unser Büro ist Montag bis Freitag von 07:00 - 17:00 Uhr und Samstag von 08:00 - 12:00 Uhr geöffnet. Für Notfälle sind wir auch außerhalb der Geschäftszeiten erreichbar."
+  - question: "Bieten Sie auch Notdienst an?"
+    answer: "Ja, wir bieten 24/7 Notdienst für dringende Reinigungs- und Wartungsaufgaben an. Besonders im Winterdienst sind wir rund um die Uhr für Sie da."
+  - question: "Welche Reinigungsprodukte verwenden Sie?"
+    answer: "Wir verwenden ausschließlich umweltfreundliche und zertifizierte Reinigungsprodukte namhafter Hersteller. Diese sind besonders schonend für Mensch und Umwelt."
+  - question: "Bieten Sie auch Industrieservice für große Betriebe an?"
+    answer: "Ja, wir sind spezialisiert auf Industrieservice und bieten maßgeschneiderte Lösungen für Produktionshallen, Maschinenreinigung und technische Reinigung an."
+  - question: "Wie läuft die Abrechnung ab?"
+    answer: "Wir bieten transparente Preise und erstellen detaillierte Rechnungen. Die Abrechnung erfolgt monatlich oder nach Vereinbarung. Alle Preise sind verhandelbar und maßgeschneidert."
+  - question: "Sind Sie versichert und zertifiziert?"
+    answer: "Ja, wir verfügen über umfassenden Versicherungsschutz und sind nach DIN EN ISO 9001 zertifiziert. Unsere Mitarbeiter sind qualifiziert und regelmäßig geschult."
 ---
 
 {#

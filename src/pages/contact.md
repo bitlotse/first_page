@@ -1,10 +1,10 @@
 ---
 layout: layouts/pages/contact.njk
-title: "Kontakt - Haarmanufaktur Suszan Traunstein"
+title: "Kontakt - DACOSTA Gebäude- & Industrieservice Bremen"
 permalink: /contact/
-description: "Kontaktiere die Haarmanufaktur Suszan in Traunstein. Adresse: Maximilianstraße 35, Telefon: 0861/90951242. Jetzt Termin vereinbaren!"
-intro_paragraph: "Besuche uns in der Maximilianstraße 35 in Traunstein oder kontaktiere uns telefonisch unter 0861/90951242. Unser erfahrenes Team freut sich darauf, dir den perfekten Look zu verleihen."
+description: "Kontaktieren Sie DACOSTA Gebäude- und Industrieservice in Bremen-Vegesack. Adresse: Vegesacker Straße 123, Telefon: 0421/12345678. Jetzt unverbindlich anfragen!"
+intro_paragraph: "Besuchen Sie uns in der Vegesacker Straße 123 in Bremen-Vegesack oder kontaktieren Sie uns telefonisch unter 0421/12345678. Unser erfahrenes Team freut sich darauf, Ihnen maßgeschneiderte Lösungen für Ihre Reinigungs- und Wartungsaufgaben anzubieten."
 cta:
-  text: "Jetzt Termin vereinbaren"
+  text: "Jetzt unverbindlich anfragen"
   url: "/contact/"
 ---

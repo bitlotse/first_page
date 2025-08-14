@@ -1,6 +1,6 @@
 ---
 layout: layouts/pages/legal/impressum.njk
-title: "Impressum - Haarmanufaktur Suszan"
+title: "Impressum - DACOSTA Gebäude- & Industrieservice GmbH"
 permalink: /impressum/
 eleventyNavigation:
   key: Impressum
@@ -10,19 +10,19 @@ eleventyNavigation:
 
 ## Angaben gemäß § 5 TMG
 
-Haarmanufaktur Suszan  
-Maximilianstraße 35  
-83278 Traunstein  
+DACOSTA Gebäude- & Industrieservice GmbH  
+Vegesacker Straße 123  
+28757 Bremen  
 Deutschland
 
 ## Vertreten durch:
 
-Susanne Suszan
+Geschäftsführer: Michael DaCosta
 
 ## Kontakt:
 
-Telefon: 0861/90951242  
-E-Mail: [info@haarmanufaktur-suszan.de](mailto:info@haarmanufaktur-suszan.de)
+Telefon: 0421/12345678  
+E-Mail: [info@dacosta-bremen.de](mailto:info@dacosta-bremen.de)
 
 ## Umsatzsteuer-ID:
 
@@ -31,9 +31,9 @@ DE123456789
 
 ## Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:
 
-Susanne Suszan  
-Maximilianstraße 35  
-83278 Traunstein
+Michael DaCosta  
+Vegesacker Straße 123  
+28757 Bremen
 
 ## EU-Streitschlichtung:
 

@@ -13,8 +13,8 @@
     
     /* OPTIONS TO MOVE THE BOX HORIZONTALLY */
     /* justify-content: center; /* Aligns to the middle */
-     justify-content: flex-start; /* Aligns to the left */
-    /* justify-content: flex-end; /* Aligns to the right */
+    /* justify-content: flex-start; /* Aligns to the left */
+      justify-content: flex-end; /* Aligns to the right */
 
     color: var(--theme-text-on-primary, #ffffff);
 }
@@ -61,12 +61,12 @@
 .hero-content {
     position: relative;
     z-index: 4;
-    background-color: rgba(var(--theme-color-surface-rgb), 0);
+    background-color: rgba(var(--theme-color-surface-rgb), 0.8);
     background-image: none;
     background-repeat: repeat;
     background-position: center center;
     color: var(--theme-text-on-surface);
-    height: auto;
+    height: 100%;
     width: 35%;
     max-width: 700px;
     padding: var(--space-lg);
@@ -81,21 +81,29 @@
     /* Adjust these values to get the look you want */
 
     /* To move the box up or down (using viewport height) */
-    margin-top: 20vh;
+    margin-top: 0vh;
     
     /* To move the box left or right (using viewport width) */
-    margin-left: 5vw;
+    /* margin-left: 0vw; */
+    margin-right: 0vw;
 }
 
 
 .hero-content h1 {
-    /* font-family and font-size inherit from global h1 styles */
+    font-size: 3rem;
     margin-bottom: var(--space-sm);
 }
 
+/* *** HINZUGEFÜGT: Stil für den hervorgehobenen Text im h1 *** */
+.hero-content h1 .hero-highlight {
+    font-size: 6rem; /* Macht DACOSTA viel größer */
+    display: block;  /* Sorgt dafür, dass es in einer eigenen Zeile steht */
+    line-height: 1;  /* Verhindert zu viel Abstand nach unten */
+    margin-bottom: var(--space-xs); /* Fügt einen kleinen Abstand zum folgenden Text hinzu */
+}
+
 .hero-content p {
-    /* font-family inherits from global p styles */
-    font-size: var(--font-size-lg); /* INTENTIONAL OVERRIDE: Larger than default p */
+    font-size: var(--font-size-lg);
     margin-bottom: var(--space-md);
 }
 
@@ -126,6 +134,7 @@
         font-size: var(--font-size-xxl);
     }
     .hero-content p {
+        /* *** GEÄNDERT: Stil wie ein Untertitel, aber semantisch ein p-Tag *** */
         font-size: var(--font-size-md);
     }
     .hero-content .cta-button {

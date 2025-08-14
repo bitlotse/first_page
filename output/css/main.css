@@ -1,42 +1,107 @@
+/* ========================================================================
+   MAIN.CSS - LOGICALLY RESTRUCTURED
+   ======================================================================== */
+
+/* ========================================================================
+   1. IMPORTS
+   ======================================================================== */
 
 @import 'fonts.css';
 
+/* ========================================================================
+   2. CSS CUSTOM PROPERTIES (VARIABLES)
+   ======================================================================== */
+
 :root {
-    /* Default Font Families */
+    /* ------------------------------------------------------------------------
+       FONT FAMILIES
+       ------------------------------------------------------------------------ */
     --font-family-primary-default: 'Garamond', Garamond, serif; /* For headings and buttons */
     --font-family-secondary-default: 'Helvetica', Arial, sans-serif; /* For body text */
-
-    /* Themeable Font Families (client.css can override these via --override-font-primary and --override-font-secondary) */
+    
+    /* Themeable Font Families (client.css can override these) */
     --font-primary: var(--override-font-primary, var(--font-family-primary-default));
     --font-secondary: var(--override-font-secondary, var(--font-family-secondary-default));
+    --font-family-base: var(--font-secondary);
+    --font-family-heading: var(--font-primary);
 
-    /* Header Layout Defaults */
-    --header-layout-justify-content-default: space-between; /* For Logo | Nav | Icons distribution */
+    /* ------------------------------------------------------------------------
+       TYPOGRAPHY SCALES
+       ------------------------------------------------------------------------ */
+    --font-size-base: 16px;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 2rem;
+    --font-size-xxxl: 2.5rem;
+
+    --line-height-base: 1.6;
+    --line-height-heading: 1.3;
+
+    /* ------------------------------------------------------------------------
+       SPACING SYSTEM
+       ------------------------------------------------------------------------ */
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 32px;
+    --space-lg: 64px;
+    --space-xl: 96px;
+    --space-xxl: 128px;
+
+    /* ------------------------------------------------------------------------
+       BORDER RADIUS VALUES
+       ------------------------------------------------------------------------ */
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    --border-radius-lg: 12px;
+    --border-radius-pill: 50px;
+
+    /* ------------------------------------------------------------------------
+       TRANSITIONS
+       ------------------------------------------------------------------------ */
+    --transition: all 0.3s ease-in-out;
+    --transition-duration: 0.3s;
+    --transition-timing-function: ease-in-out;
+
+    /* ------------------------------------------------------------------------
+       COMPONENT DIMENSIONS
+       ------------------------------------------------------------------------ */
+    --header-height: 60px;
+    --footer-height: 100px;
+
+    /* ------------------------------------------------------------------------
+       BUTTON CONFIGURATION
+       ------------------------------------------------------------------------ */
+    --button-padding-y: 12px;
+    --button-padding-x: 24px;
+    --button-border-radius: var(--button-border-radius, var(--border-radius-sm));
+    --button-text-transform: uppercase;
+
+    --card-padding: var(--space-sm);
+    --card-border-radius: var(--border-radius);
+
+    /* ------------------------------------------------------------------------
+       HEADER LAYOUT CONFIGURATION
+       ------------------------------------------------------------------------ */
+    --header-layout-justify-content-default: space-between;
     --header-nav-items-gap-default: var(--space-sm);
     --header-icons-gap-default: var(--space-sm);
 
-    /* Variables for client overrides for layout */
+    /* Variables for client overrides */
     --header-layout-justify-content: var(--override-header-layout-justify-content, var(--header-layout-justify-content-default));
     --header-nav-items-gap: var(--override-header-nav-items-gap, var(--header-nav-items-gap-default));
     --header-icons-gap: var(--override-header-icons-gap, var(--header-icons-gap-default));
 
-    /* Header Scroll Behavior Defaults (can be overridden in client.css) */
-    --header-on-hide-transform: translateY(-100%); /* Default: header hides */
-    --header-on-hide-shadow: none; /* Default: no shadow when hidden */
-    --header-content-on-hide-children-transform: translateY(-150%); /* Default: content inside header hides */
-    --header-content-on-hide-children-opacity: 0;
-    --header-content-on-hide-children-pointer-events: none;
-
-
-    /* Hero Section Gradient Overlay Defaults (for the ::before pseudo-element on .hero) */
-    --hero-gradient-direction-default: to bottom; /* e.g., to bottom, to top, to right, 180deg, etc. */
-
-    /* Variables for client overrides for Hero Gradient Overlay */
+    /* ------------------------------------------------------------------------
+       HERO SECTION CONFIGURATION
+       ------------------------------------------------------------------------ */
+    /* Hero Section Gradient Overlay Defaults */
+    --hero-gradient-direction-default: to bottom;
     --hero-gradient-direction: var(--override-hero-gradient-direction, var(--hero-gradient-direction-default));
 
-    /* Hero Background Media Positioning Defaults */
-    --hero-media-object-position-default: center center; /* Default: center horizontally and vertically */
-    /* Variables for client overrides for Hero Background Media Positioning */
+    /* Hero Background Media Positioning */
+    --hero-media-object-position-default: center center;
     --hero-media-object-position: var(--override-hero-media-object-position, var(--hero-media-object-position-default));
 
     /* Hero Content Box Defaults - Padding */
@@ -44,10 +109,11 @@
     --hero-content-padding-right-default: var(--space-lg);
     --hero-content-padding-bottom-default: var(--space-xl);
     --hero-content-padding-left-default: var(--space-lg);
+
     /* Hero Content Box Defaults - Appearance */
-    --hero-content-gradient-shape-default: ellipse at center; /* Shape of the gradient */
+    --hero-content-gradient-shape-default: ellipse at center;
     --hero-content-border-radius-default: var(--border-radius-sm);
-    --hero-content-max-width-default: 800px; /* Default max-width for the content box */
+    --hero-content-max-width-default: 800px;
 
     /* Variables for client overrides for Hero Content Box */
     --hero-content-padding-top: var(--override-hero-content-padding-top, var(--hero-content-padding-top-default));
@@ -59,202 +125,544 @@
     --hero-content-border-radius: var(--override-hero-content-border-radius, var(--hero-content-border-radius-default));
     --hero-content-max-width: var(--override-hero-content-max-width, var(--hero-content-max-width-default));
 
-    /* Intro Section Defaults */
+    /* Hero CTA Button Specific Defaults */
+    --hero-cta-button-border-radius-default: var(--border-radius-sm);
+    --hero-cta-button-border-radius: var(--override-hero-cta-button-border-radius, var(--hero-cta-button-border-radius-default));
+
+    /* ------------------------------------------------------------------------
+       INTRO SECTION CONFIGURATION
+       ------------------------------------------------------------------------ */
     --intro-section-padding-y-default: var(--space-lg);
     --intro-section-column-gap-default: var(--space-md);
 
-    /* Variables for client overrides for Intro Section */
-    --intro-section-padding-y: var(--override-intro-section-padding-y, var(--intro-section-padding-y-default));
-    --intro-section-column-gap: var(--override-intro-section-column-gap, var(--intro-section-column-gap-default));
+    /* Variables for client overrides */
+    --intro-section-padding-y: var(--override-section-padding-y, var(--intro-section-padding-y-default));
+    --intro-section-column-gap: var(--override-section-column-gap, var(--intro-section-column-gap-default));
 
-    /* Intro Section Bottom Rule Defaults */
+    /* Intro Section Bottom Rule */
     --intro-section-rule-height-default: 3px;
-    --intro-section-rule-width-default: 80vw; /* Default to 80% of viewport width */
-
-    /* Variables for client overrides for Intro Section Bottom Rule */
+    --intro-section-rule-width-default: 80vw;
     --intro-section-rule-height: var(--override-intro-section-rule-height, var(--intro-section-rule-height-default));
     --intro-section-rule-width: var(--override-intro-section-rule-width, var(--intro-section-rule-width-default));
 
-    /* Mobile Navigation Menu Defaults */
-    --mobile-nav-width-default: 36vw; /* New default width (60vw * 0.6) */
-
-    /* Variables for client overrides for Mobile Navigation Menu */
+    /* ------------------------------------------------------------------------
+       MOBILE NAVIGATION CONFIGURATION
+       ------------------------------------------------------------------------ */
+    --mobile-nav-width-default: 36vw;
     --mobile-nav-background-color: var(--override-mobile-nav-background-color, var(--mobile-nav-background-color-default));
     --mobile-nav-text-color: var(--override-mobile-nav-text-color, var(--mobile-nav-text-color-default));
-    --mobile-nav-border-radius-default: var(--border-radius); /* Default to main border-radius */
+    --mobile-nav-border-radius-default: var(--border-radius);
     --mobile-nav-border-radius: var(--override-mobile-nav-border-radius, var(--mobile-nav-border-radius-default));
     --mobile-nav-width: var(--override-mobile-nav-width, var(--mobile-nav-width-default));
 
-    /* Hero CTA Button Specific Defaults */
-    --hero-cta-button-border-radius-default: var(--border-radius-sm); /* Default to match standard button radius */
-    /* Variables for client overrides for Hero CTA Button */
-    --hero-cta-button-border-radius: var(--override-hero-cta-button-border-radius, var(--hero-cta-button-border-radius-default));
-
-    /* Home Service Card Button Background Opacity Defaults */
+    /* ------------------------------------------------------------------------
+       SERVICE CARD CONFIGURATION
+       ------------------------------------------------------------------------ */
     --service-card-button-bg-opacity-default: 0.2;
     --service-card-button-bg-opacity-hover-default: 0.4;
-    /* Variables for client overrides for Home Service Card Button Background */
     --service-card-button-bg-opacity: var(--override-service-card-button-bg-opacity, var(--service-card-button-bg-opacity-default));
     --service-card-button-bg-opacity-hover: var(--override-service-card-button-bg-opacity-hover, var(--service-card-button-bg-opacity-hover-default));
 
-    /* Typography */
-    --font-family-base: var(--font-secondary); /* Body text uses the secondary font */
-    --font-family-heading: var(--font-primary); /* Headings use the primary font */
-    --font-size-base: 16px;
-    --font-size-sm: 0.875rem; /* 14px */
-    --font-size-md: 1rem;    /* 16px */
-    --font-size-lg: 1.25rem; /* 20px */
-    --font-size-xl: 1.5rem;  /* 24px */
-    --font-size-xxl: 2rem;   /* 32px */
-    --font-size-xxxl: 2.5rem;/* 40px */
-
-    --line-height-base: 1.6;
-    --line-height-heading: 1.3;
-
-    /* Spacing values */
-    --space-xs: 8px;
-    --space-sm: 16px;
-    --space-md: 32px;
-    --space-lg: 64px;
-    --space-xl: 96px;
-    --space-xxl: 128px;
-
-    /* Border radius for rounded elements */
-    --border-radius: 8px;
-    --border-radius-sm: 4px;
-    --border-radius-lg: 12px;
-    --border-radius-pill: 50px;
-
-    /* Transitions */
-    --transition: all 0.3s ease-in-out;
-    --transition-duration: 0.3s;
-    --transition-timing-function: ease-in-out;
-
-    /* Component Specific Variables (Defaults) */
-    --header-height: 60px;
-    --footer-height: 100px; /* This is a fallback, actual height will be content-driven */
-
-    --button-padding-y: 12px;
-    --button-padding-x: 24px;
-    --button-border-radius: var(--button-border-radius, var(--border-radius-sm)); /* Use default if not explicitly defined */
-    --button-text-transform: uppercase;
-
-    --card-padding: var(--space-sm);
-    --card-border-radius: var(--border-radius);
+    /* ------------------------------------------------------------------------
+       SPECIAL POSITIONING RULES
+       ------------------------------------------------------------------------ */
+    .intro-with-header {
+        position: relative;
+    }
+    .intro-with-header header {
+        position: sticky;
+        top: 0; /* sticks when intro section hits top of viewport */
+        z-index: 1000;
+    }
 }
+
+/* ========================================================================
+   3. RESET & BASE STYLES
+   ======================================================================== */
 
 html {
-    box-sizing: border-box; /* 1. Apply a natural box layout model to the root element */
-    height: 100%; /* Ensure html takes full height */
+    box-sizing: border-box;
+    height: 100%;
 }
 
-*, *::before, *::after { /* 2. Inherit box-sizing for all other elements */
+*, *::before, *::after {
     box-sizing: inherit;
 }
 
-/* Body styles */
 body {
-    min-height: 100%; /* Ensure body takes at least full viewport height */
-    display: flex; /* Enable flexbox for body */
-    flex-direction: column; /* Stack children (header, main, footer) vertically */
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    color: var(--theme-text-on-surface, var(--theme-color-neutral)); /* Text on body background */
+    color: var(--theme-text-on-surface, var(--theme-color-neutral));
     background-color: var(--theme-color-surface);
-    background-image: var(--theme-background-texture-url); /* This now comes from client.css */
-    background-repeat: repeat; /* Sensible default for textures */
-    background-position: center center; /* Sensible default */
-    /* background-attachment: fixed; */ /* Uncomment if texture should be fixed during scroll */
+    background-image: var(--theme-background-texture-url);
+    background-repeat: repeat;
+    background-position: center center;
     margin: 0;
     padding: 0;
-    position: relative; /* Establish stacking context for z-indexed children */
+    position: relative;
 }
 
+/* ========================================================================
+   4. TYPOGRAPHY
+   ======================================================================== */
 
+h1, h2, h3 {
+    font-family: var(--font-family-heading);
+    color: var(--theme-color-heading-text);
+    line-height: var(--line-height-heading);
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+}
 
-/* Header */
+h1 {
+    font-size: var(--font-size-xxxl);
+}
+
+h2 {
+    font-size: var(--font-size-xxl);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+/* ========================================================================
+   5. LINKS
+   ======================================================================== */
+
+a {
+    color: var(--theme-color-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--theme-color-secondary);
+}
+
+/* ========================================================================
+   6. BUTTONS
+   ======================================================================== */
+
+button, .btn {
+    display: inline-block;
+    background-color: var(--theme-color-primary);
+    color: var(--theme-text-on-primary);
+    border: none;
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-md);
+    text-transform: var(--button-text-transform);
+    text-align: center;
+    line-height: var(--line-height-base);
+}
+
+button:hover, .btn:hover {
+    background-color: var(--theme-color-secondary);
+    color: var(--theme-text-on-secondary);
+}
+
+/* ========================================================================
+   7. LAYOUT COMPONENTS
+   ======================================================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+main#main-content {
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    padding: var(--space-md) 0;
+}
+
+.legal-page {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+}
+
+/* ========================================================================
+   8. HEADER
+   ======================================================================== */
+
 header {
     position: sticky;
     top: 0;
     background-color: var(--theme-color-primary);
     height: var(--header-height);
     display: flex;
-    justify-content: var(--header-layout-justify-content); /* Controls distribution of logo, nav, icons */
+    justify-content: var(--header-layout-justify-content);
     align-items: center;
     padding: 0 var(--space-sm);
     box-shadow: var(--theme-shadow-md);
-    /* Ensure transform is part of the transition for smooth hide/show */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    z-index: 1000; /* Ensure header is on top */
+    z-index: 1000;
 }
 
-/* Class to be added by JavaScript when scrolling down, removed when scrolling up */
-header.header--hidden-on-scroll {
-    transform: var(--header-on-hide-transform); /* Uses variable from :root (client.css overrides it) */
-    box-shadow: var(--header-on-hide-shadow); /* Uses variable from :root (client.css overrides it) */
-}
-
-/* Control visibility/position of header children when header is hidden */
-header.header--hidden-on-scroll .header-logo,
-header.header--hidden-on-scroll .header-contact {
-    transform: var(--header-content-on-hide-children-transform);
-    opacity: var(--header-content-on-hide-children-opacity);
-    pointer-events: var(--header-content-on-hide-children-pointer-events);
-}
-
-
-/* Site Logo Styling */
+/* Header Logo */
 .header-logo {
     text-decoration: none;
     color: var(--theme-text-on-primary);
-    font-size: var(--font-size-lg); /* Adjust as needed */
+    font-size: var(--font-size-lg);
     font-weight: bold;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+
 .header-logo img {
-    display: block; /* Prevents extra space below image */
-    max-height: calc(var(--header-height) - var(--space-sm)); /* Example: constrain logo height */
+    display: block;
+    max-height: calc(var(--header-height) - var(--space-sm));
     width: auto;
-    filter: var(--header-logo-icon-filter); /* Apply the filter from client.css */
+    filter: var(--header-logo-icon-filter);
 }
 
-/* --- Default (Desktop) Styles --- */
-/* Hide the hamburger button on larger screens by default */
+/* Header Navigation */
 .nav-toggle {
     display: none;
 }
 
-/* Ensure the full navigation is visible on desktop */
 .site-navigation {
-    display: flex; /* Or whatever your desktop nav layout is */
+    display: flex;
     flex-direction: row;
     align-items: center;
-    transition: none; /* Reset any mobile transitions */
-    max-height: none; /* Reset max-height for desktop */
-    overflow: visible; /* Reset overflow for desktop */
+    transition: none;
+    max-height: none;
+    overflow: visible;
 }
 
+.site-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: var(--header-nav-items-gap);
+}
 
-/* --- Mobile Styles (e.g., for screen width less than 768px) --- */
-@media (max-width: 768px) { /* Adjust this breakpoint as needed */
+.site-navigation a {
+    text-decoration: none;
+    color: var(--theme-text-on-primary);
+    padding: var(--space-xs) var(--space-sm);
+    display: inline-block;
+    font-size: var(--font-size-md);
+    transition: color var(--transition-duration) var(--transition-timing-function), background-color var(--transition-duration) var(--transition-timing-function);
+}
 
-    /* Show the hamburger button on mobile */
+.site-navigation a:hover,
+.site-navigation a[aria-current="page"] {
+    color: var(--theme-color-accent);
+}
+
+/* Header Contact */
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: var(--header-icons-gap);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.header-contact img {
+    height: var(--font-size-lg);
+    width: auto;
+    display: block;
+    filter: var(--header-icon-filter);
+}
+
+.header-contact ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--header-icons-gap);
+}
+
+.header-contact a {
+    text-decoration: none;
+    color: var(--theme-text-on-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-xs);
+}
+
+.header-contact a:hover {
+    color: var(--theme-color-accent);
+}
+
+/* ========================================================================
+   9. FOOTER
+   ======================================================================== */
+
+footer {
+    background-color: var(--theme-color-primary);
+    color: var(--theme-text-on-primary);
+    padding-top: var(--space-sm, 1rem);
+    padding-bottom: var(--space-sm);
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xs);
+}
+
+/* Footer Sections */
+.footer-contact,
+.footer-social {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    margin-top: var(--space-sm);
+}
+
+.footer-contact {
+    align-items: flex-start;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.footer-social {
+    align-items: center;
+    margin-left: auto;
+    margin-right: var(--space-sm);
+}
+
+.footer-contact h3,
+.footer-social h3 {
+    font-size: var(--font-size-lg);
+    margin-top: 0;
+    margin-bottom: var(--space-xxs, 4px);
+    color: var(--theme-text-on-primary);
+    line-height: 1.3;
+}
+
+.footer-contact p {
+    margin: 0 0 var(--space-xxs, 4px) 0;
+    line-height: 1.3;
+}
+
+.footer-contact a,
+.footer-social a,
+.footer-legal a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-contact a:hover, 
+.footer-social a:hover, 
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.footer-social img {
+    height: var(--font-size-xxl);
+    width: auto;
+    filter: var(--footer-icon-filter);
+}
+
+/* Footer Legal */
+.footer-legal-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-legal {
+    text-align: center;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+.footer-legal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-md);
+}
+
+/* Footer Back to Top */
+.footer-back-to-top {
+    position: static;
+}
+
+.footer-back-to-top img {
+    height: var(--font-size-xxl);
+    width: auto;
+    animation: pulse-up 1.5s infinite ease-in-out;
+    filter: var(--footer-icon-filter);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding-top: var(--space-xs);
+    border-top: 1px solid var(--theme-text-on-primary);
+    font-size: var(--font-size-sm);
+    padding-right: calc(var(--font-size-xxl) + (var(--space-sm) * 2));
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================================================
+   10. ANIMATIONS & KEYFRAMES
+   ======================================================================== */
+
+@keyframes pulse-up {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ========================================================================
+   11. BACKGROUND ELEMENTS
+   ======================================================================== */
+
+.page-right-background-image {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 35vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    --active-opacity: 0.10;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    transition: background-image 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+/* ========================================================================
+   12. UTILITY CLASSES
+   ======================================================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ========================================================================
+   13. ACCESSIBILITY
+   ======================================================================== */
+
+.skip-link {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    width: auto;
+    height: auto;
+    border-color: var(--theme-color-accent);
+}
+
+/* ========================================================================
+   14. RESPONSIVE DESIGN - MOBILE
+   ======================================================================== */
+
+@media (max-width: 768px) {
+    body {
+        font-size: var(--font-size-sm);
+    }
+
+    /* Header Mobile */
+    header {
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--space-sm);
+        height: auto;
+    }
+
     .nav-toggle {
-        display: block; /* Make the button visible on mobile */
+        display: block;
         background: none;
         border: none;
         padding: var(--space-xs);
         cursor: pointer;
-        z-index: 1001; /* Ensure it's above other header content if overlapping */
+        z-index: 1001;
     }
 
-    /* Style for the hamburger icon */
     .hamburger-icon {
         display: block;
         position: relative;
-        width: 24px; /* Adjust size as needed */
-        height: 2px; /* Thickness of lines */
+        width: 24px;
+        height: 2px;
         background-color: var(--theme-text-on-primary);
         transition: transform 0.3s ease-in-out;
     }
@@ -278,442 +686,100 @@ header.header--hidden-on-scroll .header-contact {
         top: 7px;
     }
 
-    /* Styles for the hamburger icon when the menu is OPEN */
-    /* The .nav-toggle button gets aria-expanded="true" when open */
     .nav-toggle[aria-expanded="true"] .hamburger-icon {
-        background-color: transparent; /* Hide the middle bar */
+        background-color: transparent;
+        transform: rotate(45deg);
     }
 
     .nav-toggle[aria-expanded="true"] .hamburger-icon::before {
         top: 0;
-        transform: rotate(45deg);
+        transform: rotate(90deg);
     }
 
     .nav-toggle[aria-expanded="true"] .hamburger-icon::after {
         top: 0;
-        transform: rotate(-45deg);
+        transform: rotate(0deg);
     }
 
-    /* --- MOBILE NAVIGATION PANEL STYLES --- */
-    /* Targeted by ID for better specificity and alignment with JS */
+    /* Mobile Menu */
     #mobile-menu {
-        /* Base styles for the navigation panel, including its hidden state */
         position: fixed;
-        top: var(--header-height); /* Position it to slide from under the header area */
-        right: var(--space-sm);    /* Align with hamburger button's right edge */
+        top: var(--header-height);
+        right: var(--space-sm);
         left: auto;
-        width: var(--mobile-nav-width); /* Uses --mobile-nav-width-default (36vw) or client override */
+        width: var(--mobile-nav-width);
         background-color: var(--theme-color-primary);
         box-shadow: var(--theme-shadow-md);
         padding-top: var(--space-md);
         padding-bottom: var(--space-md);
         padding-left: var(--space-sm);
         padding-right: var(--space-sm);
-        z-index: 999; /* Needs to be higher than header (1000) and nav-toggle (1001) */
-        border-radius: var(--mobile-nav-border-radius); /* Apply the new border radius */
-
-        transform: translateY(-120%); /* Start off-screen (100% of its own height + a bit more) */
+        z-index: 999;
+        border-radius: var(--mobile-nav-border-radius);
+        transform: translateY(-120%);
         opacity: 0;
         visibility: hidden;
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
-        /* Delay visibility change until transition ends for hiding */
     }
 
     #mobile-menu.nav-open {
-        transform: translateY(0); /* Slide into view */
+        transform: translateY(0);
         opacity: 1;
         visibility: visible;
-        transition-delay: 0s, 0s, 0s; /* Apply transitions immediately when opening */
+        transition-delay: 0s, 0s, 0s;
     }
 
-    #mobile-menu ul { /* Now explicitly targeting ul inside mobile menu */
+    #mobile-menu ul {
         flex-direction: column;
-        align-items: flex-end; /* Align <li> items to the right side of the <ul> */
-        gap: var(--space-xs); /* Gap between stacked links */
+        align-items: flex-end;
+        gap: var(--space-xs);
         width: 100%;
     }
 
-    #mobile-menu ul li a { /* Now explicitly targeting links inside mobile menu */
+    #mobile-menu ul li a {
         padding: var(--space-sm) var(--space-xs);
-        color: var(--theme-text-on-primary); /* Always use text-on-primary for mobile nav links */
-        text-align: right; /* Align text within each link to its right edge */
+        color: var(--theme-text-on-primary);
+        text-align: right;
     }
 
-    .header-contact {
-        /* Ensure contact icons are centered if they take less space than available */
-        /* The parent header's space-between will handle overall centering */
+    /* Mobile Background */
+    .page-right-background-image {
+        display: none;
     }
-    .header-contact ul {
-        /* Styles for the ul within .header-contact if needed for mobile */
+
+    /* Mobile Typography */
+    h1 { 
+        font-size: var(--font-size-xxl); 
     }
-}
-
-
-/* Main Navigation Styling */
-header .site-navigation ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex; /* Arrange nav items in a row */
-    gap: var(--header-nav-items-gap); /* Space between navigation items */
-}
-header .site-navigation li {
-    /* Usually no specific styles needed here if ul is flex with gap */
-}
-
-header .site-navigation a {
-    text-decoration: none;
-    color: var(--theme-text-on-primary);
-    padding: var(--space-xs) var(--space-sm); /* Provides a good clickable area */
-    display: inline-block; /* Ensures padding is respected */
-    font-size: var(--font-size-md); /* Adjust as needed for nav links */
-    transition: color var(--transition-duration) var(--transition-timing-function), background-color var(--transition-duration) var(--transition-timing-function);
-}
-
-/* Styles for navigation links when header is hidden */
-header.header--hidden-on-scroll .site-navigation a {
-    background-color: var(--theme-color-accent);
-    color: var(--theme-text-on-accent);
-    box-shadow: var(--theme-shadow-sm);
-    border-radius: var(--border-radius-sm); /* Soften the edges of the "field" */
-    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-
-header .site-navigation a:hover,
-header .site-navigation a[aria-current="page"] {
-    color: var(--theme-color-accent); /* Or a lighter/contrasting shade of --theme-text-on-primary */
-}
-
-/* Header Icons Styling */
-.header-contact {
-    display: flex; /* Arrange icons in a row */
-    align-items: center;
-    gap: var(--header-icons-gap); /* Space between icons */
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-/* Apply filter to header contact icons */
-.header-contact img {
-    height: var(--font-size-lg); /* Example size, adjust as needed */
-    width: auto; /* Maintain aspect ratio */
-    display: block; /* Good practice for images */
-    filter: var(--header-icon-filter); /* Apply the filter from client.css */
-}
-
-/* Main layout - containers */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-sm);
-}
-
-.header-contact ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    gap: var(--header-icons-gap);
-}
-
-.header-contact a {
-    text-decoration: none;
-    color: var(--theme-text-on-primary);
-    display: inline-flex; /* Good for aligning SVGs vertically */
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-xs); /* Clickable area for the link */
-}
-
-.header-contact a:hover {
-    color: var(--theme-color-accent); /* Or a lighter/contrasting shade of --theme-text-on-primary */
-}
-
-/* Headings */
-h1, h2, h3 {
-    font-family: var(--font-family-heading);
-    color: var(--theme-color-heading-text); /* NOW uses the new variable for heading text color */
-    line-height: var(--line-height-heading);
-    margin-top: 0; /* Common reset */
-    margin-bottom: var(--space-sm);
-}
-
-h1 {
-    font-size: var(--font-size-xxxl);
-}
-
-h2 {
-    font-size: var(--font-size-xxl);
-}
-
-h3 {
-    font-size: var(--font-size-xl);
-}
-
-/* Buttons */
-button, .btn {
-    display: inline-block;
-    background-color: var(--theme-color-primary);
-    color: var(--theme-text-on-primary);
-    border: none;
-    padding: var(--button-padding-y) var(--button-padding-x);
-    border-radius: var(--button-border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    text-decoration: none;
-    font-family: var(--font-primary); /* Buttons use the primary font */
-    font-size: var(--font-size-md);
-    text-transform: var(--button-text-transform);
-    text-align: center; /* Ensure text within buttons is centered */
-    line-height: var(--line-height-base);
-}
-
-button:hover, .btn:hover {
-    background-color: var(--theme-color-secondary);
-    color: var(--theme-text-on-secondary);
-}
-
-/* Links */
-a {
-    color: var(--theme-color-primary);
-    text-decoration: none;
-    transition: var(--transition);
-}
-a:hover {
-    color: var(--theme-color-secondary);
-}
-/* Ensure main content area can grow to push footer down */
-main#main-content {
-    flex-grow: 1; /* Allows main to take up available vertical space */
-    position: relative; /* For z-index stacking against fixed elements */
-    z-index: 1;          /* Ensures main content is above elements with z-index 0 */
-}
-
-/* Main content sections */
-section {
-    padding: var(--space-md) 0;
-}
-
-/*
- * Specific padding for legal pages where the <section> and .container are the same element.
- * This overrides the `padding: 0` from the .container class.
-*/
-.legal-page {
-    padding-top: var(--space-lg);
-    padding-bottom: var(--space-lg);
-}
-
-
-
-/* Footer */
-footer {
-    background-color: var(--theme-color-primary);
-    color: var(--theme-text-on-primary);
-    padding-top: var(--space-sm, 1rem);
-    padding-bottom: var(--space-sm); /* Keeps reduced padding */
-    padding-left: var(--space-sm); /* Use a defined spacing variable */
-    padding-right: var(--space-sm); /* Use a defined spacing variable */
-    position: relative; /* For z-index stacking */
-    z-index: 1; /* Ensure footer is stacked correctly, similar to main content, above z-index: -1 backgrounds */
-}
-
-.footer-container {
-    display: flex;
-    justify-content: flex-start; /* Start all items to the left */
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: var(--space-md); /* Reduced gap between items in the container */
-    margin-bottom: var(--space-xs); /* Reduced bottom margin further */
-}
-
-/* Common styles for footer sections */
-.footer-contact,
-.footer-social {
-    min-width: 250px;
-    display: flex; /* Make it a flex container */
-    flex-direction: column; /* Stack its children (h3, ul) vertically */
-    flex-grow: 0; /* Don't grow, take natural width */
-    margin-top: var(--space-sm); /* Reduced top margin */
-}
-
-/* Specific styles for contact section (left-aligned block and content) */
-.footer-contact {
-    align-items: flex-start; /* Align children to the left edge of this .footer-contact block */
-    margin-left: 0; /* Explicitly ensure it stays left, overriding any auto */
-    margin-right: 0; /* Ensure no unintended right margin */
-}
-
-/* Specific styles for social section (right-aligned block, centered content) */
-.footer-social {
-    align-items: center; /* Center the "Folgen Sie uns" heading and the icon list */
-    margin-left: auto; /* Push this block to the right of other flex items */
-    margin-right: var(--space-sm); /* Add some space from the absolute right edge of the footer's padding */
-}
-
-.footer-contact h3,
-.footer-social h3 {
-    font-size: var(--font-size-lg);
-    margin-top: 0; /* Keep top margin at 0 */
-    margin-bottom: var(--space-xxs, 4px); /* Minimize bottom margin for h3 */
-    color: var(--theme-text-on-primary);
-    line-height: 1.3; /* Adjust line-height for h3 */
-}
-
-.footer-contact p {
-    margin: 0 0 var(--space-xxs, 4px) 0; /* Minimize top and bottom margins for p */
-    line-height: 1.3; /* Adjust line-height for p */
-}
-
-.footer-contact a,
-.footer-social a,
-.footer-legal a {
-    color: inherit; /* Inherit from footer's color */
-    text-decoration: none;
-}
-
-.footer-contact a:hover, .footer-social a:hover, .footer-legal a:hover {
-    text-decoration: underline;
-}
-
-.footer-social ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: var(--space-sm);
-}
-
-/* Apply filter to footer social icons */
-.footer-social img {
-    height: var(--font-size-xxl);
-    width: auto;
-    filter: var(--footer-icon-filter); /* Apply the filter from client.css */
-}
-
-.footer-legal-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-md);
-    margin-bottom: var(--space-sm);
-}
-
-.footer-legal {
-    text-align: center;
-    margin-bottom: 0; /* Margin is now on the parent container */
-    flex-grow: 1; /* Allows the centered list to properly align in the available space */
-}
-
-.footer-legal ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--space-sm) var(--space-md);
-}
-
-/* Utility classes */
-.text-center {
-    text-align: center;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.hidden {
-    display: none;
-}
-
-/* Accessibility */
-.skip-link {
-    position: absolute;
-    top: -9999px; /* Move off-screen */
-    left: -9999px; /* Move off-screen */
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.skip-link:focus {
-    position: fixed; /* Or 'absolute' if preferred, 'static' might not work well with header */
-    top: var(--space-sm);
-    left: var(--space-sm);
-    width: auto;
-    height: auto;
-    border-color: var(--theme-color-accent); /* Use accent color for focus outline */
-}
-
-/* Keyframes for the back-to-top pulse animation */
-@keyframes pulse-up {
-    0%, 100% {
-        transform: translateY(0);
+    
+    h2 { 
+        font-size: var(--font-size-xl); 
     }
-    50% {
-        transform: translateY(-5px); /* Move 5px upwards */
+    
+    h3 { 
+        font-size: var(--font-size-lg); 
     }
-}
 
-/* Back to Top Button Styling */
-.footer-back-to-top {
-    position: static; /* Remove absolute positioning to place it in the flex flow */
-}
+    /* Mobile Container */
+    .container {
+        padding: 0 var(--space-xs);
+    }
 
-/* Apply filter to back-to-top icon */
-.footer-back-to-top img {
-    height: var(--font-size-xxl);
-    width: auto;
-    animation: pulse-up 1.5s infinite ease-in-out; /* Apply the animation */
-    filter: var(--footer-icon-filter); /* Apply the filter from client.css */
-}
+    /* Mobile Contact Map */
+    .contact-map-iframe {
+        width: 100%;
+        height: 350px;
+        border: 0;
+        display: block;
+    }
 
-/* Copyright Notice & Credits */
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-    padding-top: var(--space-xs);
-    border-top: 1px solid var(--theme-text-on-primary);
-    font-size: var(--font-size-sm);
-    /* Add padding on the right to avoid overlapping the back-to-top arrow. */
-    padding-right: calc(var(--font-size-xxl) + (var(--space-sm) * 2));
-}
-
-/* Remove default paragraph margins for better flex alignment */
-.footer-bottom p {
-    margin: 0;
-}
-
-.footer-bottom a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    text-decoration: underline;
-}
-
-/* On smaller screens, stack and center the items for better readability */
-@media (max-width: 768px) {
+    /* Mobile Footer */
     .footer-bottom {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: var(--space-xs);
-        padding-right: 0; /* Reset padding for centered mobile layout */
+        padding-right: 0;
     }
 
     .footer-legal-container {
@@ -722,132 +788,10 @@ footer {
     }
 }
 
-/* Fixed background image container for right side of page */
-.page-right-background-image {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 35vw; /* Adjust width as desired */
-    height: 100vh;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    --active-opacity: 0.10; /* Default active opacity, client can override if needed */
-    opacity: 0; /* Start hidden, JS will fade it in */
-    z-index: 0; /* Behind main content (z-index: 1) but above body's default */
-    pointer-events: none; /* Non-interactive */
-    transition: background-image 0.7s ease-in-out, opacity 0.7s ease-in-out;
-}
+/* ========================================================================
+   15. DARK MODE PLACEHOLDER
+   ======================================================================== */
 
-
-/* Responsive design */
-@media (max-width: 768px) {
-    body {
-        font-size: var(--font-size-sm);
-    }
-
-    header {
-        justify-content: space-between; /* This will push logo left, nav-toggle right, and center .header-contact */
-        align-items: center;
-        padding: var(--space-sm);
-        height: auto;
-    }
-    .page-right-background-image {
-        display: none; /* Hide this decorative background on smaller screens */
-    }
-
-
-    .nav-toggle {
-        display: block;
-    }
-
-    /* Styles for when the mobile navigation is open */
-    .nav-toggle[aria-expanded="true"] .hamburger-icon {
-        transform: rotate(45deg);
-    }
-    .nav-toggle[aria-expanded="true"] .hamburger-icon::before {
-        top: 0;
-        transform: rotate(90deg);
-    }
-    .nav-toggle[aria-expanded="true"] .hamburger-icon::after {
-        top: 0;
-        transform: rotate(0deg);
-    }
-
-    /* --- MOBILE NAVIGATION PANEL STYLES --- */
-    /* Targeted by ID for better specificity and alignment with JS */
-    #mobile-menu {
-        position: fixed;
-        top: var(--header-height); /* Position it to slide from under the header area */
-        right: var(--space-sm);    /* Align with hamburger button's right edge */
-        left: auto;
-        width: var(--mobile-nav-width); /* Uses --mobile-nav-width-default (36vw) or client override */
-        background-color: var(--theme-color-primary);
-        box-shadow: var(--theme-shadow-md);
-        padding-top: var(--space-md);
-        padding-bottom: var(--space-md);
-        padding-left: var(--space-sm);
-        padding-right: var(--space-sm);
-        z-index: 999; /* Needs to be higher than header (1000) and nav-toggle (1001) */
-        border-radius: var(--mobile-nav-border-radius); /* Apply the new border radius */
-
-        transform: translateY(-120%); /* Start off-screen (100% of its own height + a bit more) */
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
-        /* Delay visibility change until transition ends for hiding */
-    }
-
-    #mobile-menu.nav-open {
-        transform: translateY(0); /* Slide into view */
-        opacity: 1;
-        visibility: visible;
-        transition-delay: 0s, 0s, 0s; /* Apply transitions immediately when opening */
-    }
-
-    #mobile-menu ul { /* Now explicitly targeting ul inside mobile menu */
-        flex-direction: column;
-        align-items: flex-end; /* Align <li> items to the right side of the <ul> */
-        gap: var(--space-xs); /* Gap between stacked links */
-        width: 100%;
-    }
-
-    #mobile-menu ul li a { /* Now explicitly targeting links inside mobile menu */
-        padding: var(--space-sm) var(--space-xs);
-        color: var(--theme-text-on-primary); /* Always use text-on-primary for mobile nav links */
-        text-align: right; /* Align text within each link to its right edge */
-    }
-
-    .header-contact {
-        /* Ensure contact icons are centered if they take less space than available */
-        /* The parent header's space-between will handle overall centering */
-    }
-    /* Corrected nesting for .header-contact ul if it was an issue */
-    .header-contact ul {
-        /* Styles for the ul within .header-contact if needed for mobile */
-    }
-
-
-    h1 { font-size: var(--font-size-xxl); }
-    h2 { font-size: var(--font-size-xl); }
-    h3 { font-size: var(--font-size-lg); }
-
-    .container {
-        padding: 0 var(--space-xs);
-    }
-
-    /* In your CSS file */
-    .contact-map-iframe {
-        width: 100%;
-        height: 350px; /* Or use aspect-ratio */
-        border: 0;
-        display: block; /* Removes potential bottom space */
-    }
-}
-
-/* Dark Mode Styles are now expected to be handled by client.css redefining the --theme-* variables */
 @media (prefers-color-scheme: dark) {
-    /* :root { */
-        /* client.css should redefine --theme-* variables here for dark mode */
-    /* } */
+    /* Dark Mode Styles are handled by client.css redefining the --theme-* variables */
 }

@@ -1,6 +1,6 @@
 ---
 layout: layouts/pages/legal/datenschutz.njk
-title: "Datenschutzerklärung - Haarmanufaktur Suszan"
+title: "Datenschutzerklärung - DACOSTA Gebäude- & Industrieservice GmbH"
 permalink: /datenschutz/
 eleventyNavigation:
   key: Datenschutz
@@ -20,11 +20,11 @@ Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren 
 
 Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten des Betreibers sind:
 
-Haarmanufaktur Suszan  
-Maximilianstraße 35  
-83278 Traunstein  
-E-Mail: [info@haarmanufaktur-suszan.de](mailto:info@haarmanufaktur-suszan.de)  
-Telefon: 0861/90951242
+DACOSTA Gebäude- & Industrieservice GmbH  
+Vegesacker Straße 123  
+28757 Bremen  
+E-Mail: [info@dacosta-bremen.de](mailto:info@dacosta-bremen.de)  
+Telefon: 0421/12345678
 
 Weitere Angaben finden Sie im [Impressum](/impressum/) dieser Website.
 
@@ -58,10 +58,10 @@ Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre p
 
 Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
 
-Haarmanufaktur Suszan  
-Susanne Suszan  
-Maximilianstraße 35  
-83278 Traunstein
+DACOSTA Gebäude- & Industrieservice GmbH  
+Michael DaCosta  
+Vegesacker Straße 123  
+28757 Bremen
 
 ### SSL- bzw. TLS-Verschlüsselung
 

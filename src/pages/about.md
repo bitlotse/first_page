@@ -1,29 +1,32 @@
 ---
 layout: layouts/pages/about.njk
-title: "Über uns"
-description: "Erfahren Sie mehr über uns, die Haarmanufaktur Suszan in Traunstein. Über 5 Jahre Erfahrung in professioneller Haarpflege und individueller Beratung."
+title: "Über DACOSTA – Ihr Gebäude- & Industrieservice in Bremen"
+description: "Erfahren Sie mehr über DACOSTA Gebäude- und Industrieservice GmbH in Bremen-Vegesack. Über 15 Jahre Erfahrung in professioneller Gebäudereinigung und Industrieservice."
 permalink: /about/
 about:
   box1:
-    heading: "Dein Friseur in Traunstein"
+    heading: "Ihr Gebäude- & Industrieservice in Bremen"
     text: |
-      Unser erfahrenes Team versteht, dass jeder Kunde einzigartig ist. Deshalb nehmen wir uns Zeit für eine persönliche Beratung und entwickeln gemeinsam mit dir den perfekten Look, der zu deinem Stil und deiner Persönlichkeit passt.
+      DACOSTA ist Ihr zuverlässiger Partner für alle Aufgaben rund um Gebäudereinigung, Hausmeisterdienste und Industrieservice in Bremen. Seit über 15 Jahren sind wir in Bremen-Vegesack und der gesamten Region tätig und kennen die lokalen Anforderungen wie kein anderer.
+      
+      Unser erfahrenes Team versteht, dass jedes Gebäude und jeder Betrieb einzigartig ist. Deshalb entwickeln wir maßgeschneiderte Lösungen, die perfekt auf Ihre individuellen Bedürfnisse abgestimmt sind.
   box2:
     heading: "Was uns besonders macht"
     text: |
-      • Individuelle Beratung und persönliche Betreuung
-      • Hochwertige Produkte und moderne Techniken
-      • Kontinuierliche Weiterbildung unseres Teams
-      • Entspannte Atmosphäre und professioneller Service
-      • Faire Preise und transparente Abrechnung
+      • Lokale Verwurzelung in Bremen-Vegesack seit über 15 Jahren
+      • Qualifiziertes Fachpersonal mit umfassender Erfahrung
+      • Moderne Reinigungstechnik und umweltfreundliche Produkte
+      • Flexible Einsatzzeiten und 24/7 Notdienst
+      • Transparente Preise und zuverlässige Abrechnung
+      • Zertifizierte Qualitätsstandards und Versicherungsschutz
       
-      Wir verwenden nur die besten Produkte und arbeiten mit den neuesten Trends und Techniken. Unser Ziel ist es, dass du dich bei uns wohlfühlst und mit einem strahlenden Lächeln unseren Salon verlässt.
+      Wir setzen auf nachhaltige Reinigungsmethoden und verwenden umweltfreundliche Produkte. Unser Ziel ist es, Ihre Räumlichkeiten nicht nur sauber, sondern auch hygienisch und wertbeständig zu halten.
   box3:
-    heading: "Besuche uns in Traunstein"
+    heading: "Besuchen Sie uns in Bremen-Vegesack"
     text: |
-      Wir freuen uns darauf, dich in unserem Salon in der Maximilianstraße 35 in Traunstein begrüßen zu dürfen. Vereinbare jetzt deinen Termin und lass dich von unserem erfahrenen Team verwöhnen.
+      Wir freuen uns darauf, Sie in unserem Büro in der Vegesacker Straße 123 in Bremen-Vegesack begrüßen zu dürfen. Vereinbaren Sie jetzt ein unverbindliches Beratungsgespräch und lassen Sie sich von unserem erfahrenen Team überzeugen.
       
-      Für Fragen stehen wir dir gerne telefonisch unter 0861/90951242 oder per E-Mail zur Verfügung.
+      Für Fragen stehen wir Ihnen gerne telefonisch unter 0421/12345678 oder per E-Mail zur Verfügung. Wir sind auch außerhalb der Geschäftszeiten für Notfälle erreichbar.
 ---
 
 {#

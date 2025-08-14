@@ -1,86 +1,94 @@
 ---
-permalink: /services/haarverlaengerung/traunstein/
+permalink: /services/glasreinigung/bremen/
 layout: layouts/pages/underpages/services-detail.njk
-title: Haarverlängerung in Traunstein
-description: Professionelle Haarverlängerungen in Traunstein. Natürliche Extensions, Clip-in Haarverlängerungen und Volumenverstärkung für mehr Fülle.
+title: Glasreinigung in Bremen - DACOSTA Gebäude- & Industrieservice
+description: Professionelle Glasreinigung in Bremen. Fensterreinigung, Fassadenreinigung und Glasdachreinigung für kristallklare Sicht. Jetzt anfragen!
 cardImage: card6.jpg
-cardImageAlt: Professionelle Haarverlängerung in Traunstein
-serviceName: Haarverlängerung
-serviceType: Haarverlängerung
+cardImageAlt: Professionelle Glasreinigung in Bremen
+serviceName: Glasreinigung
+serviceType: Glasreinigung
 areaServed:
   type: City
-  name: Traunstein
+  name: Bremen
 ---
 
-## Professionelle Haarverlängerung in Traunstein
+## Professionelle Glasreinigung in Bremen
 
-In der Haarmanufaktur Suszan in Traunstein bieten wir Ihnen erstklassige Haarverlängerungen – von natürlichen Extensions bis zu Clip-in Haarverlängerungen. Unser erfahrenes Team sorgt für mehr Volumen und Länge mit hochwertigen Produkten.
+DACOSTA bietet Ihnen erstklassige Glasreinigung in Bremen – von der Fensterreinigung bis zur Fassadenreinigung. Unser erfahrenes Team sorgt für kristallklare Sicht und gepflegte Glasflächen in allen Höhenlagen.
 
-### Warum unsere Haarverlängerung in Traunstein?
+### Warum DACOSTA Glasreinigung in Bremen?
 
-**Hochwertige Extensions**
-Wir verwenden ausschließlich echtes Menschenhaar in höchster Qualität für natürliche und langanhaltende Ergebnisse.
+**Höhenarbeiten**
+Wir sind spezialisiert auf Glasreinigung in allen Höhenlagen und verfügen über die notwendige Ausrüstung für sichere Arbeiten.
 
-**Professionelle Techniken**
-Von Keratin-Extensions bis zu Clip-in Haarverlängerungen – unser Team beherrscht alle modernen Verlängerungstechniken.
+**Moderne Technik**
+Wir setzen auf moderne Reinigungstechnik und umweltfreundliche Produkte für optimale Ergebnisse.
 
-**Individuelle Beratung**
-Jede Haarverlängerung beginnt mit einer persönlichen Beratung, um die perfekte Methode für Ihr Haar zu finden.
+**Sicherheit**
+Unsere Mitarbeiter sind speziell für Höhenarbeiten geschult und verfügen über alle notwendigen Sicherheitszertifikate.
 
-### Unsere Haarverlängerung-Services in Traunstein
+### Unsere Glasreinigung-Services in Bremen
 
-**Extensions**
-- Keratin-Extensions
-- Micro-Ring Extensions
-- Tape-In Extensions
-- Pre-Bonded Extensions
+**Fensterreinigung**
+- Innen- und Außenfenster
+- Wintergärten und Veranden
+- Schaufenster und Vitrinen
+- Spezialglasreinigung
 
-**Clip-in Haarverlängerungen**
-- Clip-in Strähnen
-- Clip-in Volumen
-- Clip-in Pony
-- Clip-in Zöpfe
+**Fassadenreinigung**
+- Glasfassaden und Vorhangfassaden
+- Balkonverglasungen
+- Dachfenster und Lichtkuppeln
+- Glasdächer und Überdachungen
 
-**Spezielle Behandlungen**
-- Volumenverstärkung
-- Längenverlängerung
-- Farbanpassung
-- Pflegebehandlung
+**Spezialreinigung**
+- Sonnenschutzglas
+- Sicherheitsglas
+- Isolierglas
+- Beschichtetes Glas
 
-### Ablauf Ihrer Haarverlängerung in Traunstein
+### Ablauf der Glasreinigung in Bremen
 
-1. **Beratungsgespräch**: Wir analysieren Ihr Haar und besprechen Ihre Wünsche
-2. **Haarwäsche**: Professionelle Reinigung mit hochwertigen Produkten
-3. **Verlängerung**: Präzise Anbringung der Extensions
-4. **Styling**: Perfekte Integration und Finish
-5. **Pflegeberatung**: Tipps für die optimale Pflege zu Hause
+1. **Inspektion**: Wir analysieren Ihre Glasflächen und besprechen die Reinigungsanforderungen
+2. **Sicherheitsplanung**: Erstellung eines Sicherheitskonzepts für Höhenarbeiten
+3. **Reinigung**: Professionelle Reinigung mit modernster Technik
+4. **Qualitätskontrolle**: Überprüfung der Reinigungsqualität
+5. **Dokumentation**: Protokollierung aller Maßnahmen
 
-### Preise für Haarverlängerung in Traunstein
+### Preise für Glasreinigung in Bremen
 
-- **Keratin-Extensions**: ab 200€
-- **Micro-Ring Extensions**: ab 180€
-- **Clip-in Haarverlängerung**: ab 150€
-- **Volumenverstärkung**: ab 120€
-- **Nachbehandlung**: ab 80€
+- **Fensterreinigung**: ab 20€/m²
+- **Fassadenreinigung**: ab 25€/m²
+- **Höhenarbeiten**: ab 30€/m²
+- **Spezialreinigung**: Individuelle Kalkulation
 
-*Die genauen Preise erfahren Sie bei der Beratung vor Ort.*
+*Alle Preise sind verhandelbar und werden individuell kalkuliert.*
+
+### Servicegebiete in Bremen
+
+Wir sind hauptsächlich in Bremen-Vegesack tätig und bedienen auch:
+- Bremen-Blumenthal
+- Bremen-Burglesum
+- Bremen-Grohn
+- Bremen-Schönebeck
 
 ### Terminvereinbarung
 
-Vereinbaren Sie jetzt Ihren Termin für eine professionelle Haarverlängerung in Traunstein:
+Vereinbaren Sie jetzt ein unverbindliches Beratungsgespräch für Ihre Glasreinigung in Bremen:
 
-- **Telefon**: 0861/90951242
-- **E-Mail**: info@haarmanufaktur-suszan.de
-- **WhatsApp**: 0861/90951242
+- **Telefon**: 0421/12345678
+- **E-Mail**: info@dacosta-bremen.de
+- **Kontaktformular**: [Jetzt anfragen](/contact/)
 
-### Unser Standort in Traunstein
+### Unser Standort in Bremen
 
-Haarmanufaktur Suszan  
-Maximilianstraße 35  
-83278 Traunstein
+DACOSTA Gebäude- & Industrieservice GmbH  
+Vegesacker Straße 123  
+28757 Bremen
 
 **Öffnungszeiten**:  
-Dienstag - Freitag: 09:00 - 18:00 Uhr  
-Samstag: 08:00 - 13:00 Uhr
+Montag - Freitag: 07:00 - 17:00 Uhr  
+Samstag: 08:00 - 12:00 Uhr  
+Glasreinigung: Wetterabhängige Einsatzzeiten
 
-Besuchen Sie uns in Traunstein – wir freuen uns darauf, Ihnen die perfekte Haarverlängerung zu verleihen! 
+Vertrauen Sie auf DACOSTA für professionelle Glasreinigung in Bremen – wir sorgen für kristallklare Sicht! 

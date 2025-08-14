@@ -1,86 +1,94 @@
 ---
-permalink: /services/haarwaesche-styling/traunstein/
+permalink: /services/gruenanlagenpflege/bremen/
 layout: layouts/pages/underpages/services-detail.njk
-title: Haarwäsche & Styling in Traunstein
-description: Entspannende Haarwäsche und professionelles Styling in Traunstein. Pflegende Behandlungen und perfekte Frisuren für jeden Anlass.
+title: Grünanlagenpflege in Bremen - DACOSTA Gebäude- & Industrieservice
+description: Professionelle Grünanlagenpflege in Bremen. Rasenmähen, Hecken schneiden, Gartenpflege und Landschaftsbau für gepflegte Außenanlagen. Jetzt anfragen!
 cardImage: card5.jpg
-cardImageAlt: Professionelle Haarwäsche & Styling in Traunstein
-serviceName: Haarwäsche & Styling
-serviceType: Haarpflege
+cardImageAlt: Professionelle Grünanlagenpflege in Bremen
+serviceName: Grünanlagenpflege
+serviceType: Gartenpflege
 areaServed:
   type: City
-  name: Traunstein
+  name: Bremen
 ---
 
-## Professionelle Haarwäsche & Styling in Traunstein
+## Professionelle Grünanlagenpflege in Bremen
 
-In der Haarmanufaktur Suszan in Traunstein bieten wir Ihnen entspannende Haarwäsche und professionelles Styling – von der sanften Reinigung bis zur perfekten Frisur. Unser erfahrenes Team verwöhnt Ihr Haar mit hochwertigen Pflegeprodukten.
+DACOSTA bietet Ihnen umfassende Grünanlagenpflege in Bremen – von der regelmäßigen Gartenpflege bis zum Landschaftsbau. Unser erfahrenes Team sorgt dafür, dass Ihre Außenanlagen das ganze Jahr über gepflegt und ansprechend aussehen.
 
-### Warum unsere Haarwäsche & Styling in Traunstein?
+### Warum DACOSTA Grünanlagenpflege in Bremen?
 
-**Entspannende Haarwäsche**
-Genießen Sie eine wohltuende Kopfmassage während der Haarwäsche. Wir verwenden nur hochwertige, schonende Produkte, die Ihr Haar optimal pflegen.
+**Ganzjährige Betreuung**
+Wir bieten saisonale Gartenpflege und sorgen dafür, dass Ihre Grünanlagen zu jeder Jahreszeit optimal aussehen.
 
-**Professionelles Styling**
-Von alltäglichen Looks bis zu festlichen Frisuren – unser Team beherrscht alle Styling-Techniken und sorgt für den perfekten Look.
+**Professionelle Ausrüstung**
+Wir verfügen über moderne Gartengeräte und Maschinen, um auch größere Flächen effizient zu bearbeiten.
 
-**Individuelle Beratung**
-Jede Haarwäsche beginnt mit einer persönlichen Beratung, um die richtigen Produkte für Ihren Haartyp zu wählen.
+**Umweltbewusste Pflege**
+Wir setzen auf nachhaltige Gartenpflege und verwenden umweltfreundliche Methoden und Produkte.
 
-### Unsere Haarwäsche & Styling-Services in Traunstein
+### Unsere Grünanlagenpflege-Services in Bremen
 
-**Haarwäsche**
-- Entspannende Haarwäsche
-- Kopfmassage
-- Pflegende Spülung
-- Tiefenreinigung
+**Rasenpflege**
+- Rasenmähen und Kantenschneiden
+- Vertikutieren und Aerifizieren
+- Düngen und Bewässerung
+- Rasenreparatur und Nachsaat
 
-**Styling**
-- Blow-Dry
-- Glätten
-- Locken
-- Volumen-Styling
+**Hecken- und Strauchpflege**
+- Hecken schneiden und formen
+- Strauchpflege und Rückschnitt
+- Baumpflege und Kronenschnitt
+- Entfernung von Totholz
 
-**Spezielle Behandlungen**
-- Feuchtigkeitsbehandlung
-- Glanzbehandlung
-- Volumenbehandlung
-- Reparaturbehandlung
+**Gartenpflege**
+- Beete und Rabatten
+- Unkrautbekämpfung
+- Mulchen und Düngen
+- Pflanzung und Umpflanzung
 
-### Ablauf Ihrer Haarwäsche & Styling in Traunstein
+### Ablauf der Grünanlagenpflege in Bremen
 
-1. **Beratungsgespräch**: Wir analysieren Ihr Haar und besprechen Ihre Wünsche
-2. **Haarwäsche**: Sanfte Reinigung mit hochwertigen Produkten
-3. **Kopfmassage**: Entspannende Massage für die Kopfhaut
-4. **Styling**: Professionelle Formgebung nach Ihren Wünschen
-5. **Finish**: Perfekte Frisur für Ihren Anlass
+1. **Analyse**: Wir analysieren Ihre Grünanlagen und besprechen Ihre Wünsche
+2. **Pflegeplan**: Erstellung eines individuellen Pflegeplans
+3. **Regelmäßige Betreuung**: Durchführung aller vereinbarten Pflegemaßnahmen
+4. **Saisonale Arbeiten**: Anpassung an die jeweilige Jahreszeit
+5. **Dokumentation**: Protokollierung aller Pflegemaßnahmen
 
-### Preise für Haarwäsche & Styling in Traunstein
+### Preise für Grünanlagenpflege in Bremen
 
-- **Haarwäsche & Blow-Dry**: ab 25€
-- **Styling (ohne Wäsche)**: ab 20€
-- **Glätten**: ab 30€
-- **Locken**: ab 35€
-- **Volumen-Styling**: ab 40€
+- **Rasenmähen**: ab 30€/Stunde
+- **Hecken schneiden**: ab 35€/Stunde
+- **Gartenpflege**: ab 40€/Stunde
+- **Landschaftsbau**: Individuelle Kalkulation
 
-*Die genauen Preise erfahren Sie bei der Beratung vor Ort.*
+*Alle Preise sind verhandelbar und werden individuell kalkuliert.*
+
+### Servicegebiete in Bremen
+
+Wir sind hauptsächlich in Bremen-Vegesack tätig und bedienen auch:
+- Bremen-Blumenthal
+- Bremen-Burglesum
+- Bremen-Grohn
+- Bremen-Schönebeck
 
 ### Terminvereinbarung
 
-Vereinbaren Sie jetzt Ihren Termin für eine professionelle Haarwäsche & Styling in Traunstein:
+Vereinbaren Sie jetzt ein unverbindliches Beratungsgespräch für Ihre Grünanlagenpflege in Bremen:
 
-- **Telefon**: 0861/90951242
-- **E-Mail**: info@haarmanufaktur-suszan.de
-- **WhatsApp**: 0861/90951242
+- **Telefon**: 0421/12345678
+- **E-Mail**: info@dacosta-bremen.de
+- **Kontaktformular**: [Jetzt anfragen](/contact/)
 
-### Unser Standort in Traunstein
+### Unser Standort in Bremen
 
-Haarmanufaktur Suszan  
-Maximilianstraße 35  
-83278 Traunstein
+DACOSTA Gebäude- & Industrieservice GmbH  
+Vegesacker Straße 123  
+28757 Bremen
 
 **Öffnungszeiten**:  
-Dienstag - Freitag: 09:00 - 18:00 Uhr  
-Samstag: 08:00 - 13:00 Uhr
+Montag - Freitag: 07:00 - 17:00 Uhr  
+Samstag: 08:00 - 12:00 Uhr  
+Gartenpflege: Saisonale Einsatzzeiten
 
-Besuchen Sie uns in Traunstein – wir freuen uns darauf, Ihnen die perfekte Haarwäsche & Styling zu verleihen! 
+Vertrauen Sie auf DACOSTA für professionelle Grünanlagenpflege in Bremen – wir sorgen für gepflegte und ansprechende Außenanlagen! 
