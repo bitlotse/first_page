@@ -168,9 +168,10 @@
        ------------------------------------------------------------------------ */
     .intro-with-header {
         position: relative;
+        padding: 0;
     }
     .intro-with-header header {
-        position: sticky;
+        position: static;
         top: 0; /* sticks when intro section hits top of viewport */
         z-index: 1000;
     }
@@ -300,7 +301,7 @@ section {
    ======================================================================== */
 
 header {
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     background-color: var(--theme-color-primary);
     height: var(--header-height);

@@ -5,6 +5,7 @@
     position: relative;
     height: calc(100vh - var(--header-height));
     min-height: 500px;
+    /* height: 100vh; */ /* if hero should talk the whole start screen */
     overflow: hidden;
     display: flex;
     padding-top: 0;
