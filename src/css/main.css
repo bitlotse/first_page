@@ -301,7 +301,7 @@ section {
    ======================================================================== */
 
 header {
-    /* position: sticky; */
+    position: sticky;
     top: 0;
     background-color: var(--theme-color-primary);
     height: var(--header-height);
@@ -312,6 +312,12 @@ header {
     box-shadow: var(--theme-shadow-md);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
     z-index: 1000;
+}
+
+/* This class is applied by the JavaScript to hide the header */
+.header--hidden-on-scroll {
+  /* This moves the header up and out of the viewport */
+  transform: translateY(-100%);
 }
 
 /* Header Logo */
