@@ -41,34 +41,69 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Header Hide on Scroll ---
-    const header = document.querySelector('header');
-    if (header) {
-        let lastScrollY = window.scrollY;
-        const headerHeight = header.offsetHeight;
-        const scrollThreshold = 5;
+// --- Header Hide on Scroll ---
+const header = document.querySelector('header');
+if (header) {
+    let lastScrollY = window.scrollY;
+    const scrollThreshold = 5;
+    
+    // Calculate where the header actually starts (important for homepage layout)
+    const getHeaderStartPosition = () => {
+        const introSection = document.querySelector('.intro-section, .intro-with-header');
+        return introSection ? introSection.offsetTop : 0;
+    };
+    
+    let headerStartPosition = getHeaderStartPosition();
+    let isInScrollMode = false;
+    
+    // Recalculate on resize in case layout changes
+    window.addEventListener('resize', () => {
+        headerStartPosition = getHeaderStartPosition();
+    });
 
-        window.addEventListener('scroll', () => {
-            const currentScrollY = window.scrollY;
-
-            if (Math.abs(currentScrollY - lastScrollY) <= scrollThreshold) {
-                return;
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        
+        // Don't process tiny scroll movements
+        if (Math.abs(currentScrollY - lastScrollY) <= scrollThreshold) {
+            return;
+        }
+        
+        // Determine scroll direction
+        const isScrollingDown = currentScrollY > lastScrollY;
+        const isScrollingUp = currentScrollY < lastScrollY;
+        
+        if (currentScrollY <= headerStartPosition) {
+            // We're above where the header starts - use sticky positioning
+            if (isInScrollMode) {
+                header.classList.remove('header--scroll-mode');
+                header.classList.remove('header--hidden-on-scroll');
+                isInScrollMode = false;
             }
-
-            if (currentScrollY > lastScrollY && currentScrollY > headerHeight) {
-                // Scrolling Down and past the header: add the hide class
+        } else {
+            // We're past the header start position - switch to fixed positioning for scroll behavior
+            if (!isInScrollMode) {
+                header.classList.add('header--scroll-mode');
+                isInScrollMode = true;
+            }
+            
+            // Apply hide/show logic
+            if (isScrollingDown) {
+                // Scrolling Down: hide the header
                 header.classList.add('header--hidden-on-scroll');
-            } else {
-                // Scrolling Up or at the top (or not past header): remove the hide class
-                if (currentScrollY < lastScrollY || currentScrollY <= headerHeight) {
-                    header.classList.remove('header--hidden-on-scroll');
-                }
+            } else if (isScrollingUp) {
+                // Scrolling Up: show the header
+                header.classList.remove('header--hidden-on-scroll');
             }
-            lastScrollY = currentScrollY;
-        });
-    } else {
-        console.warn('Header element not found for scroll behavior.');
-    }
+        }
+        
+        lastScrollY = currentScrollY;
+    });
+} else {
+    console.warn('Header element not found for scroll behavior.');
+}
+
+    
 
     // --- Hero Section Video Fallback (Image when JS is ready) ---
     const heroVideo = document.getElementById('hero-video');
