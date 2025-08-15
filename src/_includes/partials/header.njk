@@ -1,7 +1,6 @@
 <header>
 
-  <!-- Left side navigation -->
-  <nav class="site-navigation site-navigation--left" id="mobile-menu-left">
+  <nav class="site-navigation site-navigation--left">
     <ul>
       <li><a href="{{ '/' | url }}">wir sind</a></li>
       <li><a href="{{ '/services' | url }}">wir können</a></li>
@@ -9,15 +8,13 @@
     </ul>
   </nav>
 
-  <!-- Centered Logo -->
   <div class="header-logo">
     <a href="{{ '/' | url }}">
       <img src="{{ site.logo_path | url }}" alt="DACOSTA Gebäude- & Industrieservice Logo - Gebäudereinigung in Bremen" />
     </a>
   </div>
 
-  <!-- Right side navigation -->
-  <nav class="site-navigation site-navigation--right" id="mobile-menu-right">
+  <nav class="site-navigation site-navigation--right">
     <ul>
       <li><a href="{{ '/about' | url }}">oft gefragt</a></li>
       <li><a href="{{ '/faq' | url }}">blog</a></li>
@@ -25,9 +22,26 @@
     </ul>
   </nav>
 
-
-
   <button class="nav-toggle" id="mobile-menu-button" aria-label="Navigation öffnen/schließen" aria-expanded="false" aria-controls="mobile-menu">
     <span class="hamburger-icon" id="menu-icon"></span>
   </button>
+
+  <nav id="mobile-menu">
+    <ul>
+      <li><a href="{{ '/' | url }}">⌂</a></li>
+
+      <li><a href="{{ '/' | url }}">wir sind</a></li>
+      <li><a href="{{ '/services' | url }}">wir können</a></li>
+      <li><a href="{{ '/services' | url }}">andere sagen</a></li>
+      <li><a href="{{ '/about' | url }}">oft gefragt</a></li>
+      <li><a href="{{ '/faq' | url }}">blog</a></li>
+      <li><a href="{{ '/contact' | url }}">kontakt</a></li>
+    </ul>
+
+      <button class="menu-close-button" aria-label="Menü schließen">
+    <span class="menu-close-icon">X</span>
+  </button>
+
+  </nav>
+
 </header>

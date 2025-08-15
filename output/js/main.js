@@ -30,16 +30,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Mobile Menu Toggle ---
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+// --- Mobile Menu Toggle ---
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeButton = mobileMenu.querySelector('.menu-close-button');
 
-    if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
-            const isPanelOpening = mobileMenu.classList.toggle('nav-open');
-            mobileMenuButton.setAttribute('aria-expanded', String(isPanelOpening));
-        });
-    }
+if (mobileMenuButton && mobileMenu && closeButton) {
+    const toggleMenu = () => {
+        const isPanelOpening = mobileMenu.classList.toggle('nav-open');
+        mobileMenuButton.setAttribute('aria-expanded', String(isPanelOpening));
+    };
+
+    mobileMenuButton.addEventListener('click', toggleMenu);
+    closeButton.addEventListener('click', toggleMenu);
+}
 
 // --- Header Hide on Scroll ---
 const header = document.querySelector('header');

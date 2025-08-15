@@ -137,7 +137,7 @@
     /* ------------------------------------------------------------------------
        MOBILE NAVIGATION CONFIGURATION
        ------------------------------------------------------------------------ */
-    --mobile-nav-width-default: 36vw;
+    --mobile-nav-width-default: 50vw;
     --mobile-nav-background-color: var(--override-mobile-nav-background-color, var(--mobile-nav-background-color-default));
     --mobile-nav-text-color: var(--override-mobile-nav-text-color, var(--mobile-nav-text-color-default));
     --mobile-nav-border-radius-default: var(--border-radius);
@@ -388,6 +388,16 @@ header {
 .site-navigation a:hover,
 .site-navigation a[aria-current="page"] {
     color: var(--theme-color-accent);
+}
+
+/* Hide the mobile menu panel on larger screens */
+#mobile-menu {
+    display: none;
+}
+
+/* Hide the hamburger icon on larger screens */
+.nav-toggle {
+    display: none;
 }
 
 /* ========================================================================
@@ -692,14 +702,22 @@ footer {
 
     /* Header Mobile */
     header {
+        display: flex;
         justify-content: space-between;
         align-items: center;
         padding: var(--space-sm);
         height: auto;
     }
+    
+    /* Hide BOTH desktop navigation menus on mobile */
+    .site-navigation--left,
+    .site-navigation--right {
+        display: none;
+    }
 
+    /* Mobile Navigation Toggle */
     .nav-toggle {
-        display: block;
+        display: block; /* Show the hamburger button */
         background: none;
         border: none;
         padding: var(--space-xs);
@@ -750,46 +768,78 @@ footer {
         transform: rotate(0deg);
     }
 
-    /* Mobile Menu */
-    #mobile-menu {
-        position: fixed;
-        top: var(--header-height);
-        right: var(--space-sm);
-        left: auto;
-        width: var(--mobile-nav-width);
-        background-color: var(--theme-color-primary);
-        box-shadow: var(--theme-shadow-md);
-        padding-top: var(--space-md);
-        padding-bottom: var(--space-md);
-        padding-left: var(--space-sm);
-        padding-right: var(--space-sm);
-        z-index: 999;
-        border-radius: var(--mobile-nav-border-radius);
-        transform: translateY(-120%);
-        opacity: 0;
-        visibility: hidden;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+#mobile-menu {
+    /* Existing positioning and transition styles */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: var(--theme-color-primary);
+
+    /* This centers the menu items vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* This centers the menu items horizontally */
+    align-items: center;
+
+    /* Add space on the left and right */
+    padding: 0 var(--space-sm);
+    box-sizing: border-box;
+
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+#mobile-menu.nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s, 0s, 0s;
+}
+
+#mobile-menu ul {
+    flex-direction: column;
+    /* Remove 'align-items' from here to let the parent handle alignment */
+    /* This removes the bullet points */
+    list-style: none;
+    /* This increases the vertical space between each item */
+    gap: var(--space-lg);
+    width: 100%;
+    padding: 0; /* Ensures the list has no default padding */
+}
+
+#mobile-menu ul li a {
+    /* Makes the entire link a larger, more clickable block */
+    display: block;
+    /* Increased padding to make the entire clickable area larger */
+    padding: var(--space-xs) var(--space-xs);
+    color: var(--theme-text-on-primary);
+    /* Aligns the text to the left */
+    text-align: center;
+    /* Increased font size for better readability on mobile */
+    font-size: var(--font-size-lg); 
+}
+
+    .menu-close-button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's on top of the menu */
+    margin-top: var(--space-md); /* Add space above the button */
+    padding: var(--space-xs) var(--space-sm);
     }
 
-    #mobile-menu.nav-open {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-        transition-delay: 0s, 0s, 0s;
-    }
-
-    #mobile-menu ul {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: var(--space-xs);
-        width: 100%;
-    }
-
-    #mobile-menu ul li a {
-        padding: var(--space-sm) var(--space-xs);
-        color: var(--theme-text-on-primary);
-        text-align: right;
-    }
+    .menu-close-icon {
+    font-size: var(--font-size-xl);
+    color: var(--theme-text-on-primary);
+    font-weight: bold;
+}
 
     /* Mobile Background */
     .page-right-background-image {
@@ -836,6 +886,7 @@ footer {
         gap: var(--space-md);
     }
 }
+
 
 /* ========================================================================
    15. DARK MODE PLACEHOLDER
