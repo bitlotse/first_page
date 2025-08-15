@@ -2,8 +2,7 @@
 <html lang="de">
 <head>
  {% include "partials/head.njk" %}
-
- {% block css %}
+  {% block css %}
  <link rel="stylesheet" href="/css/main.css">
  <link rel="stylesheet" href="/css/client.css">
  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
@@ -14,19 +13,15 @@
 
 {% set bodyClasses = [page.fileSlug] %}
 {% if bodyClass %}{% set bodyClasses = bodyClasses | push(bodyClass) %}{% endif %}
-<body id="top" class="{{ bodyClasses | join(' ') }}">
+<body id="top" class="{{ bodyClasses | join(' ') }} home-page">
  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-     {% include "partials/contact-bar.njk" %}
-
+  {% include "partials/contact-bar.njk" %}
  <div class="page-right-background-image"></div>
  <div class="page-complete-background-image"></div>
-
- <main id="main-content">
-   {% block content %}{% endblock %}
+  <main id="main-content">
+  {% block content %}{% endblock %}
  </main>
-
- {% include "partials/footer.njk" %}
+  {% include "partials/footer.njk" %}
  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
  <script src="/js/main.js" defer></script>
 </body>

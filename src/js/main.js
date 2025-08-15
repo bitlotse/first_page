@@ -105,6 +105,43 @@ if (header) {
 
     
 
+// --- Contact Bar Show on Scroll ---
+const contactBar = document.querySelector('.fixed-contact-icons');
+// Use the same selector as the header for consistency
+const scrollStartSection = document.querySelector('.intro-section, .intro-with-header');
+const body = document.body;
+
+// We only want this logic to run on the homepage
+if (contactBar && scrollStartSection && body.classList.contains('home-page')) {
+    let contactBarStartPosition = scrollStartSection.offsetTop;
+
+    function handleContactBarVisibility() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > contactBarStartPosition) {
+            // Scrolling past the start section: add the visible class
+            contactBar.classList.add('is-visible');
+        } else {
+            // Still in the start section: remove the visible class
+            contactBar.classList.remove('is-visible');
+        }
+    }
+    
+    // Handle visibility on initial page load
+    handleContactBarVisibility();
+
+    // Recalculate on resize in case layout changes
+    window.addEventListener('resize', () => {
+        contactBarStartPosition = scrollStartSection.offsetTop;
+        handleContactBarVisibility();
+    });
+
+    // Handle visibility on scroll
+    window.addEventListener('scroll', handleContactBarVisibility);
+}
+
+
+
     // --- Hero Section Video Fallback (Image when JS is ready) ---
     const heroVideo = document.getElementById('hero-video');
     const heroSnapshotImage = document.getElementById('hero-snapshot-image');

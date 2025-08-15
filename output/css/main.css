@@ -393,25 +393,18 @@ header {
    FIXED CONTACT-BAR
    ======================================================================== */
 
+
 .fixed-contact-icons {
-    /* Positions the element relative to the viewport so it stays in place */
     position: fixed;
-    
-    /* Aligns the element to the right edge of the screen */
     right: 0;
-    
-    /* Centers the element vertically on the screen */
     top: 50%;
     transform: translateY(-50%);
-
-    /* Adds some styling and spacing */
     padding: var(--space-xs);
     background-color: var(--theme-color-primary); 
     border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
     box-shadow: var(--shadow-2);
-    
-    /* Ensures the element is always on top of other content */
     z-index: 900;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .fixed-contact-icons ul {
@@ -419,11 +412,7 @@ header {
     margin: 0;
     padding: 0;
     display: flex;
-    
-    /* Stacks the icons vertically, from top to bottom */
     flex-direction: column; 
-    
-    /* Adds space between the icons */
     gap: var(--space-md);
 }
 
@@ -445,6 +434,20 @@ header {
     width: auto;
     display: block;
     filter: var(--header-icon-filter);
+}
+
+/* Homepage only: This rule hides the bar when the body has the 'home-page' class */
+body.home-page .fixed-contact-icons {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction while hidden */
+}
+
+/* This is the class that JavaScript will add to make the bar visible */
+body.home-page .fixed-contact-icons.is-visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto; /* Re-enables interaction */
 }
 
 /* ========================================================================
