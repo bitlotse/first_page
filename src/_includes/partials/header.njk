@@ -1,27 +1,31 @@
 <header>
+
+  <!-- Left side navigation -->
+  <nav class="site-navigation site-navigation--left" id="mobile-menu-left">
+    <ul>
+      <li><a href="{{ '/' | url }}">wir sind</a></li>
+      <li><a href="{{ '/services' | url }}">wir können</a></li>
+      <li><a href="{{ '/services' | url }}">andere sagen</a></li>
+    </ul>
+  </nav>
+
+  <!-- Centered Logo -->
   <div class="header-logo">
     <a href="{{ '/' | url }}">
       <img src="{{ site.logo_path | url }}" alt="DACOSTA Gebäude- & Industrieservice Logo - Gebäudereinigung in Bremen" />
     </a>
   </div>
 
-  <nav class="site-navigation" id="mobile-menu">
+  <!-- Right side navigation -->
+  <nav class="site-navigation site-navigation--right" id="mobile-menu-right">
     <ul>
-      <li><a href="{{ '/' | url }}">Startseite</a></li>
-      <li><a href="{{ '/services' | url }}">Dienstleistungen</a></li>
-      <li><a href="{{ '/about' | url }}">Über uns</a></li>
-      <li><a href="{{ '/faq' | url }}">FAQ</a></li>
-      <li><a href="{{ '/contact' | url }}">Kontakt</a></li>
+      <li><a href="{{ '/about' | url }}">oft gefragt</a></li>
+      <li><a href="{{ '/faq' | url }}">blog</a></li>
+      <li><a href="{{ '/contact' | url }}">kontakt</a></li>
     </ul>
   </nav>
 
-  <div class="header-contact">
-    <ul>
-      <li><a href="tel:{{ site.contact.phoneLink }}" aria-label="Anrufen"><img src="{{ '/img/icons/phone.svg' | url }}" alt="Telefon Icon" /></a></li>
-      <li><a href="mailto:{{ site.contact.email }}" aria-label="E-Mail schreiben"><img src="{{ '/img/icons/mail.svg' | url }}" alt="E-Mail Icon" /></a></li>
-      <li><a href="https://wa.me/{{ site.contact.whatsappLink }}" aria-label="WhatsApp Nachricht"><img src="{{ '/img/icons/whatsapp.svg' | url }}" alt="WhatsApp Icon" /></a></li>
-    </ul>
-  </div>
+
 
   <button class="nav-toggle" id="mobile-menu-button" aria-label="Navigation öffnen/schließen" aria-expanded="false" aria-controls="mobile-menu">
     <span class="hamburger-icon" id="menu-icon"></span>

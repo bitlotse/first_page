@@ -88,9 +88,9 @@
   --theme-testimonial-author-text-color: var(--theme-color-secondary); /* Using secondary for author text */
 
   /* Icon filter control for header and footer */
-  --header-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
-  --footer-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
-  --header-logo-icon-filter: invert(1); /* Set to 'invert(1)' for white, 'none' for black */
+  --header-icon-filter: none; /* Set to 'invert(1)' for white, 'none' for black */
+  --footer-icon-filter: none; /* Set to 'invert(1)' for white, 'none' for black */
+  --header-logo-icon-filter: none; /* Set to 'invert(1)' for white, 'none' for black */
 
 
   /* Example: If you want to override the header's justify-content from main.css defaults */

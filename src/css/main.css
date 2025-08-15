@@ -82,18 +82,6 @@
     --card-border-radius: var(--border-radius);
 
     /* ------------------------------------------------------------------------
-       HEADER LAYOUT CONFIGURATION
-       ------------------------------------------------------------------------ */
-    --header-layout-justify-content-default: space-between;
-    --header-nav-items-gap-default: var(--space-sm);
-    --header-icons-gap-default: var(--space-sm);
-
-    /* Variables for client overrides */
-    --header-layout-justify-content: var(--override-header-layout-justify-content, var(--header-layout-justify-content-default));
-    --header-nav-items-gap: var(--override-header-nav-items-gap, var(--header-nav-items-gap-default));
-    --header-icons-gap: var(--override-header-icons-gap, var(--header-icons-gap-default));
-
-    /* ------------------------------------------------------------------------
        HERO SECTION CONFIGURATION
        ------------------------------------------------------------------------ */
     /* Hero Section Gradient Overlay Defaults */
@@ -298,16 +286,22 @@ section {
     padding-bottom: var(--space-lg);
 }
 
+
+/* ========================================================================
+   8. HEADER
+   ======================================================================== */
+
+
 header {
     position: sticky;
     top: 0;
-    background-color: var(--theme-color-primary);
+    background-color: #E8DFE4; /* Your hardcoded header color */
     height: var(--header-height);
-    display: flex;
-    justify-content: var(--header-layout-justify-content);
+    display: grid; /* Use a simple grid */
+    grid-template-columns: 1fr auto 1fr; /* This is the key: two equal flexible sides and a middle column for the logo */
     align-items: center;
     padding: 0 var(--space-sm);
-    box-shadow: var(--theme-shadow-md);
+    box-shadow: none;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
     z-index: 1000;
     width: 100%;
@@ -327,23 +321,25 @@ header {
     transform: translateY(-100%);
 }
 
-/* Header Logo */
+/* Header Logo - Centered */
 .header-logo {
     text-decoration: none;
     color: var(--theme-text-on-primary);
     font-size: var(--font-size-lg);
     font-weight: bold;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    grid-column: 2; /* The logo is in the exact center column */
+    justify-self: center; /* Ensures the logo is centered within its column */
 }
 
 .header-logo img {
     display: block;
-    max-height: calc(var(--header-height) - var(--space-sm));
+    max-height: calc(var(--header-height) * 0.9);
     width: auto;
     filter: var(--header-logo-icon-filter);
 }
 
-/* Header Navigation */
+/* Header Navigation - Split Left and Right */
 .nav-toggle {
     display: none;
 }
@@ -355,6 +351,20 @@ header {
     transition: none;
     max-height: none;
     overflow: visible;
+}
+
+/* Left navigation - Now aligned to the far left of its grid column */
+.site-navigation--left {
+    grid-column: 1; /* Positioned in the first column */
+    justify-self: end;
+    padding-left: var(--space-md);
+}
+
+/* Right navigation - Now aligned to the far right of its grid column */
+.site-navigation--right {
+    grid-column: 3; /* Positioned in the third column */
+    justify-self: start;
+    padding-right: var(--space-md);
 }
 
 .site-navigation ul {
@@ -379,41 +389,62 @@ header {
     color: var(--theme-color-accent);
 }
 
-/* Header Contact */
-.header-contact {
-    display: flex;
-    align-items: center;
-    gap: var(--header-icons-gap);
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+/* ========================================================================
+   FIXED CONTACT-BAR
+   ======================================================================== */
+
+.fixed-contact-icons {
+    /* Positions the element relative to the viewport so it stays in place */
+    position: fixed;
+    
+    /* Aligns the element to the right edge of the screen */
+    right: 0;
+    
+    /* Centers the element vertically on the screen */
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* Adds some styling and spacing */
+    padding: var(--space-xs);
+    background-color: var(--theme-color-primary); 
+    border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+    box-shadow: var(--shadow-2);
+    
+    /* Ensures the element is always on top of other content */
+    z-index: 900;
 }
 
-.header-contact img {
-    height: var(--font-size-lg);
-    width: auto;
-    display: block;
-    filter: var(--header-icon-filter);
-}
-
-.header-contact ul {
+.fixed-contact-icons ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
-    gap: var(--header-icons-gap);
+    
+    /* Stacks the icons vertically, from top to bottom */
+    flex-direction: column; 
+    
+    /* Adds space between the icons */
+    gap: var(--space-md);
 }
 
-.header-contact a {
-    text-decoration: none;
-    color: var(--theme-text-on-primary);
+.fixed-contact-icons a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: var(--space-xs);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-duration);
 }
 
-.header-contact a:hover {
-    color: var(--theme-color-accent);
+.fixed-contact-icons a:hover {
+    background-color: var(--theme-color-highlight);
+}
+
+.fixed-contact-icons img {
+    height: var(--font-size-lg);
+    width: auto;
+    display: block;
+    filter: var(--header-icon-filter);
 }
 
 /* ========================================================================
