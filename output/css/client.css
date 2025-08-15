@@ -5,7 +5,7 @@
   --theme-color-secondary: #735664; /* (main button when hover, about and faq boxes) */
   --theme-color-accent: #597081;    /* (nav when hover, rules, faq-questions) */
   --theme-color-neutral: #E4FF1A;   /* (text in testimonial, tel+mail+whatsapp + rules in contact box, I think it's not used anymore) */
-  --theme-color-surface: #E8DFE4;   /* (for page backgrounds) */
+  --theme-color-surface: #f9f9f9;   /* (for page backgrounds) */
 
   /* --- TEXT COLORS ON CORE BACKGROUNDS - LIGHT MODE --- */
   --theme-text-on-primary: #2E2127;

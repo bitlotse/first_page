@@ -76,7 +76,8 @@
     --button-padding-y: 12px;
     --button-padding-x: 24px;
     --button-border-radius: var(--button-border-radius, var(--border-radius-sm));
-    --button-text-transform: uppercase;
+    /* --button-text-transform: uppercase; */
+    --button-text-transform: none; /* uncomment if i don't want uppercase button */
 
     --card-padding: var(--space-sm);
     --card-border-radius: var(--border-radius);
@@ -295,7 +296,7 @@ section {
 header {
     position: sticky;
     top: 0;
-    background-color: #E8DFE4; /* Your hardcoded header color */
+    background-color: #F6F6F6; /* Your hardcoded header color */
     height: var(--header-height);
     display: grid; /* Use a simple grid */
     grid-template-columns: 1fr auto 1fr; /* This is the key: two equal flexible sides and a middle column for the logo */
