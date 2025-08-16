@@ -141,95 +141,76 @@
 
 
 /* Intro Section Styles */
-.intro {
+/* Offer Section Styles */
+.offer {
     background-color: var(--theme-color-surface);
     background-image: var(--theme-background-texture-url);
-    color: var(--theme-text-on-surface, --theme-color-neutral);
+    color: var(--theme-text-on-surface, var(--theme-color-neutral));
     padding-top: var(--intro-section-padding-y);
     padding-bottom: var(--intro-section-padding-y);
-    position: relative; /* For positioning the ::after pseudo-element */
-    /* The section itself doesn't need to be flex if its content is wrapped in a .container */
+    position: relative;
 }
 
-.intro .container { /* Assuming you'll wrap .intro-content and .intro-image in a .container for centering */
+.offer .container {
     display: flex;
-    align-items: center; /* Vertically align items if they have different heights */
-    gap: var(--intro-section-column-gap);
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    align-items: flex-start;
+    gap: var(--intro-section-column-gap, 3rem);
+    flex-wrap: wrap;
 }
 
-.intro-content {
-    flex: 1; /* Allows content to take up available space */
-    min-width: 300px; /* Minimum width before wrapping/stacking */
-    padding-right: var(--space-md); /* Add some space if image is on the right */
+.offer-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
 }
 
-.intro-content h2 {
-    /* font-size and color inherit from global h2 styles */
+.offer-content h2 {
     margin-bottom: var(--space-md);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
-.intro-content p {
-    /* font-family and font-size inherit from global p styles */
+.offer-content p {
+    font-size: 1.1rem;
     line-height: var(--line-height-base);
-    margin-bottom: var(--space-sm);
+    color: var(--theme-color-neutral-light);
 }
 
-.intro-content .cta-button {
-    margin-top: var(--space-sm);
-    /* Uses .btn styles from main.css, can be overridden here if needed */
-}
-.intro-content .btn--secondary { /* Specific styling for the secondary button in intro if needed */
-    /* It already gets its themeable styles from components.css and main.css */
-}
-
-.intro-image {
-    flex: 1; /* Allows image to take up available space */
-    min-width: 300px; /* Minimum width */
-    text-align: center; /* Center image if it's smaller than its container */
+/* Visual section wrapper */
+.offer-visual {
+    flex: 1;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
 }
 
-.intro-image img {
-    max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove bottom space under image */
-    border-radius: var(--border-radius); /* Optional: rounded corners for the image */
-    box-shadow: var(--theme-shadow-lg); /* Optional: add a shadow */
-}
-
-/* Responsive adjustments for the intro section */
-@media (max-width: 768px) {
-    .intro .container {
-        flex-direction: column; /* Stack content and image vertically */
-        text-align: center; /* Center text content when stacked */
-    }
-    .intro-content {
-        padding-right: 0; /* Remove right padding when stacked */
-        margin-bottom: var(--space-md); /* Add space below content when stacked */
-            }
-}
-
-/* Base style for section rules implemented as <hr> or <div> */
-.section-rule {
-  display: block;
-  border: none; /* Remove default HR border */
-  height: var(--intro-section-rule-height, 3px);
-  background-color: var(--theme-color-accent);
-  border-radius: var(--border-radius-pill, 50px);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Bottom rule for the intro section - now targets the <hr> element */
-.intro-bottom-rule {
-    /* Inherits base styles from .section-rule */
-    display: block;
+/* Bottom rule for offer section */
+.offer-bottom-rule {
     width: var(--intro-section-rule-width);
-    margin-top: var(--space-lg); /* Space above the rule, after the content */
-    /* Other properties like height, background-color, border-radius,
-        and centering margins are handled by the .section-rule base class.
-        If specific overrides are needed for the intro rule, add them here. */
+    margin-top: var(--space-lg);
 }
+
+/* Responsive Layout */
+@media (max-width: 968px) {
+    .offer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .offer-content {
+        max-width: none;
+        margin-bottom: var(--space-lg);
+    }
+
+    .offer-visual {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+
 
 
 

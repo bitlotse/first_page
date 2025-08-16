@@ -187,3 +187,158 @@ section.services { /* Make the selector more specific to target <section class="
         transform: scale(1.1); /* Pulse to 110% size */
     }
 }
+
+
+/* ---------------------------------------------
+   Reusable Card Component - Benefits Card
+   --------------------------------------------- */
+
+/* Base card component - can be reused anywhere */
+.card {
+    background: var(--theme-color-background);
+    border: 2px solid var(--theme-color-border, #ddd);
+    border-radius: var(--border-radius);
+    padding: var(--space-md);
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    max-width: 420px;
+    min-width: max-content;
+    font-family: var(--font-family-heading);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Hover effect for all cards */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Modifier for Benefits Card */
+.card--benefit {
+    transform: perspective(1000px) rotateY(-8deg);
+    padding: var(--space-md) var(--space-md);
+}
+
+.card--benefit:hover {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Benefit items inside the card */
+.card--benefit .benefit-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 2px 0;
+    font-size: 1.3rem;
+    color: var(--theme-text-on-background);
+}
+
+.card--benefit .plus-sign {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--theme-color-accent);
+    width: 25px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.card--benefit .benefit-text {
+    flex: 0 1 auto;
+}
+
+/* Addition line / horizontal rule */
+.card--benefit .addition-line {
+    display: inline-block;
+    width: 60%;
+    height: 2px;
+    background: var(--theme-color-accent);
+    margin: var(--space-xs) auto;
+    transform: rotate(-0.5deg);
+    border-radius: 1px;
+    position: relative;
+}
+
+.card--benefit .addition-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 20%;
+    height: 2px;
+    background: var(--theme-color-accent);
+    transform: rotate(1deg);
+}
+
+.card--benefit .addition-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 15%;
+    width: 25%;
+    height: 2px;
+    background: var(--theme-color-accent);
+    transform: rotate(-0.8deg);
+}
+
+/* Result text with highlight */
+.card--benefit .result {
+    font-size: 1.5rem;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: var(--space-xs);
+}
+
+.card--benefit .result-text {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    white-space: normal; /* allows multiple lines */
+}
+
+/* Marker highlight effect */
+.card--benefit .result-text::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -0.3em;
+    right: -0.3em;
+    height: 0.8em;
+    background-color: rgba(127, 191, 127, 0.4);
+    transform: translateY(-50%) rotate(-1deg);
+    z-index: -1;
+    border-radius: 2px;
+}
+
+/* Responsive tweaks for mobile */
+@media (max-width: 640px) {
+    .card--benefit {
+        width: auto;
+        max-width: 100%;
+        padding: var(--space-sm) var(--space-sm);
+        transform: perspective(800px) rotateY(-6deg);
+    }
+
+    .card--benefit .benefit-item {
+        font-size: 1.1rem;
+        gap: var(--space-xs);
+        padding-right: 2px;
+    }
+
+    .card--benefit .plus-sign {
+        font-size: 1.1rem;
+        width: 20px;
+    }
+
+    .card--benefit .result {
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
